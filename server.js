@@ -12,8 +12,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 const cache = new NodeCache({ stdTTL: 86400 }); // Cache for 1 day
-const domain = 'https://www.fearlessdraft.net';
-// const domain = 'http://localhost:3333';
+const domain = process.env.DOMAIN
 
 const currStates = {};
 
@@ -30,9 +29,7 @@ app.get('/', (req, res) => {
 	res.render('index');
 });
 
-const mongoUser = process.env.mongoUser;
-const mongoPass = process.env.mongoPass;
-const uri = `mongodb+srv://${mongoUser}:${mongoPass}@fearlessdraft.roz4r.mongodb.net/?retryWrites=true&w=majority&appName=FearlessDraft`;
+const uri = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}/?retryWrites=true&w=majority&appName=FearlessDraft`;
 const clientOptions = {
 	serverApi: {
 		version: '1',
