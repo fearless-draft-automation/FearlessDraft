@@ -8,6 +8,9 @@ var { nanoid } = require('nanoid');
 const mongoose = require('mongoose');
 const NodeCache = require('node-cache');
 
+const { Draft } = require('./models');
+const draftService = require("./services/draft")
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
@@ -26,91 +29,65 @@ function log(message) {
 }
 
 app.get('/', (req, res) => {
-	res.render('index');
+    res.render('index');
 });
 
 const uri = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}/?retryWrites=true&w=majority&appName=FearlessDraft`;
 const clientOptions = {
-	serverApi: {
-		version: '1',
-		strict: true,
-		deprecationErrors: true
-	}
+    serverApi: {
+        version: '1',
+        strict: true,
+        deprecationErrors: true
+    }
 };
 async function run() {
-	try {
-		// Create a Mongoose client with a MongoClientOptions object to set the Stable API version
-		await mongoose.connect(uri, clientOptions);
-		await mongoose.connection.db.admin().command({
-			ping: 1
-		});
-		log("Connected To MongoDB");
-	} catch (error) {
-		// Ensures that the client will close when you finish/error
-		log("Error connecting to MongoDB", error);
-	}
+    try {
+        // Create a Mongoose client with a MongoClientOptions object to set the Stable API version
+        await mongoose.connect(uri, clientOptions);
+        await mongoose.connection.db.admin().command({
+            ping: 1
+        });
+        log("Connected To MongoDB");
+    } catch (error) {
+        // Ensures that the client will close when you finish/error
+        log("Error connecting to MongoDB", error);
+    }
 }
 run().catch(console.dir);
 
-const draftSchema = new mongoose.Schema({
-	draftId: String,
-	picks: [String],
-	fearlessBans: [String],
-	matchNumber: Number,
-	blueTeamName: String,
-	redTeamName: String,
-    date: {
-        type: Date,
-        default: Date.now
-    }
-});
-
-const Draft = mongoose.model('Draft', draftSchema);
 setInterval(checkFinishedDrafts, 5 * 1000 * 60); //check every 5 minutes to see if drafts are finished
 
 async function saveDraft(draftId, picks, fearlessBans, matchNumber, blueTeamName, redTeamName) {
-	try {
-		if (mongoose.connection.readyState !== 1) {
-			throw new Error("MongoDB connection is not established");
-		}
-		const draft = new Draft({
-			draftId,
-			picks,
-			fearlessBans,
-			matchNumber,
-			blueTeamName,
-			redTeamName,
+    try {
+        if (mongoose.connection.readyState !== 1) {
+            throw new Error("MongoDB connection is not established");
+        }
+        const draft = new Draft({
+            draftId,
+            picks,
+            fearlessBans,
+            matchNumber,
+            blueTeamName,
+            redTeamName,
             date: Date.now()
-		});
-		await draft.save();
-		log('Draft saved successfully');
-	} catch (error) {
-		log('Error saving draft:', error);
-	}
-}
-
-async function getDraft(draftId, matchNumber) {
-	try {
-		const draft = await Draft.findOne({
-			draftId,
-			matchNumber
-		});
-		return draft;
-	} catch (error) {
-		log('Error retrieving draft:', error);
-	}
+        });
+        await draft.save();
+        log('Draft saved successfully');
+    } catch (error) {
+        log('Error saving draft:', error);
+    }
 }
 
 function isDraftFinished(draftId) {
-	const inactivityDuration = 3 * 1000 * 60 * 60; // 3 hours
-	const currentTime = Date.now();
-	const lastActivity = currStates[draftId].lastActivity;
+    const inactivityDuration = 3 * 1000 * 60 * 60; // 3 hours
+    const currentTime = Date.now();
+    const lastActivity = currStates[draftId].lastActivity;
 
-	return currentTime - lastActivity >= inactivityDuration;
+    return currentTime - lastActivity >= inactivityDuration;
 }
 
 function checkFinishedDrafts() {
-    try{
+    try {
         Object.keys(currStates).forEach((draftId) => {
             if (!currStates[draftId].finished && isDraftFinished(draftId)) {
                 currStates[draftId].finished = true;
@@ -129,27 +106,47 @@ app.get('/proxy/championrates', async (req, res) => { //TODO: cache later
     if (cachedData) {
         return res.json(cachedData);
     }
-	try {
-		const response = await fetch('https://cdn.merakianalytics.com/riot/lol/resources/latest/en-US/championrates.json');
-		const data = await response.json();
+    try {
+        const response = await fetch('https://cdn.merakianalytics.com/riot/lol/resources/latest/en-US/championrates.json');
+        const data = await response.json();
         cache.set(cacheKey, data);
-		res.json(data);
-	} catch (error) {
-		log('Error fetching data:', error);
-		res.status(500).json({
-			error: 'Failed to fetch data'
-		});
-	}
+        res.json(data);
+    } catch (error) {
+        log('Error fetching data:', error);
+        res.status(500).json({
+            error: 'Failed to fetch data'
+        });
+    }
+});
+
+app.get('/champions', async (req, res) => {
+    const cacheKey = 'champions';
+    let champions = cache.get(cacheKey);
+    if (champions) {
+        return res.json(champions);
+    }
+
+    try {
+        champions = require("./priv/champions.json");
+        cache.set(cacheKey, champions);
+        res.json(champions);
+    } catch (error) {
+        log('Error loading champions.json:', error);
+
+        res.status(500).json({
+            error: 'Failed to load champions list'
+        });
+    }
 });
 
 app.get('/draft/:draftId/:side', (req, res) => {
-    try{
+    try {
         const draftId = req.params.draftId;
         const teamId = req.params.side;
         let side = 'spectator'
-        if(teamId == 'team1'){
+        if (teamId == 'team1') {
             side = 'blue'
-        } else if(teamId == 'team2'){
+        } else if (teamId == 'team2') {
             side = 'red'
         }
         const blueTeamName = currStates[draftId]?.blueTeamName || 'Team 1';
@@ -169,7 +166,7 @@ app.get('/draft/:draftId/:side', (req, res) => {
 
 
 app.post('/create-draft', (req, res) => {
-    try{
+    try {
         const blueTeamName = req.body.blueTeamName;
         const redTeamName = req.body.redTeamName;
         const draftId = nanoid(8);
@@ -206,21 +203,21 @@ app.post('/create-draft', (req, res) => {
 
 
 io.on('connection', (socket) => {
-	socket.on('joinDraft', (draftId) => {
-		try {
-			socket.join(draftId);
-		} catch (error) {
-			log('Error joining draft:', error);
-		}
-	});
+    socket.on('joinDraft', (draftId) => {
+        try {
+            socket.join(draftId);
+        } catch (error) {
+            log('Error joining draft:', error);
+        }
+    });
 
-	socket.on('playerReady', (data) => {
-        try{
+    socket.on('playerReady', (data) => {
+        try {
             const {
                 draftId,
                 side
             } = data;
-            if(!currStates[draftId]){
+            if (!currStates[draftId]) {
                 io.to(draftId).emit('draftNotAvailable');
                 return;
             }
@@ -242,10 +239,10 @@ io.on('connection', (socket) => {
         } catch (error) {
             log(`Error setting player ready: ${error.message}`);
         }
-	});
+    });
 
-	socket.on('startTimer', (data) => {
-        try{
+    socket.on('startTimer', (data) => {
+        try {
             const draftId = data;
             currStates[draftId].started = true;
             currStates[draftId].lastActivity = Date.now();
@@ -264,7 +261,7 @@ io.on('connection', (socket) => {
                     currStates[draftId].timer = null;
                     setTimeout(() => {
                         if (!currStates[draftId].isLocking) {
-                        io.to(draftId).emit('lockChamp');
+                            io.to(draftId).emit('lockChamp');
                         }
                     }, 100);
                 }
@@ -272,11 +269,11 @@ io.on('connection', (socket) => {
         } catch (error) {
             log(`Error starting timer: ${error.message}`);
         }
-	});
+    });
 
 
-	socket.on('getData', (draftId) => { //sends the state to people who open page
-        try{
+    socket.on('getData', (draftId) => { //sends the state to people who open page
+        try {
             if (!currStates[draftId] || currStates[draftId].finished) {
                 socket.emit('draftState', {
                     finished: true
@@ -300,20 +297,20 @@ io.on('connection', (socket) => {
         } catch (error) {
             log(`Error getting data: ${error.message}`);
         }
-	});
-    
+    });
+
     socket.on('hover', (data) => { //hovering over champ
-        try{
+        try {
             socket.to(data.draftId).emit('hover', data.champion);
         } catch (error) {
             log(`Error hovering over champ: ${error.message}`);
         }
     });
 
-	socket.on('pickSelection', (data) => { //new pick made
-		const {draftId, pick} = data;
+    socket.on('pickSelection', (data) => { //new pick made
+        const { draftId, pick } = data;
         try {
-            if(currStates[draftId].isLocking) {
+            if (currStates[draftId].isLocking) {
                 return;
             }
             currStates[draftId].isLocking = true;
@@ -325,14 +322,14 @@ io.on('connection', (socket) => {
                     currStates[draftId].isLocking = false;
                 }, 100);
             }
-        } catch(error) {
+        } catch (error) {
             log("Pick selection error:", currStates[draftId], error);
             return;
         }
-	});
+    });
 
-	socket.on('endDraft', (draftId) => { //ends draft
-        try{
+    socket.on('endDraft', (draftId) => { //ends draft
+        try {
             if (currStates[draftId].timer) {
                 clearInterval(currStates[draftId].timer);
                 currStates[draftId].timer = null;
@@ -350,11 +347,11 @@ io.on('connection', (socket) => {
         } catch (error) {
             log(`Error ending draft: ${error.message}`);
         }
-	});
-    
+    });
 
-	socket.on('switchSides', (draftId) => { //switches sides 
-        try{
+
+    socket.on('switchSides', (draftId) => { //switches sides 
+        try {
             if (currStates[draftId]) {
                 currStates[draftId].sideSwapped = !currStates[draftId].sideSwapped;
                 currStates[draftId].blueReady = false;
@@ -371,11 +368,11 @@ io.on('connection', (socket) => {
         } catch (error) {
             log(`Error switching sides: ${error.message}`);
         }
-	});
+    });
 
     socket.on('endSeries', (draftId) => { //ends draft
-        try{
-            if(currStates[draftId]){
+        try {
+            if (currStates[draftId]) {
                 currStates[draftId].finished = true;
                 io.to(draftId).emit('showNextGameButton', currStates[draftId]);
                 delete currStates[draftId];
@@ -383,30 +380,30 @@ io.on('connection', (socket) => {
         } catch (error) {
             log(`Error ending series: ${error.message}`);
         }
-	});
+    });
 
-	socket.on('showDraft', async (draftId, gameNum) => { //shows draft
-		try {
-			const draft = await getDraft(draftId, gameNum);
-			if (draft) {
-				draftData = {
-					picks: draft.picks,
-					fearlessBans: draft.fearlessBans,
-					matchNumber: draft.matchNumber,
-					blueTeamName: draft.blueTeamName,
-					redTeamName: draft.redTeamName,
-				}
-				socket.emit('showDraftResponse', draftData);
-			} else {
-				socket.emit('showDraftResponse', null);
-			}
-		} catch (error) {
-			log('Error showing draft:', error);
-		}
-	});
+    socket.on('showDraft', async (draftId, gameNum) => { //shows draft
+        try {
+            const draft = await draftService.get(draftId, gameNum);
+            if (!draft) {
+                socket.emit('showDraftResponse', null);
+                return;
+            }
+
+            socket.emit('showDraftResponse', {
+                picks: draft.picks,
+                fearlessBans: draft.fearlessBans,
+                matchNumber: draft.matchNumber,
+                blueTeamName: draft.blueTeamName,
+                redTeamName: draft.redTeamName,
+            });
+        } catch (error) {
+            log('Error showing draft:', error);
+        }
+    });
 });
 
 const port = process.env.PORT || 3333;
 server.listen(port, () => {
-	log(`Server is running on port ${port}`);
+    log(`Server is running on port ${port}`);
 });
