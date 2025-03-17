@@ -1,11 +1,9 @@
 const socket = io();
 const patch = '15.2.1'
 const baseUrl = `https://ddragon.leagueoflegends.com/cdn/${patch}`
-let champions = null;
+let championsV2 = null;
 let currPick = 0;
 let matchNumber = 1;
-const preloadedImages = {};
-const preloadedIcons = {};
 let usedChamps = new Set();
 let fearlessChamps = new Set();
 let timerInterval = null;
@@ -30,89 +28,9 @@ function startTimer() {
 	socket.emit('startTimer', draftId);
 }
 
-async function loadChamps() { //preload champion grid images
-    try{
-        return new Promise((resolve, reject) => {
-            fetch(`${baseUrl}/data/en_US/champion.json`)
-                .then(response => response.json())
-                .then(data => {
-                    champions = data.data;
-                    champions['MonkeyKing'].id = 'Wukong'; //LOL!
-                    champions = Object.entries(champions).map(([key, value]) => ({
-                        id: value.id,
-                        key: value.key,
-                    }));
-                    //sort chmapions by id
-                    champions.sort((a, b) => a.id.localeCompare(b.id)); //TODO: maybe find faster way to do this
-                    champions.unshift({id: 'none', key: 'none'});
-                    return fetch('/proxy/championrates');
-                })
-                .then(response => response.json())
-                .then(data => {
-                    roleData = data;
-                    mergeRoleData(roleData.data);
-                    resolve();
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    reject(error);
-                });
-        });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
-}
-
-function preloadChampionImages() { //preload pick images
-	Object.keys(champions).forEach(championKey => {
-        if(championKey == 0){ //none placeholder icon
-            const championImage = new Image();
-            const championIcon = new Image();
-            championImage.src = '/img/placeholder.png';
-            championIcon.src = '/img/placeholder.png';
-            preloadedImages['none'] = championImage;
-            preloadedIcons['none'] = championIcon;
-            return;
-        }
-		const champion = champions[championKey];
-		const championImage = new Image();
-		const championIcon = new Image();
-		if (champion.id === 'Fiddlesticks') { //LOL!
-			championImage.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/centered/FiddleSticks_0.jpg`;
-			championIcon.src = `${baseUrl}/img/champion/Fiddlesticks.png`;
-		} else if(champion.id === 'Wukong'){
-            championImage.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/centered/MonkeyKing_0.jpg`;
-            championIcon.src = `${baseUrl}/img/champion/MonkeyKing.png`;
-        } else {
-			championImage.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/centered/${champion.id}_0.jpg`;
-			championIcon.src = `${baseUrl}/img/champion/${champion.id}.png`;
-		}
-		preloadedImages[champion.id] = championImage;
-		preloadedIcons[champion.id] = championIcon;
-	});
-}
-
-function mergeRoleData(roleData) { //get role data for role filters
-	Object.keys(champions).forEach(champ => {
-		const key = champions[champ].key.toString();
-		if (roleData[key]) {
-			const roles = roleData[key];
-			roleTest = Object.entries(roles).map(([role, data]) => ({
-				role: role,
-				playRate: data.playRate
-			}))
-			roleTest = roleTest.filter(role => role.playRate > 0);
-			roleTest = roleTest.map(role => role.role);
-			champions[champ].roles = roleTest;
-		} else {
-			champions[champ].roles = [];
-		}
-	});
-}
-
 function getCurrSlot() { //get current pick in draft
 	if (currPick <= 6) {
-		return currPick % 2 === 1 ? `BB${Math.ceil(currPick/2)}` : `RB${Math.ceil(currPick/2)}`;
+		return currPick % 2 === 1 ? `BB${Math.ceil(currPick / 2)}` : `RB${Math.ceil(currPick / 2)}`;
 	} else if (currPick <= 12) {
 		switch (currPick) {
 			case 7:
@@ -129,7 +47,7 @@ function getCurrSlot() { //get current pick in draft
 				return 'RP3';
 		}
 	} else if (currPick <= 16) {
-		return currPick % 2 === 0 ? `BB${Math.ceil(currPick/2)-3}` : `RB${Math.ceil(currPick/2)-3}`;
+		return currPick % 2 === 0 ? `BB${Math.ceil(currPick / 2) - 3}` : `RB${Math.ceil(currPick / 2) - 3}`;
 	} else if (currPick <= 20) {
 		switch (currPick) {
 			case 17:
@@ -148,21 +66,22 @@ function getCurrSlot() { //get current pick in draft
 
 function displayChampions(champions) { //display champion grid
 	championGrid.innerHTML = '';
-	Object.keys(champions).forEach(championKey => {
-		const champion = champions[championKey];
+	Object.values(champions).forEach(champion => {
 		const championIcon = document.createElement('img');
-		championIcon.src = preloadedIcons[champion.id].src;
-		championIcon.alt = champion.id;
+		championIcon.src = champion.iconLink;
+		championIcon.alt = champion.name;
 		championIcon.classList.add('champion-icon');
-        if(champion.id === 'none'){ //placeholder image for none pick
-            championIcon.style.objectFit = 'cover';
-            championIcon.style.objectPosition = 'center';
-        }
-		if (champion.id !== 'none' && (usedChamps.has(champion.id) || fearlessChamps.has(champion.id))) {
+		championIcon.setAttribute('data-key', champion.key)
+		if (champion.key === 'none') { //placeholder image for none pick
+			championIcon.style.objectFit = 'cover';
+			championIcon.style.objectPosition = 'center';
+		}
+
+		if (champion.key !== 'none' && (usedChamps.has(champion.key) || fearlessChamps.has(champion.key))) {
 			championIcon.classList.add('used');
 			championIcon.style.filter = 'grayscale(100%)';
-            //remove event listener
-            championIcon.removeEventListener('click', () => {});
+			//remove event listener
+			championIcon.removeEventListener('click', () => { });
 		} else {
 			championIcon.addEventListener('click', () => {
 				const currSlot = getCurrSlot();
@@ -175,26 +94,28 @@ function displayChampions(champions) { //display champion grid
 				if (currSlot[1] === 'B') { //ban
 					let banSlot = document.querySelector(`#blue-bans .ban-slot:nth-child(${currSlot[2]})`);
 					if (currSlot[0] === 'R') { //red side ban
-						banSlot = document.querySelector(`#red-bans .ban-slot:nth-child(${6-currSlot[2]})`);
+						banSlot = document.querySelector(`#red-bans .ban-slot:nth-child(${6 - currSlot[2]})`);
 					}
 					const banImage = banSlot.querySelector('img');
-					banImage.src = preloadedIcons[champion.id].src;
+					banImage.src = champion.iconLink;
 				} else { //pick
 					let pickSlot = document.querySelector(`#blue-picks .pick-slot:nth-child(${currSlot[2]})`);
 					if (currSlot[0] === 'R') { //red side ban
 						pickSlot = document.querySelector(`#red-picks .pick-slot:nth-child(${currSlot[2]})`);
 					}
 					const pickImage = pickSlot.querySelector('img');
-					pickImage.src = preloadedImages[champion.id].src;
-                    addChampionNameText(pickSlot, champion.id);
+					pickImage.src = champion.splashArtLink;
+					addChampionNameText(pickSlot, champion.key);
 				}
-                if (selectedChampion) {
-                    selectedChampion.classList.remove('selected');
-                }
-                  // Add the 'selected' class to the clicked champion
-                championIcon.classList.add('selected');
+
+				if (selectedChampion) {
+					selectedChampion.classList.remove('selected');
+				}
+
+				// Add the 'selected' class to the clicked champion
+				championIcon.classList.add('selected');
 				selectedChampion = championIcon;
-                socket.emit('hover', {draftId, side: side, champion: champion.id});
+				socket.emit('hover', { draftId, side: side, champion: champion.key });
 				confirmButton.disabled = false;
 			});
 		}
@@ -204,11 +125,15 @@ function displayChampions(champions) { //display champion grid
 
 function filterChampions() { //filter champions based on search and role
 	const searchTerm = searchInput.value.toLowerCase();
-	const filteredChampions = Object.values(champions).filter(champion => {
-		const matchesRole = selectedRole === '' || champion.roles.includes(selectedRole.toUpperCase());
-		const matchesSearch = champion.id.toLowerCase().includes(searchTerm);
+	const filteredChampions = Object.values(championsV2).filter(champion => {
+		const matchesRole = selectedRole === '' || champion.positions.includes(selectedRole.toLowerCase());
+		const matchesSearch = champion.key.toLowerCase().includes(searchTerm);
 		return matchesRole && matchesSearch;
-	});
+	}).reduce((acc, elem) => {
+		acc[elem.key] = elem;
+		return acc;
+	}, {});
+
 	displayChampions(filteredChampions);
 }
 
@@ -231,9 +156,10 @@ roleIcons.forEach(icon => {
 searchInput.addEventListener('input', filterChampions);
 
 confirmButton.addEventListener('click', () => { //lock in/ready button
-    if(viewingPreviousDraft){
-        return;
-    }
+	if (viewingPreviousDraft) {
+		return;
+	}
+	
 	if (currPick === 0) {
 		if (side === 'S') {
 			return
@@ -278,56 +204,56 @@ function colorBorder() { //shows who is picking currently
 	let pickChampOutline = fetchOutlineTempElement('pick-champ-outline');
 	document.body.removeChild(tempElement);
 
-    if(viewingPreviousDraft){
-        return;
-    }
-    let currSlot = getCurrSlot();
-    if (currSlot === "done") {
-        return;
-    }
-    // Reset the border for all side headers and slots
-    document.querySelectorAll('.side-header').forEach(header => {
-        header.style.border = headerDefaultOutline;
-    });
-    document.querySelectorAll('.pick-slot, .ban-slot').forEach(slot => {
-        slot.style.outline = 'none'; // Reset the border of all slots
-    });
+	if (viewingPreviousDraft) {
+		return;
+	}
+	let currSlot = getCurrSlot();
+	if (currSlot === "done") {
+		return;
+	}
+	// Reset the border for all side headers and slots
+	document.querySelectorAll('.side-header').forEach(header => {
+		header.style.border = headerDefaultOutline;
+	});
+	document.querySelectorAll('.pick-slot, .ban-slot').forEach(slot => {
+		slot.style.outline = 'none'; // Reset the border of all slots
+	});
 
-    if(currPick == 0){ // color border based on side
-        if (side === 'B') {
-            document.querySelector('#blue-side-header').style.border = headerSelectOutline;
-            document.querySelector('#red-side-header').style.border = headerDefaultOutline;
-        } else if (side === 'R') {
-            document.querySelector('#red-side-header').style.border = headerSelectOutline;
-            document.querySelector('#blue-side-header').style.border = headerDefaultOutline;
-        }
-        return;
-    }
-    // Apply a golden border to the current side's header
-    if (currSlot[0] === 'B') {
-        document.querySelector('#blue-side-header').style.border = headerSelectOutline;
-        document.querySelector('#red-side-header').style.border = headerDefaultOutline;
-    } else {
-        document.querySelector('#red-side-header').style.border = headerSelectOutline;
-        document.querySelector('#blue-side-header').style.border = headerDefaultOutline;
-    }
+	if (currPick == 0) { // color border based on side
+		if (side === 'B') {
+			document.querySelector('#blue-side-header').style.border = headerSelectOutline;
+			document.querySelector('#red-side-header').style.border = headerDefaultOutline;
+		} else if (side === 'R') {
+			document.querySelector('#red-side-header').style.border = headerSelectOutline;
+			document.querySelector('#blue-side-header').style.border = headerDefaultOutline;
+		}
+		return;
+	}
+	// Apply a golden border to the current side's header
+	if (currSlot[0] === 'B') {
+		document.querySelector('#blue-side-header').style.border = headerSelectOutline;
+		document.querySelector('#red-side-header').style.border = headerDefaultOutline;
+	} else {
+		document.querySelector('#red-side-header').style.border = headerSelectOutline;
+		document.querySelector('#blue-side-header').style.border = headerDefaultOutline;
+	}
 
-    // Highlight the current pick/ban slot
-    let pickOrBanSlot = null;
-    if (currSlot[1] === 'B') { //ban
-        pickOrBanSlot = document.querySelector(`#blue-bans .ban-slot:nth-child(${currSlot[2]})`);
-        if (currSlot[0] === 'R') { //red side ban
-            pickOrBanSlot = document.querySelector(`#red-bans .ban-slot:nth-child(${6-currSlot[2]})`);
-        }
-    } else { //pick
-        pickOrBanSlot = document.querySelector(`#blue-picks .pick-slot:nth-child(${currSlot[2]})`);
-        if (currSlot[0] === 'R') { //red side ban
-            pickOrBanSlot = document.querySelector(`#red-picks .pick-slot:nth-child(${currSlot[2]})`);
-        }
-    }
-    if (pickOrBanSlot) {
-        pickOrBanSlot.style.outline = pickChampOutline; // Golden outline for the current pick or ban slot
-    }
+	// Highlight the current pick/ban slot
+	let pickOrBanSlot = null;
+	if (currSlot[1] === 'B') { //ban
+		pickOrBanSlot = document.querySelector(`#blue-bans .ban-slot:nth-child(${currSlot[2]})`);
+		if (currSlot[0] === 'R') { //red side ban
+			pickOrBanSlot = document.querySelector(`#red-bans .ban-slot:nth-child(${6 - currSlot[2]})`);
+		}
+	} else { //pick
+		pickOrBanSlot = document.querySelector(`#blue-picks .pick-slot:nth-child(${currSlot[2]})`);
+		if (currSlot[0] === 'R') { //red side ban
+			pickOrBanSlot = document.querySelector(`#red-picks .pick-slot:nth-child(${currSlot[2]})`);
+		}
+	}
+	if (pickOrBanSlot) {
+		pickOrBanSlot.style.outline = pickChampOutline; // Golden outline for the current pick or ban slot
+	}
 }
 
 
@@ -370,35 +296,35 @@ function updateFearlessBanSlots() { //controls fearless bans
 }
 
 function lockChamp() { //lock in champ
-    if(isLocking){
-        return;
-    }
-    isLocking = true;
+	if (isLocking) {
+		return;
+	}
+	isLocking = true;
 	const currSlot = getCurrSlot();
 	if (currSlot[0] != side) {
-        isLocking = false;
+		isLocking = false;
 		return;
 	}
 	if (selectedChampion) {
-		const championName = selectedChampion.alt;
+		const key = selectedChampion.getAttribute('data-key');
 		confirmButton.disabled = true;
-		usedChamps.add(championName);
+		usedChamps.add(key);
 		socket.emit('pickSelection', {
-            draftId,
-			pick: championName
+			draftId,
+			pick: key
 		});
-        selectedChampion = null;
+		selectedChampion = null;
 	} else {
 		socket.emit('pickSelection', {
 			draftId,
 			pick: "none"
 		});
-        confirmButton.disabled = true;
+		confirmButton.disabled = true;
 	}
-    searchInput.value = '';
-    selectedRole = '';
-    roleIcons.forEach(icon => icon.classList.remove('active'));
-    filterChampions();
+	searchInput.value = '';
+	selectedRole = '';
+	roleIcons.forEach(icon => icon.classList.remove('active'));
+	filterChampions();
 	if (currPick <= 19) {
 		colorBorder();
 		startTimer();
@@ -408,20 +334,20 @@ function lockChamp() { //lock in champ
 		currPick = 0
 		endDraft();
 	}
-    setTimeout(() => {
-        isLocking = false;
-    }, 100);
+	setTimeout(() => {
+		isLocking = false;
+	}, 100);
 }
 
 function startDraft() {
 	currPick = 1;
 	document.querySelectorAll('.ban-slot img').forEach(img => img.src = '/img/placeholder.png');
 	document.querySelectorAll('.pick-slot img').forEach(img => img.src = '/img/placeholder.png');
-    document.querySelectorAll('.champion-name').forEach(label => label.textContent = '');
+	document.querySelectorAll('.champion-name').forEach(label => label.textContent = '');
 	confirmButton.textContent = 'Lock In';
 	switchSidesButton.style.display = 'none';
-    finishSeriesButton.style.display = 'none';
-	displayChampions(champions);
+	finishSeriesButton.style.display = 'none';
+	displayChampions(championsV2);
 	colorBorder();
 	startTimer();
 }
@@ -431,9 +357,9 @@ function fearlessBan(champions) {
 	blueCounter = 1;
 	redCounter = 1;
 	champions.forEach((pick, index) => {
-        if(pick == 'placeholder'){ //TODO remove this later, currently here for backward compatibility
-            pick = 'none'
-        }
+		if (pick == 'placeholder') { //TODO remove this later, currently here for backward compatibility
+			pick = 'none'
+		}
 		fearlessBanSlot = (index + 1) % 10;
 		let banSlot = null;
 		let banImage = null;
@@ -445,7 +371,7 @@ function fearlessBan(champions) {
 			case 9:
 				banSlot = document.querySelector(`#blue-fearless-bans .fearless-ban-slot:nth-child(${blueCounter})`);
 				banImage = banSlot.querySelector('img');
-				banImage.src = preloadedIcons[pick].src;
+				banImage.src = pick.iconLink;
 				blueCounter++;
 				break;
 			case 2:
@@ -455,7 +381,7 @@ function fearlessBan(champions) {
 			case 0:
 				banSlot = document.querySelector(`#red-fearless-bans .fearless-ban-slot:nth-child(${redCounter})`);
 				banImage = banSlot.querySelector('img');
-				banImage.src = preloadedIcons[pick].src;
+				banImage.src = pick.iconLink;
 				redCounter++;
 				break;
 			default:
@@ -464,45 +390,43 @@ function fearlessBan(champions) {
 	});
 }
 
-function hover(pick){
-    const slot = getCurrSlot(currPick);
-    if (slot[1] === 'B') {
-        const banSlot = document.querySelector(`#${slot[0] === 'B' ? 'blue' : 'red'}-bans .ban-slot:nth-child(${slot[0] === 'B' ? slot[2] : 6-slot[2]})`);
-        const banImage = banSlot.querySelector('img');
-        banImage.src = preloadedIcons[pick].src;
-    } else {
-        const pickSlot = document.querySelector(`#${slot[0] === 'B' ? 'blue' : 'red'}-picks .pick-slot:nth-child(${slot[2]})`);
-        const pickImage = pickSlot.querySelector('img');
-        pickImage.src = preloadedImages[pick].src;
-        addChampionNameText(pickSlot, pick);
-    }
+function hover(pick) {
+	const slot = getCurrSlot(currPick);
+	if (slot[1] === 'B') {
+		const banSlot = document.querySelector(`#${slot[0] === 'B' ? 'blue' : 'red'}-bans .ban-slot:nth-child(${slot[0] === 'B' ? slot[2] : 6 - slot[2]})`);
+		const banImage = banSlot.querySelector('img');
+		banImage.src = championsV2[pick].iconLink;
+	} else {
+		const pickSlot = document.querySelector(`#${slot[0] === 'B' ? 'blue' : 'red'}-picks .pick-slot:nth-child(${slot[2]})`);
+		const pickImage = pickSlot.querySelector('img');
+		pickImage.src = championsV2[pick].iconLink;
+		addChampionNameText(pickSlot, pick);
+	}
 }
 
-function addChampionNameText(pickSlot, pick){
-    const championName = pickSlot.querySelector('.champion-name');
-    championName.textContent = pick;
+function addChampionNameText(pickSlot, pick) {
+	const championName = pickSlot.querySelector('.champion-name');
+	championName.textContent = championsV2[pick].name;
 }
 
 function newPick(picks) {
 	picks.forEach((pick, index) => {
-        if(pick == 'placeholder'){ //TODO remove this later, currently here for backward compatibility
-            pick = 'none'
-        }
-        if(pick == 'MonkeyKing'){
-            pick = 'Wukong'; //LOL!
-        }
+		if (pick == 'placeholder') { //TODO remove this later, currently here for backward compatibility
+			pick = 'none'
+		}
+		
 		currPick = index + 1;
 		const slot = getCurrSlot(currPick);
 		if (slot[1] === 'B') {
-			const banSlot = document.querySelector(`#${slot[0] === 'B' ? 'blue' : 'red'}-bans .ban-slot:nth-child(${slot[0] === 'B' ? slot[2] : 6-slot[2]})`);
+			const banSlot = document.querySelector(`#${slot[0] === 'B' ? 'blue' : 'red'}-bans .ban-slot:nth-child(${slot[0] === 'B' ? slot[2] : 6 - slot[2]})`);
 			const banImage = banSlot.querySelector('img');
-			banImage.src = preloadedIcons[pick].src;
+			banImage.src = championsV2[pick].iconLink;
 		} else {
 			const pickSlot = document.querySelector(`#${slot[0] === 'B' ? 'blue' : 'red'}-picks .pick-slot:nth-child(${slot[2]})`);
 			const pickImage = pickSlot.querySelector('img');
-			pickImage.src = preloadedImages[pick].src;
-            //text that shows champion name
-            addChampionNameText(pickSlot, pick);
+			pickImage.src = championsV2[pick].splashArtLink;
+			//text that shows champion name
+			addChampionNameText(pickSlot, pick);
 		}
 		usedChamps.add(pick);
 		currPick++;
@@ -526,13 +450,13 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 	document.getElementById('red-team-name').textContent = redName;
 	if (!sideSwapped) {
 		if (!initialLoad)
-            if(side !== 'S'){
-                if(side === 'B')
-                    alert('You are now on Blue Side');
-                else if(side === 'R')
-                    alert('You are now on Red Side');
-            } else
-                alert(`Sides Swapped`);
+			if (side !== 'S') {
+				if (side === 'B')
+					alert('You are now on Blue Side');
+				else if (side === 'R')
+					alert('You are now on Red Side');
+			} else
+				alert(`Sides Swapped`);
 		return
 	}
 	if (side === 'B') {
@@ -576,7 +500,7 @@ socket.on('timerUpdate', (data) => { //updates timer
 
 socket.on('draftState', (data) => { //updates screen when page loaded with draft state
 	if (data.finished) {
-        viewingPreviousDraft = true;
+		viewingPreviousDraft = true;
 		socket.emit('showDraft', draftId, 1)
 		return;
 	}
@@ -595,15 +519,15 @@ socket.on('draftState', (data) => { //updates screen when page loaded with draft
 		currPick = 0;
 		if (side !== 'S') {
 			switchSidesButton.style.display = 'block';
-			switchSidesButton.onclick = function() {
+			switchSidesButton.onclick = function () {
 				socket.emit('switchSides', draftId);
 			};
-            finishSeriesButton.style.display = 'block';
-			finishSeriesButton.onclick = function() {
+			finishSeriesButton.style.display = 'block';
+			finishSeriesButton.onclick = function () {
 				viewingPreviousDraft = true;
-                socket.emit('endSeries', draftId)
-                finishSeriesButton.style.display = 'none';
-                switchSidesButton.style.display = 'none';
+				socket.emit('endSeries', draftId)
+				finishSeriesButton.style.display = 'none';
+				switchSidesButton.style.display = 'none';
 			};
 		}
 	}
@@ -622,7 +546,7 @@ socket.on('draftState', (data) => { //updates screen when page loaded with draft
 	if (side === 'S') {
 		confirmButton.style.display = 'none';
 		switchSidesButton.style.display = 'none';
-        finishSeriesButton.style.display = 'none';
+		finishSeriesButton.style.display = 'none';
 	}
 });
 
@@ -631,7 +555,7 @@ socket.on('lockChamp', () => { //locks in champ
 });
 
 socket.on('hover', (champion) => { //hovering over champ
-    hover(champion);
+	hover(champion);
 });
 
 socket.on('pickUpdate', (picks) => { //new pick was locked
@@ -640,15 +564,15 @@ socket.on('pickUpdate', (picks) => { //new pick was locked
 
 socket.on('showNextGameButton', (data) => { //draft ended
 	if (data.finished) {
-        viewingPreviousDraft = true;
+		viewingPreviousDraft = true;
 		confirmButton.textContent = 'View Previous Games';
 		confirmButton.style.display = 'block';
 		confirmButton.disabled = false;
-		confirmButton.onclick = function() {
+		confirmButton.onclick = function () {
 			location.reload();
 		};
-        switchSidesButton.style.display = 'none';
-        finishSeriesButton.style.display = 'none';
+		switchSidesButton.style.display = 'none';
+		finishSeriesButton.style.display = 'none';
 		return;
 	}
 	currPick = 0;
@@ -656,16 +580,16 @@ socket.on('showNextGameButton', (data) => { //draft ended
 	confirmButton.disabled = false;
 	if (side !== 'S') {
 		switchSidesButton.style.display = 'block';
-		switchSidesButton.onclick = function() {
+		switchSidesButton.onclick = function () {
 			socket.emit('switchSides', draftId);
 		};
-        finishSeriesButton.style.display = 'block';
-        finishSeriesButton.onclick = function() {
-            viewingPreviousDraft = true;
-            socket.emit('endSeries', draftId)
-            finishSeriesButton.style.display = 'none';
-            switchSidesButton.style.display = 'none';
-        };
+		finishSeriesButton.style.display = 'block';
+		finishSeriesButton.onclick = function () {
+			viewingPreviousDraft = true;
+			socket.emit('endSeries', draftId)
+			finishSeriesButton.style.display = 'none';
+			switchSidesButton.style.display = 'none';
+		};
 	}
 	blueReady = data.blueReady;
 	redReady = data.redReady;
@@ -681,8 +605,8 @@ socket.on('switchSidesResponse', (data) => { //sides swapped
 });
 
 socket.on('draftNotAvailable', () => {
-    alert('Draft not available please make a new one.');
-    window.location.href = '/';
+	alert('Draft not available please make a new one.');
+	window.location.href = '/';
 });
 
 socket.on('showDraftResponse', (data) => {
@@ -705,16 +629,24 @@ socket.on('showDraftResponse', (data) => {
 	confirmButton.style.display = 'block';
 	confirmButton.textContent = 'Show Next Game';
 	confirmButton.disabled = false;
-	confirmButton.onclick = function() {
+	confirmButton.onclick = function () {
 		matchNumber++;
 		socket.emit('showDraft', draftId, matchNumber);
 	}
 });
 
+async function loadChampionsV2() {
+	const response = await fetch("/champions");
+	const champions = await response.json();
+	return champions.reduce((acc, elem) => {
+		acc[elem.key] = elem;
+		return acc;
+	}, {});
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
-	await loadChamps();
-	preloadChampionImages();
-	displayChampions(champions);
+	championsV2 = await loadChampionsV2();
+	displayChampions(championsV2);
 	socket.emit('joinDraft', draftId);
 	socket.emit('getData', draftId);
 	if (side === 'S') {
