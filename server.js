@@ -1,10 +1,10 @@
 const express = require("express");
-const http = require("http");
+const http = require("node:http");
 require("dotenv").config();
 const socketIO = require("socket.io");
 const fetch = require("node-fetch");
 const uuid = require("uuid");
-var { nanoid } = require("nanoid");
+const { nanoid } = require("nanoid");
 const mongoose = require("mongoose");
 const NodeCache = require("node-cache");
 
@@ -95,13 +95,13 @@ function isDraftFinished(draftId) {
 
 function checkFinishedDrafts() {
 	try {
-		Object.keys(currStates).forEach((draftId) => {
+		for (const draftId of Object.keys(currStates)) {
 			if (!currStates[draftId].finished && isDraftFinished(draftId)) {
 				currStates[draftId].finished = true;
 				log(`Draft ${draftId} is finished.`);
 				delete currStates[draftId];
 			}
-		});
+		}
 	} catch (error) {
 		log("Error checking finished drafts:", error);
 	}
@@ -154,9 +154,9 @@ app.get("/draft/:draftId/:side", (req, res) => {
 		const draftId = req.params.draftId;
 		const teamId = req.params.side;
 		let side = "spectator";
-		if (teamId == "team1") {
+		if (teamId === "team1") {
 			side = "blue";
-		} else if (teamId == "team2") {
+		} else if (teamId === "team2") {
 			side = "red";
 		}
 		const blueTeamName = currStates[draftId]?.blueTeamName || "Team 1";

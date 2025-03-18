@@ -1,7 +1,5 @@
 const socket = io();
-const patch = "15.2.1";
-const baseUrl = `https://ddragon.leagueoflegends.com/cdn/${patch}`;
-let championsV2 = null;
+let champions = null;
 let currPick = 0;
 let matchNumber = 1;
 let usedChamps = new Set();
@@ -70,7 +68,7 @@ function getCurrSlot() {
 function displayChampions(champions) {
 	//display champion grid
 	championGrid.innerHTML = "";
-	Object.values(champions).forEach((champion) => {
+	for (const champion of Object.values(champions)) {
 		const championIcon = document.createElement("img");
 		championIcon.src = champion.iconLink;
 		championIcon.alt = champion.name;
@@ -96,7 +94,7 @@ function displayChampions(champions) {
 				if (currSlot === "done") {
 					return;
 				}
-				if (currSlot[0] != side) {
+				if (currSlot[0] !== side) {
 					return;
 				}
 				if (currSlot[1] === "B") {
@@ -140,13 +138,13 @@ function displayChampions(champions) {
 			});
 		}
 		championGrid.appendChild(championIcon);
-	});
+	}
 }
 
 function filterChampions() {
 	//filter champions based on search and role
 	const searchTerm = searchInput.value.toLowerCase();
-	const filteredChampions = Object.values(championsV2)
+	const filteredChampions = Object.values(champions)
 		.filter((champion) => {
 			const matchesRole =
 				selectedRole === "" ||
@@ -162,20 +160,28 @@ function filterChampions() {
 	displayChampions(filteredChampions);
 }
 
-roleIcons.forEach((icon) => {
-	icon.addEventListener("click", () => {
-		const role = icon.getAttribute("data-role");
+for (const iconElem of roleIcons) {
+	iconElem.addEventListener("click", () => {
+		const role = iconElem.getAttribute("data-role");
 		if (selectedRole === role) {
 			selectedRole = "";
-			icon.classList.remove("active");
+			iconElem.classList.remove("active");
 		} else {
 			selectedRole = role;
-			roleIcons.forEach((icon) => icon.classList.remove("active"));
-			icon.classList.add("active");
+			// TODO I do not like that "click" even have to access to all other icons
+			resetSelectedRoles();
+			iconElem.classList.add("active");
 		}
+
 		filterChampions();
 	});
-});
+}
+
+function resetSelectedRoles() {
+	for (const iconElem of roleIcons) {
+		iconElem.classList.remove("active");
+	}
+}
 
 searchInput.addEventListener("input", filterChampions);
 
@@ -240,15 +246,10 @@ function colorBorder() {
 	if (currSlot === "done") {
 		return;
 	}
-	// Reset the border for all side headers and slots
-	document.querySelectorAll(".side-header").forEach((header) => {
-		header.style.border = headerDefaultOutline;
-	});
-	document.querySelectorAll(".pick-slot, .ban-slot").forEach((slot) => {
-		slot.style.outline = "none"; // Reset the border of all slots
-	});
 
-	if (currPick == 0) {
+	resetBorders();
+
+	if (currPick === 0) {
 		// color border based on side
 		if (side === "B") {
 			document.querySelector("#blue-side-header").style.border =
@@ -306,6 +307,16 @@ function colorBorder() {
 	}
 }
 
+function resetBorders() {
+	for (const headerElem of document.querySelectorAll(".side-header")) {
+		headerElem.style.border = headerDefaultOutline;
+	}
+
+	for (const slotElem of document.querySelectorAll(".pick-slot, .ban-slot")) {
+		slotElem.style.outline = "none"; // Reset the border of all slots
+	}
+}
+
 function updateFearlessBanSlots() {
 	//controls fearless bans
 	const blueFearlessBanSlots = document.querySelectorAll(
@@ -355,7 +366,7 @@ function lockChamp() {
 	}
 	isLocking = true;
 	const currSlot = getCurrSlot();
-	if (currSlot[0] != side) {
+	if (currSlot[0] !== side) {
 		isLocking = false;
 		return;
 	}
@@ -377,7 +388,7 @@ function lockChamp() {
 	}
 	searchInput.value = "";
 	selectedRole = "";
-	roleIcons.forEach((icon) => icon.classList.remove("active"));
+	resetSelectedRoles();
 	filterChampions();
 	if (currPick <= 19) {
 		colorBorder();
@@ -395,21 +406,27 @@ function lockChamp() {
 
 function startDraft() {
 	currPick = 1;
-	document
-		.querySelectorAll(".ban-slot img")
-		.forEach((img) => (img.src = "/img/placeholder.png"));
-	document
-		.querySelectorAll(".pick-slot img")
-		.forEach((img) => (img.src = "/img/placeholder.png"));
-	document
-		.querySelectorAll(".champion-name")
-		.forEach((label) => (label.textContent = ""));
+	resetPickBanVisuals();
 	confirmButton.textContent = "Lock In";
 	switchSidesButton.style.display = "none";
 	finishSeriesButton.style.display = "none";
-	displayChampions(championsV2);
+	displayChampions(champions);
 	colorBorder();
 	startTimer();
+}
+
+function resetPickBanVisuals() {
+	for (const banImageElem of document.querySelectorAll(".ban-slot img")) {
+		banImageElem.src = "/img/placeholder.png";
+	}
+
+	for (const pickImageElem of document.querySelectorAll(".pick-slot img")) {
+		pickImageElem.src = "/img/placeholder.png";
+	}
+
+	for (const championLabelElem of document.querySelectorAll(".champion-name")) {
+		championLabelElem.textContent = "";
+	}
 }
 
 function fearlessBan(champions) {
@@ -417,10 +434,6 @@ function fearlessBan(champions) {
 	blueCounter = 1;
 	redCounter = 1;
 	champions.forEach((pick, index) => {
-		if (pick == "placeholder") {
-			//TODO remove this later, currently here for backward compatibility
-			pick = "none";
-		}
 		fearlessBanSlot = (index + 1) % 10;
 		let banSlot = null;
 		let banImage = null;
@@ -462,29 +475,24 @@ function hover(pick) {
 			`#${slot[0] === "B" ? "blue" : "red"}-bans .ban-slot:nth-child(${slot[0] === "B" ? slot[2] : 6 - slot[2]})`,
 		);
 		const banImage = banSlot.querySelector("img");
-		banImage.src = championsV2[pick].iconLink;
+		banImage.src = champions[pick].iconLink;
 	} else {
 		const pickSlot = document.querySelector(
 			`#${slot[0] === "B" ? "blue" : "red"}-picks .pick-slot:nth-child(${slot[2]})`,
 		);
 		const pickImage = pickSlot.querySelector("img");
-		pickImage.src = championsV2[pick].iconLink;
+		pickImage.src = champions[pick].iconLink;
 		addChampionNameText(pickSlot, pick);
 	}
 }
 
 function addChampionNameText(pickSlot, pick) {
 	const championName = pickSlot.querySelector(".champion-name");
-	championName.textContent = championsV2[pick].name;
+	championName.textContent = champions[pick].name;
 }
 
 function newPick(picks) {
 	picks.forEach((pick, index) => {
-		if (pick == "placeholder") {
-			//TODO remove this later, currently here for backward compatibility
-			pick = "none";
-		}
-
 		currPick = index + 1;
 		const slot = getCurrSlot(currPick);
 		if (slot[1] === "B") {
@@ -492,20 +500,20 @@ function newPick(picks) {
 				`#${slot[0] === "B" ? "blue" : "red"}-bans .ban-slot:nth-child(${slot[0] === "B" ? slot[2] : 6 - slot[2]})`,
 			);
 			const banImage = banSlot.querySelector("img");
-			banImage.src = championsV2[pick].iconLink;
+			banImage.src = champions[pick].iconLink;
 		} else {
 			const pickSlot = document.querySelector(
 				`#${slot[0] === "B" ? "blue" : "red"}-picks .pick-slot:nth-child(${slot[2]})`,
 			);
 			const pickImage = pickSlot.querySelector("img");
-			pickImage.src = championsV2[pick].splashArtLink;
+			pickImage.src = champions[pick].splashArtLink;
 			//text that shows champion name
 			addChampionNameText(pickSlot, pick);
 		}
 		usedChamps.add(pick);
 		currPick++;
 	});
-	if (draftStarted && picks.length == 0) {
+	if (draftStarted && picks.length === 0) {
 		currPick = 1;
 	}
 	colorBorder();
@@ -527,7 +535,7 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 			if (side !== "S") {
 				if (side === "B") alert("You are now on Blue Side");
 				else if (side === "R") alert("You are now on Red Side");
-			} else alert(`Sides Swapped`);
+			} else alert("Sides Swapped");
 		return;
 	}
 	if (side === "B") {
@@ -719,8 +727,8 @@ async function loadChampionsV2() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-	championsV2 = await loadChampionsV2();
-	displayChampions(championsV2);
+	champions = await loadChampionsV2();
+	displayChampions(champions);
 	socket.emit("joinDraft", draftId);
 	socket.emit("getData", draftId);
 	if (side === "S") {
