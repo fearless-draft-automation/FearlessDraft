@@ -1,113 +1,113 @@
 body {
-    background-color: #303030;
-    font-family: "Roboto", sans-serif;
-    text-align: center;
+	background-color: #303030;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
 }
 h1 {
-    color: white;
+	color: white;
 }
 
 #create-draft {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    display: inline-block;
+	margin-top: 30px;
+	padding: 20px;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	display: inline-block;
 }
 
 #create-draft label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    margin-top: 10px;
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	margin-top: 10px;
 }
 
 #create-draft input[type="text"] {
-    padding: 5px;
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+	padding: 5px;
+	width: 200px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
 }
 
 #create-draft button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: rgb(236, 209, 59);
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+	margin-top: 10px;
+	padding: 10px 20px;
+	background-color: rgb(236, 209, 59);
+	color: #000000;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
 }
 
 #draft-links {
-    margin-top: 30px;
+	margin-top: 30px;
 }
 
 .link-container {
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border-radius: 5px;
 }
 
 .link-container p {
-    margin: 0;
-    color: white;
+	margin: 0;
+	color: white;
 }
 
 .link-container a {
-    color: white;
-    text-decoration: none;
+	color: white;
+	text-decoration: none;
 }
 
 .blue-link {
-    background-color: #3537ae;
+	background-color: #3537ae;
 }
 
 .red-link {
-    background-color: #b70b0b;
+	background-color: #b70b0b;
 }
 
 .spectator-link {
-    background-color: #000000;
+	background-color: #000000;
 }
 
 .copy-button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: rgb(236, 209, 59);
-    color: #000000;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+	margin-left: 10px;
+	padding: 5px 10px;
+	background-color: rgb(236, 209, 59);
+	color: #000000;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
 }
 
 .copy-all-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: rgb(236, 209, 59);
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+	margin-top: 20px;
+	padding: 10px 20px;
+	background-color: rgb(236, 209, 59);
+	color: #000000;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
 }
 
 .social-icons {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .social-icons a {
-    margin: 0 3px;
+	margin: 0 3px;
 }
 
 .social-icons img {
-    width: 50px;
-    height: 50px;
+	width: 50px;
+	height: 50px;
 }

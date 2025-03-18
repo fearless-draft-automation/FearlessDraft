@@ -1,26 +1,30 @@
 {
-  "name": "fearlessdraft",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "npx dotenvx run -f .env.local -f .env -- node ./server.js",
-    "generate-champions-json": "node ./scripts/assemble_champions_json.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@dotenvx/dotenvx": "^1.38.5",
-    "dotenv": "^16.4.5",
-    "ejs": "^3.1.10",
-    "express": "^4.19.2",
-    "mongoose": "^8.6.2",
-    "nanoid": "^3.0.0",
-    "node-cache": "^5.1.2",
-    "node-fetch": "^2.6.7",
-    "socket.io": "^4.7.5",
-    "uuid": "^10.0.0"
-  }
+	"name": "fearlessdraft",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "npx dotenvx run -f .env.local -f .env -- node ./server.js",
+		"generate-champions-json": "node ./scripts/assemble_champions_json.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"check": "npx @biomejs/biome check --write ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@dotenvx/dotenvx": "^1.38.5",
+		"dotenv": "^16.4.5",
+		"ejs": "^3.1.10",
+		"express": "^4.19.2",
+		"mongoose": "^8.6.2",
+		"nanoid": "^3.0.0",
+		"node-cache": "^5.1.2",
+		"node-fetch": "^2.6.7",
+		"socket.io": "^4.7.5",
+		"uuid": "^10.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	}
 }
