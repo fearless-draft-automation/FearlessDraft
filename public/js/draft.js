@@ -1,6 +1,6 @@
 const socket = io();
 let champions = null;
-let currPick = 0;
+let currentPick = 0;
 let matchNumber = 1;
 let usedChamps = new Set();
 let fearlessChamps = new Set();
@@ -24,45 +24,16 @@ function startTimer() {
 	socket.emit("startTimer", draftId);
 }
 
-function getCurrSlot() {
-	//get current pick in draft
-	if (currPick <= 6) {
-		return currPick % 2 === 1
-			? `BB${Math.ceil(currPick / 2)}`
-			: `RB${Math.ceil(currPick / 2)}`;
-	} else if (currPick <= 12) {
-		switch (currPick) {
-			case 7:
-				return "BP1";
-			case 8:
-				return "RP1";
-			case 9:
-				return "RP2";
-			case 10:
-				return "BP2";
-			case 11:
-				return "BP3";
-			case 12:
-				return "RP3";
-		}
-	} else if (currPick <= 16) {
-		return currPick % 2 === 0
-			? `BB${Math.ceil(currPick / 2) - 3}`
-			: `RB${Math.ceil(currPick / 2) - 3}`;
-	} else if (currPick <= 20) {
-		switch (currPick) {
-			case 17:
-				return "RP4";
-			case 18:
-				return "BP4";
-			case 19:
-				return "BP5";
-			case 20:
-				return "RP5";
-		}
-	} else {
-		return "done";
-	}
+// biome-ignore format: lines reflect various pick/ban phases
+const pickOrder = [
+	"BB1", "RB1", "BB2", "RB2", "BB3", "RB3",
+	"BP1", "RP1", "RP2", "BP2", "BP3", "RP3",
+	"BB4", "RB4", "BB5", "RB5",
+	"RP4", "BP4", "BP5", "RP5"
+]
+
+function getCurrSlot(currentPick) {
+	return pickOrder[currentPick - 1] || "done";
 }
 
 function displayChampions(champions) {
@@ -90,7 +61,7 @@ function displayChampions(champions) {
 			championIcon.removeEventListener("click", () => {});
 		} else {
 			championIcon.addEventListener("click", () => {
-				const currSlot = getCurrSlot();
+				const currSlot = getCurrSlot(currentPick);
 				if (currSlot === "done") {
 					return;
 				}
@@ -191,7 +162,7 @@ confirmButton.addEventListener("click", () => {
 		return;
 	}
 
-	if (currPick === 0) {
+	if (currentPick === 0) {
 		if (side === "S") {
 			return;
 		}
@@ -242,14 +213,14 @@ function colorBorder() {
 	if (viewingPreviousDraft) {
 		return;
 	}
-	const currSlot = getCurrSlot();
+	const currSlot = getCurrSlot(currentPick);
 	if (currSlot === "done") {
 		return;
 	}
 
 	resetBorders();
 
-	if (currPick === 0) {
+	if (currentPick === 0) {
 		// color border based on side
 		if (side === "B") {
 			document.querySelector("#blue-side-header").style.border =
@@ -365,7 +336,7 @@ function lockChamp() {
 		return;
 	}
 	isLocking = true;
-	const currSlot = getCurrSlot();
+	const currSlot = getCurrSlot(currentPick);
 	if (currSlot[0] !== side) {
 		isLocking = false;
 		return;
@@ -390,14 +361,14 @@ function lockChamp() {
 	selectedRole = "";
 	resetSelectedRoles();
 	filterChampions();
-	if (currPick <= 19) {
+	if (currentPick <= 19) {
 		colorBorder();
 		startTimer();
 	} else {
 		confirmButton.textContent = "Ready Next Game";
 		confirmButton.disabled = false;
-		currPick = 0;
-		endDraft();
+		currentPick = 0;
+		endDraft(draftId);
 	}
 	setTimeout(() => {
 		isLocking = false;
@@ -405,7 +376,7 @@ function lockChamp() {
 }
 
 function startDraft() {
-	currPick = 1;
+	currentPick = 1;
 	resetPickBanVisuals();
 	confirmButton.textContent = "Lock In";
 	switchSidesButton.style.display = "none";
@@ -469,7 +440,7 @@ function fearlessBan(champions) {
 }
 
 function hover(pick) {
-	const slot = getCurrSlot(currPick);
+	const slot = getCurrSlot(currentPick);
 	if (slot[1] === "B") {
 		const banSlot = document.querySelector(
 			`#${slot[0] === "B" ? "blue" : "red"}-bans .ban-slot:nth-child(${slot[0] === "B" ? slot[2] : 6 - slot[2]})`,
@@ -493,8 +464,8 @@ function addChampionNameText(pickSlot, pick) {
 
 function newPick(picks) {
 	picks.forEach((pick, index) => {
-		currPick = index + 1;
-		const slot = getCurrSlot(currPick);
+		currentPick = index + 1;
+		const slot = getCurrSlot(currentPick);
 		if (slot[1] === "B") {
 			const banSlot = document.querySelector(
 				`#${slot[0] === "B" ? "blue" : "red"}-bans .ban-slot:nth-child(${slot[0] === "B" ? slot[2] : 6 - slot[2]})`,
@@ -511,10 +482,10 @@ function newPick(picks) {
 			addChampionNameText(pickSlot, pick);
 		}
 		usedChamps.add(pick);
-		currPick++;
+		currentPick++;
 	});
 	if (draftStarted && picks.length === 0) {
-		currPick = 1;
+		currentPick = 1;
 	}
 	colorBorder();
 	filterChampions();
@@ -549,7 +520,7 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 	document.getElementById("red-team-name").textContent = redName;
 }
 
-function endDraft() {
+function endDraft(draftId) {
 	socket.emit("endDraft", draftId);
 }
 
@@ -593,7 +564,7 @@ socket.on("draftState", (data) => {
 	fearlessBan(data.fearlessBans);
 	newPick(picks);
 	if (picks.length === 20) {
-		currPick = 0;
+		currentPick = 0;
 		if (side !== "S") {
 			switchSidesButton.style.display = "block";
 			switchSidesButton.onclick = () => {
@@ -656,7 +627,7 @@ socket.on("showNextGameButton", (data) => {
 		finishSeriesButton.style.display = "none";
 		return;
 	}
-	currPick = 0;
+	currentPick = 0;
 	confirmButton.textContent = "Ready Next Game";
 	confirmButton.disabled = false;
 	if (side !== "S") {
