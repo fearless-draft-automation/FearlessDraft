@@ -13,6 +13,16 @@ const Draft = mongoose.model(
 			type: Date,
 			default: Date.now,
 		},
+		options: {
+			pickTimeout: {
+				type: Number,
+				default: 30,
+			},
+			nicknames: {
+				type: [{ String }],
+				default: [],
+			},
+		},
 	}),
 );
 

@@ -196,6 +196,32 @@ body {
 	text-overflow: ellipsis;
 }
 
+.blue-side .nickname {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: rgb(255, 255, 255);
+	font-size: 12px;
+	text-align: right;
+	padding: 2px 4px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.red-side .nickname {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: rgb(255, 255, 255);
+	font-size: 12px;
+	text-align: left;
+	padding: 2px 4px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .ban-slot {
 	width: 45px;
 	height: 45px;

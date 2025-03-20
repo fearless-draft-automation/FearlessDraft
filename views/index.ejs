@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fearless Draft - League of Legends Fearless Draft Simulator</title>
-    <meta name="description" content="Simulate League of Legends pick and ban with Fearless Draft. Create custom drafts and explore various strategies to improve your drafting skills.">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" type="image/png" href="/img/favicon.png">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9QVY05JLL"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-Z9QVY05JLL');
-    </script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fearless Draft WR - League of Legends: Wild Rift Fearless Draft Simulator</title>
+  <meta name="description"
+    content="Simulate League of Legends pick and ban with Fearless Draft featuring Wild Rift characters. Create custom drafts and explore various strategies to improve your drafting skills.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
   <script>
+    function draftParams() {
+      const params = {
+        blueTeamName: document.getElementById('blue-team-name').value,
+        redTeamName: document.getElementById('red-team-name').value
+      }
+
+      isAdvancedSettingsEnabled = document.getElementById("enable-advanced-settings").checked;
+      if (isAdvancedSettingsEnabled) {
+        params.nicknames = document.querySelectorAll("table#player-nicknames input").values().map(x => x.value).toArray()
+        params.pickTimeout = document.getElementById('pick-timeout').value
+      }
+
+      return params;
+    }
+
     // Function to create a new draft
     function createDraft() {
-      const blueTeamName = document.getElementById('blue-team-name').value;
-      const redTeamName = document.getElementById('red-team-name').value;
-
       fetch('/create-draft', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ blueTeamName, redTeamName })
+        body: JSON.stringify(draftParams())
       })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('create-draft').style.display = 'none';
-        document.getElementById('draft-links').innerHTML = `
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('create-draft').style.display = 'none';
+          document.getElementById('draft-links').innerHTML = `
           <div class="link-container blue-link">
             <p>Blue Side Link: <a href="${data.blueLink}" target="_blank">${data.blueLink}</a>
               <button class="copy-button" onclick="copyLink('${data.blueLink}')">Copy</button>
@@ -51,7 +55,7 @@
           </div>
           <button class="copy-all-button" onclick="copyAllLinks('${data.blueLink}', '${data.redLink}', '${data.spectatorLink}')">Copy All Links</button>
         `;
-      });
+        });
     }
 
     // Function to copy a link to the clipboard
@@ -78,8 +82,9 @@
     }
   </script>
 </head>
+
 <body>
-<h1 onclick="location.reload()" style="cursor: pointer;">Fearless Draft</h1>
+  <h1 onclick="location.reload()" style="cursor: pointer;">Fearless Draft</h1>
 
   <div id="create-draft">
     <label for="blue-team-name">Blue Team Name:</label>
@@ -87,18 +92,53 @@
     <br>
     <label for="red-team-name">Red Team Name:</label>
     <input type="text" id="red-team-name" value="Team 2" required>
+
+
+    <div id="advanced-settings" class="accordeon">
+      <label for="enable-advanced-settings">+ Advanced Settings (Click to expand)</label>
+      <input type="checkbox" id="enable-advanced-settings">
+
+      <div class="accordeon-content">
+        <label for="pick-timeout">Time to pick/ban (seconds)</label>
+        <input type="number" id="pick-timeout" value="30">
+
+        <label>Player Nicknames</label>
+        <table id="player-nicknames">
+          <tr>
+            <td> <input type="text" id="blue-top" placeholder="Player 1"> </td>
+            <td> <img src="/img/top_icon.png" alt="Top" class="role-icon"> </td>
+            <td> <input type="text" id="red-top" placeholder="Player 6"> </td>
+          </tr>
+          <tr>
+            <td> <input type="text" id="blue-jungle" placeholder="Player 2"> </td>
+            <td> <img src="/img/jg_icon.png" alt="Jungle" class="role-icon"> </td>
+            <td> <input type="text" id="red-jungle" placeholder="Player 7"> </td>
+          </tr>
+          <tr>
+            <td> <input type="text" id="blue-mid" placeholder="Player 3"> </td>
+            <td> <img src="/img/mid_icon.png" alt="Mid" class="role-icon"> </td>
+            <td> <input type="text" id="red-mid" placeholder="Player 8"> </td>
+
+          </tr>
+          <tr>
+            <td> <input type="text" id="blue-bottom" placeholder="Player 4"> </td>
+            <td> <img src="/img/bot_icon.png" alt="ADC" class="role-icon"> </td>
+            <td> <input type="text" id="red-bottom" placeholder="Player 9"> </td>
+          </tr>
+          <tr>
+            <td> <input type="text" id="blue-utility" placeholder="Player 5"> </td>
+            <td> <img src="/img/supp_icon.png" alt="Support" class="role-icon"> </td>
+            <td> <input type="text" id="red-utility" placeholder="Player 10"> </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
     <br>
     <button onclick="createDraft()">Create Draft</button>
   </div>
 
   <div id="draft-links"></div>
-  <div class="social-icons">
-    <a href="https://x.com/ProtosLoL" target="_blank">
-      <img src="/img/twitter_logo.png" alt="Follow me on Twitter!">
-    </a>
-    <a href="https://ko-fi.com/colinli" target="_blank">
-      <img src="/img/kofi_logo.png" alt="Support me on Ko-fi">
-    </a>
-  </div>
 </body>
+
 </html>

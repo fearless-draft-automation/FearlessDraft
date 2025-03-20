@@ -64,6 +64,8 @@ async function saveDraft(
 	matchNumber,
 	blueTeamName,
 	redTeamName,
+	pickTimeout,
+	nicknames,
 ) {
 	try {
 		if (mongoose.connection.readyState !== 1) {
@@ -77,6 +79,8 @@ async function saveDraft(
 			blueTeamName,
 			redTeamName,
 			date: Date.now(),
+			pickTimeout,
+			nicknames,
 		});
 		await draft.save();
 		log("Draft saved successfully");
@@ -167,6 +171,8 @@ app.get("/draft/:draftId/:side", (req, res) => {
 			side,
 			blueTeamName,
 			redTeamName,
+			pickTimeout: currStates[draftId]?.pickTimeout || 30,
+			nicknames: currStates[draftId]?.nicknames || [],
 		});
 	} catch (error) {
 		log(`Error rendering draft: ${error.message}`);
@@ -196,6 +202,8 @@ app.post("/create-draft", (req, res) => {
 			finished: false,
 			lastActivity: Date.now(),
 			isLocking: false,
+			nicknames: req.body.nicknames || [],
+			pickTimeout: Number(req.body.pickTimeout || 30),
 		};
 		log(
 			`Draft created: ${draftId} | Blue Team: ${blueTeamName} | Red Team: ${redTeamName}`,
@@ -259,7 +267,7 @@ io.on("connection", (socket) => {
 				clearInterval(currStates[draftId].timer);
 				currStates[draftId].timer = null;
 			}
-			let timeLeft = 30;
+			let timeLeft = currStates[draftId].pickTimeout || 30;
 			currStates[draftId].timer = setInterval(() => {
 				timeLeft--;
 				io.to(draftId).emit("timerUpdate", {
@@ -356,6 +364,8 @@ io.on("connection", (socket) => {
 				currStates[draftId].matchNumber,
 				currStates[draftId].blueTeamName,
 				currStates[draftId].redTeamName,
+				currStates[draftId].pickTimeout,
+				currStates[draftId].nicknames,
 			);
 			currStates[draftId].matchNumber++;
 			currStates[draftId].lastActivity = Date.now();

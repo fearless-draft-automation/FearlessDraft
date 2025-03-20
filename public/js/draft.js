@@ -5,7 +5,7 @@ let matchNumber = 1;
 let usedChamps = new Set();
 let fearlessChamps = new Set();
 const timerInterval = null;
-const timeLeft = 30;
+const timeLeft = pickTimeout;
 let side = null;
 let blueReady = false;
 let redReady = false;
@@ -705,5 +705,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 	if (side === "S") {
 		confirmButton.style.display = "none";
 		switchSidesButton.style.display = "none";
+	}
+
+	if ((nicknames || []).some((x) => x !== "")) {
+		for (const [index, playerNicknameElem] of document
+			.querySelectorAll(".nickname")
+			.entries()) {
+			playerNicknameElem.textContent =
+				nicknames[index] || `Player ${index + 1}`;
+		}
 	}
 });
