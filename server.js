@@ -56,7 +56,6 @@ run().catch(console.dir);
 
 setInterval(checkFinishedDrafts, 5 * 1000 * 60); //check every 5 minutes to see if drafts are finished
 
-
 function isDraftFinished(draftId) {
 	const inactivityDuration = 3 * 1000 * 60 * 60; // 3 hours
 	const currentTime = Date.now();
@@ -356,22 +355,15 @@ io.on("connection", (socket) => {
 	socket.on("switchSides", (draftId) => {
 		//switches sides
 		try {
-			if (currStates[draftId]) {
-				currStates[draftId].sideSwapped = !currStates[draftId].sideSwapped;
-				currStates[draftId].blueReady = false;
-				currStates[draftId].redReady = false;
-				if (
-					currStates[draftId].blueTeamName === "Blue" ||
-					currStates[draftId].redTeamName === "Red"
-				) {
-					io.to(draftId).emit("switchSidesResponse", currStates[draftId]);
-					return;
-				}
-				const temp = currStates[draftId].blueTeamName;
-				currStates[draftId].blueTeamName = currStates[draftId].redTeamName;
-				currStates[draftId].redTeamName = temp;
-				io.to(draftId).emit("switchSidesResponse", currStates[draftId]);
+			if (!currStates[draftId]) {
+				return;
 			}
+
+			currStates[draftId].sideSwapped = !currStates[draftId].sideSwapped;
+			currStates[draftId].blueReady = false;
+			currStates[draftId].redReady = false;
+
+			io.to(draftId).emit("switchSidesResponse", currStates[draftId]);
 		} catch (error) {
 			log(`Error switching sides: ${error.message}`);
 		}

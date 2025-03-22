@@ -21,7 +21,7 @@ const draftSchema = new mongoose.Schema(
 	},
 	{
 		timestamps: {
-			currentTime: () => Date.now()
+			currentTime: () => Date.now(),
 		},
 	},
 );

@@ -499,8 +499,15 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 	} else {
 		side = "S";
 	}
-	document.getElementById("blue-team-name").textContent = blueName;
-	document.getElementById("red-team-name").textContent = redName;
+
+	if (sideSwapped) {
+		document.getElementById("blue-team-name").textContent = redName;
+		document.getElementById("red-team-name").textContent = blueName;
+	} else {
+		document.getElementById("blue-team-name").textContent = blueName;
+		document.getElementById("red-team-name").textContent = redName;
+	}
+
 	if (!sideSwapped) {
 		if (!initialLoad)
 			if (side !== "S") {
@@ -516,8 +523,6 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 		side = "B";
 		if (!initialLoad) alert("You are now on Blue Side");
 	}
-	document.getElementById("blue-team-name").textContent = blueName;
-	document.getElementById("red-team-name").textContent = redName;
 }
 
 function endDraft(draftId) {
