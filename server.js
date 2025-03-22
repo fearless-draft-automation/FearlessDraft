@@ -31,7 +31,10 @@ app.get("/", (req, res) => {
 	res.render("index");
 });
 
-const uri = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}/?retryWrites=true&w=majority&appName=FearlessDraft`;
+const protocol = process.env.MONGO_HOST?.includes("localhost")
+	? "mongodb"
+	: "mongodb+srv";
+const uri = `${protocol}://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}/?retryWrites=true&w=majority&appName=FearlessDraft`;
 const clientOptions = {
 	serverApi: {
 		version: "1",
