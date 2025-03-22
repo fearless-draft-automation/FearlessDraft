@@ -9,7 +9,6 @@ const mongoose = require("mongoose");
 const NodeCache = require("node-cache");
 
 const { Draft } = require("./models");
-const draftService = require("./services/draft");
 
 const app = express();
 const server = http.createServer(app);
@@ -57,37 +56,6 @@ run().catch(console.dir);
 
 setInterval(checkFinishedDrafts, 5 * 1000 * 60); //check every 5 minutes to see if drafts are finished
 
-async function saveDraft(
-	draftId,
-	picks,
-	fearlessBans,
-	matchNumber,
-	blueTeamName,
-	redTeamName,
-	pickTimeout,
-	nicknames,
-) {
-	try {
-		if (mongoose.connection.readyState !== 1) {
-			throw new Error("MongoDB connection is not established");
-		}
-		const draft = new Draft({
-			draftId,
-			picks,
-			fearlessBans,
-			matchNumber,
-			blueTeamName,
-			redTeamName,
-			date: Date.now(),
-			pickTimeout,
-			nicknames,
-		});
-		await draft.save();
-		log("Draft saved successfully");
-	} catch (error) {
-		log("Error saving draft:", error);
-	}
-}
 
 function isDraftFinished(draftId) {
 	const inactivityDuration = 3 * 1000 * 60 * 60; // 3 hours
@@ -347,7 +315,7 @@ io.on("connection", (socket) => {
 		}
 	});
 
-	socket.on("endDraft", (draftId) => {
+	socket.on("endDraft", async (draftId) => {
 		//ends draft
 		try {
 			if (currStates[draftId].timer) {
@@ -357,16 +325,22 @@ io.on("connection", (socket) => {
 			currStates[draftId].blueReady = false;
 			currStates[draftId].redReady = false;
 			currStates[draftId].started = false;
-			saveDraft(
-				draftId,
-				currStates[draftId].picks,
-				currStates[draftId].fearlessBans,
-				currStates[draftId].matchNumber,
-				currStates[draftId].blueTeamName,
-				currStates[draftId].redTeamName,
-				currStates[draftId].pickTimeout,
-				currStates[draftId].nicknames,
-			);
+
+			let draft = new Draft({
+				draftId: draftId,
+				picks: currStates[draftId].picks,
+				fearlessBans: currStates[draftId].fearlessBans,
+				matchNumber: currStates[draftId].matchNumber,
+				blueTeamName: currStates[draftId].blueTeamName,
+				readTeamName: currStates[draftId].redTeamName,
+				options: {
+					pickTimeout: currStates[draftId].pickTimeout,
+					nicknames: currStates[draftId].nicknames,
+				},
+			});
+
+			draft = await draft.save();
+
 			currStates[draftId].matchNumber++;
 			currStates[draftId].lastActivity = Date.now();
 			if (currStates[draftId].matchNumber > 5) {
@@ -419,7 +393,10 @@ io.on("connection", (socket) => {
 	socket.on("showDraft", async (draftId, gameNum) => {
 		//shows draft
 		try {
-			const draft = await draftService.get(draftId, gameNum);
+			const draft = await Draft.findOne({
+				draftId: draftId,
+				matchNumber: gameNum,
+			});
 			if (!draft) {
 				socket.emit("showDraftResponse", null);
 				return;

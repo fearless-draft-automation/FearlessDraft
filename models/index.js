@@ -1,30 +1,35 @@
 const mongoose = require("mongoose");
 
-const Draft = mongoose.model(
-	"Draft",
-	new mongoose.Schema({
+const draftSchema = new mongoose.Schema(
+	{
 		draftId: String,
 		picks: [String],
 		fearlessBans: [String],
 		matchNumber: Number,
 		blueTeamName: String,
 		redTeamName: String,
-		date: {
-			type: Date,
-			default: Date.now,
-		},
 		options: {
 			pickTimeout: {
 				type: Number,
 				default: 30,
 			},
 			nicknames: {
-				type: [{ String }],
+				type: [String],
 				default: [],
 			},
 		},
-	}),
+	},
+	{
+		timestamps: {
+			currentTime: () => Date.now()
+		},
+	},
 );
+
+draftSchema.index({ createdAt: -1 });
+draftSchema.index({ updatedAt: -1 });
+
+const Draft = mongoose.model("Draft", draftSchema);
 
 module.exports = {
 	Draft,
