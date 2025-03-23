@@ -82,6 +82,11 @@ h1 {
 	cursor: pointer;
 }
 
+.copy-button:disabled {
+	background-color: rgb(145, 129, 34);
+	cursor: not-allowed;
+}
+
 .copy-all-button {
 	margin-top: 20px;
 	padding: 10px 20px;
@@ -91,6 +96,11 @@ h1 {
 	border-radius: 5px;
 	cursor: pointer;
 	font-size: 16px;
+}
+
+.copy-all-button:disabled {
+	background-color: rgb(145, 129, 34);
+	cursor: not-allowed;
 }
 
 .social-icons {

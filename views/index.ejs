@@ -45,45 +45,45 @@
           document.getElementById('draft-links').innerHTML = `
           <div class="link-container blue-link">
             <p>Blue Side Link: <a href="${blueLink}" target="_blank">${blueLink}</a>
-              <button class="copy-button" onclick="copyLink('${blueLink}')">Copy</button>
+              <button class="copy-button" onclick="copy(event, '${blueLink}')">Copy</button>
             </p>
           </div>
           <div class="link-container red-link">
             <p>Red Side Link: <a href="${redLink}" target="_blank">${redLink}</a>
-              <button class="copy-button" onclick="copyLink('${redLink}')">Copy</button>
+              <button class="copy-button" onclick="copy(event, '${redLink}')">Copy</button>
             </p>
           </div>
           <div class="link-container spectator-link">
             <p>Spectator Link: <a href="${spectatorLink}" target="_blank">${spectatorLink}</a>
-              <button class="copy-button" onclick="copyLink('${spectatorLink}')">Copy</button>
+              <button class="copy-button" onclick="copy(event, '${spectatorLink}')">Copy</button>
             </p>
           </div>
-          <button class="copy-all-button" onclick="copyAllLinks('${blueLink}', '${redLink}', '${spectatorLink}')">Copy All Links</button>
+          <button class="copy-all-button" onclick="copyAllLinks(event)">Copy All Links</button>
         `;
         });
     }
 
-    // Function to copy a link to the clipboard
-    function copyLink(link) {
-      const tempInput = document.createElement('input');
-      tempInput.value = link;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand('copy');
-      document.body.removeChild(tempInput);
-      alert('Link copied to clipboard!');
+    async function copyAllLinks(event) {
+      // TODO: Can be fragile. Relies on document order
+      const [blueLink, redLink, spectatorLink] = document
+        .querySelectorAll("div.link-container a")
+        .values()
+        .map(x => x.href)
+        .toArray()
+        
+      const content = `Blue Link: ${blueLink}\nRed Link: ${redLink}\nSpec Link: ${spectatorLink}`;
+
+      await copy(event, content);
     }
 
-    // Function to copy all links to the clipboard
-    function copyAllLinks(blueLink, redLink, spectatorLink) {
-      const links = `Blue Link: ${blueLink}\nRed Link: ${redLink}\nSpec Link: ${spectatorLink}`;
-      const tempTextarea = document.createElement('textarea');
-      tempTextarea.value = links;
-      document.body.appendChild(tempTextarea);
-      tempTextarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(tempTextarea);
-      alert('All links copied to clipboard!');
+    async function copy(event, content) {
+      await navigator.clipboard.writeText(content)
+      setCopiedState(event.target);
+    }
+
+    async function setCopiedState(button) {
+      button.textContent = "Copied";
+      button.setAttribute("disabled", true)
     }
 
     function addHostname(relativeLink) {
