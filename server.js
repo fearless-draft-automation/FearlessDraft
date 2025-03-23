@@ -14,7 +14,6 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 const cache = new NodeCache({ stdTTL: 86400 }); // Cache for 1 day
-const domain = process.env.DOMAIN;
 
 const currStates = {};
 
@@ -155,9 +154,7 @@ app.post("/create-draft", (req, res) => {
 		const blueTeamName = req.body.blueTeamName;
 		const redTeamName = req.body.redTeamName;
 		const draftId = nanoid(8);
-		const blueLink = `${domain}/draft/${draftId}/team1`;
-		const redLink = `${domain}/draft/${draftId}/team2`;
-		const spectatorLink = `${domain}/draft/${draftId}/spectator`;
+
 		currStates[draftId] = {
 			blueTeamName: blueTeamName,
 			redTeamName: redTeamName,
@@ -180,9 +177,9 @@ app.post("/create-draft", (req, res) => {
 		);
 
 		res.json({
-			blueLink,
-			redLink,
-			spectatorLink,
+			blueLink: `/draft/${draftId}/team1`,
+			redLink: `/draft/${draftId}/team2`,
+			spectatorLink: `/draft/${draftId}/spectator`,
 		});
 	} catch (error) {
 		log(`Error creating draft: ${error.message}`);
