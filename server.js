@@ -2,8 +2,6 @@ const express = require("express");
 const http = require("node:http");
 require("dotenv").config();
 const socketIO = require("socket.io");
-const fetch = require("node-fetch");
-const uuid = require("uuid");
 const { nanoid } = require("nanoid");
 const mongoose = require("mongoose");
 const NodeCache = require("node-cache");
@@ -79,28 +77,6 @@ function checkFinishedDrafts() {
 		log("Error checking finished drafts:", error);
 	}
 }
-
-app.get("/proxy/championrates", async (req, res) => {
-	//TODO: cache later
-	const cacheKey = "championrates";
-	const cachedData = cache.get(cacheKey);
-	if (cachedData) {
-		return res.json(cachedData);
-	}
-	try {
-		const response = await fetch(
-			"https://cdn.merakianalytics.com/riot/lol/resources/latest/en-US/championrates.json",
-		);
-		const data = await response.json();
-		cache.set(cacheKey, data);
-		res.json(data);
-	} catch (error) {
-		log("Error fetching data:", error);
-		res.status(500).json({
-			error: "Failed to fetch data",
-		});
-	}
-});
 
 app.get("/champions", async (req, res) => {
 	const cacheKey = "champions";
