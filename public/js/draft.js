@@ -400,11 +400,11 @@ function resetPickBanVisuals() {
 	}
 }
 
-function fearlessBan(champions) {
+function fearlessBan(bans) {
 	let fearlessBanSlot = 0;
 	blueCounter = 1;
 	redCounter = 1;
-	champions.forEach((pick, index) => {
+	bans.forEach((pick, index) => {
 		fearlessBanSlot = (index + 1) % 10;
 		let banSlot = null;
 		let banImage = null;
@@ -418,7 +418,7 @@ function fearlessBan(champions) {
 					`#blue-fearless-bans .fearless-ban-slot:nth-child(${blueCounter})`,
 				);
 				banImage = banSlot.querySelector("img");
-				banImage.src = pick.iconLink;
+				banImage.src = champions[pick].iconLink;
 				blueCounter++;
 				break;
 			case 2:
@@ -430,7 +430,7 @@ function fearlessBan(champions) {
 					`#red-fearless-bans .fearless-ban-slot:nth-child(${redCounter})`,
 				);
 				banImage = banSlot.querySelector("img");
-				banImage.src = pick.iconLink;
+				banImage.src = champions[pick].iconLink;
 				redCounter++;
 				break;
 			default:
