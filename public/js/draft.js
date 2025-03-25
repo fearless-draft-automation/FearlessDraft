@@ -689,7 +689,7 @@ socket.on("showDraftResponse", (data) => {
 	updateFearlessBanSlots();
 	fearlessBan(data.fearlessBans);
 	newPick(picks);
-	maybeFillNicknames(sideSwapped);
+	maybeFillNicknames();
 	confirmButton.style.display = "block";
 	confirmButton.textContent = "Show Next Game";
 	confirmButton.disabled = false;
