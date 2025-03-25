@@ -307,7 +307,7 @@ io.on("connection", (socket) => {
 				fearlessBans: currStates[draftId].fearlessBans,
 				matchNumber: currStates[draftId].matchNumber,
 				blueTeamName: currStates[draftId].blueTeamName,
-				readTeamName: currStates[draftId].redTeamName,
+				redTeamName: currStates[draftId].redTeamName,
 				options: {
 					pickTimeout: currStates[draftId].pickTimeout,
 					nicknames: currStates[draftId].nicknames,
