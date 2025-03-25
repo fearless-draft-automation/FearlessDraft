@@ -508,6 +508,8 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 		document.getElementById("red-team-name").textContent = redName;
 	}
 
+	maybeFillNicknames(sideSwapped);
+
 	if (!sideSwapped) {
 		if (!initialLoad)
 			if (side !== "S") {
@@ -678,12 +680,16 @@ socket.on("showDraftResponse", (data) => {
 	matchNumber = data.matchNumber;
 	blueTeamName = data.blueTeamName;
 	redTeamName = data.redTeamName;
+	pickTimeout = data.pickTimeout;
+	nicknames = data.nicknames;
+
 	document.getElementById("blue-team-name").textContent = blueTeamName;
 	document.getElementById("red-team-name").textContent = redTeamName;
 	draftStarted = false;
 	updateFearlessBanSlots();
 	fearlessBan(data.fearlessBans);
 	newPick(picks);
+	maybeFillNicknames(sideSwapped);
 	confirmButton.style.display = "block";
 	confirmButton.textContent = "Show Next Game";
 	confirmButton.disabled = false;
@@ -702,6 +708,27 @@ async function loadChampionsV2() {
 	}, {});
 }
 
+function maybeFillNicknames(sideSwapped = false) {
+	if (nicknames?.every((x) => !x)) {
+		return;
+	}
+
+	let localNicknames = nicknames.map((x, index) => {
+		return x || `Player ${index + 1}`;
+	});
+	if (sideSwapped) {
+		const teamRedNicknames = localNicknames;
+		const teamBlueNicknames = teamRedNicknames.splice(0, 5);
+
+		localNicknames = [...teamRedNicknames, ...teamBlueNicknames];
+	}
+
+	const nicknameElements = document.querySelectorAll(".nickname").entries();
+	for (const [index, playerNicknameElem] of nicknameElements) {
+		playerNicknameElem.textContent = localNicknames[index];
+	}
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	champions = await loadChampionsV2();
 	displayChampions(champions);
@@ -710,14 +737,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 	if (side === "S") {
 		confirmButton.style.display = "none";
 		switchSidesButton.style.display = "none";
-	}
-
-	if ((nicknames || []).some((x) => x !== "")) {
-		for (const [index, playerNicknameElem] of document
-			.querySelectorAll(".nickname")
-			.entries()) {
-			playerNicknameElem.textContent =
-				nicknames[index] || `Player ${index + 1}`;
-		}
 	}
 });

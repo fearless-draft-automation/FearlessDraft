@@ -252,6 +252,8 @@ io.on("connection", (socket) => {
 				sideSwapped: currStates[draftId].sideSwapped,
 				blueTeamName: currStates[draftId].blueTeamName,
 				redTeamName: currStates[draftId].redTeamName,
+				pickTimeout: currStates[draftId].pickTimeout,
+				nicknames: currStates[draftId].nicknames,
 			};
 			socket.emit("draftState", data);
 		} catch (error) {
@@ -376,6 +378,8 @@ io.on("connection", (socket) => {
 				matchNumber: draft.matchNumber,
 				blueTeamName: draft.blueTeamName,
 				redTeamName: draft.redTeamName,
+				pickTimeout: draft.options.pickTimeout,
+				nicknames: draft.options.nicknames,
 			});
 		} catch (error) {
 			log("Error showing draft:", error);
