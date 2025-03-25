@@ -117,7 +117,7 @@
 		"key": "teemo",
 		"positions": ["top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/17.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.jpg"
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg"
 	},
 	{
 		"id": 18,
@@ -635,7 +635,7 @@
 		"id": 122,
 		"name": "Darius",
 		"key": "darius",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/122.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/darius/skins/base/images/darius_splash_centered_0.jpg"
 	},
@@ -731,7 +731,7 @@
 		"id": 157,
 		"name": "Yasuo",
 		"key": "yasuo",
-		"positions": ["middle"],
+		"positions": ["top", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/157.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yasuo/skins/base/images/yasuo_splash_centered_0.jpg"
 	},
@@ -819,7 +819,7 @@
 		"id": 238,
 		"name": "Zed",
 		"key": "zed",
-		"positions": ["middle"],
+		"positions": ["jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/238.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zed/skins/base/images/zed_splash_centered_0.jpg"
 	},

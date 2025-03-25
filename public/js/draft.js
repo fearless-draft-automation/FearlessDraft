@@ -400,11 +400,11 @@ function resetPickBanVisuals() {
 	}
 }
 
-function fearlessBan(bans) {
+function fearlessBan(previousPicks) {
 	let fearlessBanSlot = 0;
 	blueCounter = 1;
 	redCounter = 1;
-	bans.forEach((pick, index) => {
+	previousPicks.forEach((pick, index) => {
 		fearlessBanSlot = (index + 1) % 10;
 		let banSlot = null;
 		let banImage = null;

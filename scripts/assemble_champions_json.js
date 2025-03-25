@@ -77,15 +77,26 @@ function determinePositions(positionPlayRates) {
 }
 
 function addImageLinks(champions) {
-	return champions.map((x) => {
-		x.iconLink = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${x.id}.png`;
-		x.splashArtLink = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/${x.key}/skins/base/images/${x.key}_splash_centered_0.jpg`;
-		if (x.id === -1) {
-			x.splashArtLink = "/img/placeholder.png";
-		}
+	return champions
+		.map((x) => {
+			x.iconLink = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${x.id}.png`;
+			x.splashArtLink = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/${x.key}/skins/base/images/${x.key}_splash_centered_0.jpg`;
 
-		return x;
-	});
+			return x;
+		})
+		.map((x) => {
+			switch (x.key) {
+				case "none":
+					x.splashArtLink = "/img/placeholder.png";
+					break;
+				case "teemo":
+					x.splashArtLink =
+						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg";
+					break;
+			}
+
+			return x;
+		});
 }
 
 async function saveFile(champions) {
