@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +14,14 @@
         let nicknames = '<%= nicknames %>'.split(",");
     </script>
 </head>
+
 <body>
     <div class="draft-container">
         <div class="blue-side">
             <div id="blue-side-header" class="blue-side-header">
-                <h2 id="blue-team-name"><%= blueTeamName %> </h2>
+                <h2 id="blue-team-name">
+                    <%= blueTeamName %>
+                </h2>
             </div>
             <div id="blue-picks">
                 <div class="pick-slot">
@@ -64,67 +68,9 @@
                 </div>
             </div>
             <div id="blue-fearless-bans">
-                <!-- Fearless ban slots -->
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB1">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB2">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB3">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB4">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB5">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB6">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB7">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB8">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB9">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB10">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB11">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB12">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB13">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB14">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB15">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB16">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB17">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB18">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB19">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="BFB20">
-                </div>
+                <% for (let i=1; i <=20; i++) { %>
+                    <%- include("components/fearless_ban_slot", { alt: `BFB#{i}`}); %>
+                        <%} %>
             </div>
         </div>
         <div class="champion-pool-container">
@@ -136,7 +82,9 @@
                     <img src="/img/bot_icon.png" alt="Bot" data-role="bottom" class="role-icon">
                     <img src="/img/supp_icon.png" alt="Support" data-role="utility" class="role-icon">
                 </div>
-                <div id="timer"><%= pickTimeout %></div>
+                <div id="timer">
+                    <%= pickTimeout %>
+                </div>
                 <div class="search-bar">
                     <input type="text" id="searchInput" placeholder="Search champion...">
                 </div>
@@ -154,7 +102,9 @@
         </div>
         <div class="red-side">
             <div id="red-side-header" class="red-side-header">
-                <h2 id="red-team-name"><%= redTeamName %> </h2>
+                <h2 id="red-team-name">
+                    <%= redTeamName %>
+                </h2>
             </div>
             <div id="red-picks">
                 <div class="pick-slot">
@@ -201,70 +151,13 @@
                 </div>
             </div>
             <div id="red-fearless-bans">
-                <!-- Fearless ban slots -->
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB1">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB2">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB3">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB4">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB5">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB6">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB7">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB8">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB9">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB10">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB11">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB12">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB13">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB14">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB15">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB16">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB17">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB18">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB19">
-                </div>
-                <div class="fearless-ban-slot">
-                    <img src="/img/placeholder.png" alt="RFB20">
-                </div>
+                <% for (let i=1; i <=20; i++) { %>
+                    <%- include("components/fearless_ban_slot", { alt: `RFB#{i}`}); %>
+                        <%} %>
             </div>
         </div>
     </div>
     <script src="/js/draft.js"></script>
 </body>
+
 </html>
