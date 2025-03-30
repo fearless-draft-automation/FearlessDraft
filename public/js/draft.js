@@ -28,7 +28,7 @@ function startTimer() {
 const pickOrder = [
 	"BB1", "RB1", "BB2", "RB2", "BB3", "RB3",
 	"BP1", "RP1", "RP2", "BP2", "BP3", "RP3",
-	"BB4", "RB4", "BB5", "RB5",
+	"RB4", "BB4", "RB5", "BB5",
 	"RP4", "BP4", "BP5", "RP5"
 ]
 
