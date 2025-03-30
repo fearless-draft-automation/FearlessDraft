@@ -19,14 +19,13 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.json());
 
+app.use(require("./controllers/web/index_controller"));
+app.use(require("./controllers/web/draft_controller"));
+
 function log(message) {
 	const timestamp = new Date().toISOString();
 	console.log(`[${timestamp}] ${message}`);
 }
-
-app.get("/", (req, res) => {
-	res.render("index");
-});
 
 const protocol = process.env.MONGO_HOST?.includes("localhost")
 	? "mongodb"
@@ -95,33 +94,6 @@ app.get("/champions", async (req, res) => {
 		res.status(500).json({
 			error: "Failed to load champions list",
 		});
-	}
-});
-
-app.get("/draft/:draftId/:side", (req, res) => {
-	try {
-		const draftId = req.params.draftId;
-		const teamId = req.params.side;
-		let side = "spectator";
-		if (teamId === "team1") {
-			side = "blue";
-		} else if (teamId === "team2") {
-			side = "red";
-		}
-		const blueTeamName = currStates[draftId]?.blueTeamName || "Team 1";
-		const redTeamName = currStates[draftId]?.redTeamName || "Team 2";
-
-		res.render("draft", {
-			draftId,
-			side,
-			blueTeamName,
-			redTeamName,
-			pickTimeout: currStates[draftId]?.pickTimeout || 30,
-			nicknames: currStates[draftId]?.nicknames || [],
-		});
-	} catch (error) {
-		log(`Error rendering draft: ${error.message}`);
-		res.status(500).json({ error: "Failed to render draft" });
 	}
 });
 
