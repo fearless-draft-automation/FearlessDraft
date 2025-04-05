@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const router = express.Router();
 
 const { Draft } = require("../../models");
@@ -9,7 +8,7 @@ module.exports = router;
 
 router.get("/draft/:draftId/:side", async (req, res) => {
 	try {
-		const { draftId, teamId } = req.params;
+		const { draftId, side: teamId } = req.params;
 
 		const draft = await loadDraft(draftId);
 		if (!draft) {
@@ -22,11 +21,11 @@ router.get("/draft/:draftId/:side", async (req, res) => {
 			side: getSideId(teamId),
 			blueTeamName: draft.blueTeamName,
 			redTeamName: draft.redTeamName,
-			pickTimeout: draft.options.pickTimeout,
-			nicknames: draft.options.nicknames,
+			pickTimeout: draft.pickTimeout,
+			nicknames: draft.nicknames,
 		});
 	} catch (error) {
-		log(`Error rendering draft: ${error.message}`);
+		console.log(`Error rendering draft: ${error.message}`);
 		res.status(500).json({ error: "Failed to render draft" });
 	}
 });

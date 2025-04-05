@@ -2,22 +2,23 @@ const express = require("express");
 const http = require("node:http");
 require("dotenv").config();
 const socketIO = require("socket.io");
-const { nanoid } = require("nanoid");
 const mongoose = require("mongoose");
-const NodeCache = require("node-cache");
 
 const { Draft } = require("./models");
+const LiveDraftManager = require("./services/live-draft-manager");
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
-const cache = new NodeCache({ stdTTL: 86400 }); // Cache for 1 day
 
 const currStates = {};
+const draftManager = LiveDraftManager.getInstance();
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.json());
+
+app.use(require("./controllers/api/api_controller"));
 
 app.use(require("./controllers/web/index_controller"));
 app.use(require("./controllers/web/draft_controller"));
@@ -53,87 +54,13 @@ async function run() {
 }
 run().catch(console.dir);
 
-setInterval(checkFinishedDrafts, 5 * 1000 * 60); //check every 5 minutes to see if drafts are finished
-
-function isDraftFinished(draftId) {
-	const inactivityDuration = 3 * 1000 * 60 * 60; // 3 hours
-	const currentTime = Date.now();
-	const lastActivity = currStates[draftId].lastActivity;
-
-	return currentTime - lastActivity >= inactivityDuration;
-}
-
-function checkFinishedDrafts() {
-	try {
-		for (const draftId of Object.keys(currStates)) {
-			if (!currStates[draftId].finished && isDraftFinished(draftId)) {
-				currStates[draftId].finished = true;
-				log(`Draft ${draftId} is finished.`);
-				delete currStates[draftId];
-			}
-		}
-	} catch (error) {
-		log("Error checking finished drafts:", error);
-	}
-}
-
-app.get("/champions", async (req, res) => {
-	const cacheKey = "champions";
-	let champions = cache.get(cacheKey);
-	if (champions) {
-		return res.json(champions);
-	}
-
-	try {
-		champions = require("./priv/champions.json");
-		cache.set(cacheKey, champions);
-		res.json(champions);
-	} catch (error) {
-		log("Error loading champions.json:", error);
-
-		res.status(500).json({
-			error: "Failed to load champions list",
-		});
-	}
-});
-
-app.post("/create-draft", (req, res) => {
-	try {
-		const blueTeamName = req.body.blueTeamName;
-		const redTeamName = req.body.redTeamName;
-		const draftId = nanoid(8);
-
-		currStates[draftId] = {
-			blueTeamName: blueTeamName,
-			redTeamName: redTeamName,
-			blueReady: false,
-			redReady: false,
-			picks: [],
-			fearlessBans: [],
-			timer: null,
-			started: false,
-			matchNumber: 1,
-			sideSwapped: false,
-			finished: false,
-			lastActivity: Date.now(),
-			isLocking: false,
-			nicknames: req.body.nicknames || [],
-			pickTimeout: Number(req.body.pickTimeout || 30),
-		};
-		log(
-			`Draft created: ${draftId} | Blue Team: ${blueTeamName} | Red Team: ${redTeamName}`,
-		);
-
-		res.json({
-			blueLink: `/draft/${draftId}/team1`,
-			redLink: `/draft/${draftId}/team2`,
-			spectatorLink: `/draft/${draftId}/spectator`,
-		});
-	} catch (error) {
-		log(`Error creating draft: ${error.message}`);
-		res.status(500).json({ error: "Failed to create draft" });
-	}
-});
+// Clean finished drafts every 5 minutes
+setInterval(
+	() => {
+		draftManager.cleanFinishedDrafts();
+	},
+	5 * 1000 * 60,
+);
 
 io.on("connection", (socket) => {
 	socket.on("joinDraft", (draftId) => {
@@ -204,29 +131,30 @@ io.on("connection", (socket) => {
 	});
 
 	socket.on("getData", (draftId) => {
-		//sends the state to people who open page
 		try {
-			if (!currStates[draftId] || currStates[draftId].finished) {
+			const draft = draftManager.getDraft(draftId);
+			if (!draft || draft.finished) {
 				socket.emit("draftState", {
 					finished: true,
 				});
+
 				return;
 			}
 
-			//data = everything except timer
 			data = {
-				blueReady: currStates[draftId].blueReady,
-				redReady: currStates[draftId].redReady,
-				picks: currStates[draftId].picks,
-				started: currStates[draftId].started,
-				fearlessBans: currStates[draftId].fearlessBans,
-				matchNumber: currStates[draftId].matchNumber,
-				sideSwapped: currStates[draftId].sideSwapped,
-				blueTeamName: currStates[draftId].blueTeamName,
-				redTeamName: currStates[draftId].redTeamName,
-				pickTimeout: currStates[draftId].pickTimeout,
-				nicknames: currStates[draftId].nicknames,
+				blueReady: draft.blueReady,
+				redReady: draft.redReady,
+				picks: draft.picks,
+				started: draft.started,
+				fearlessBans: draft.fearlessBans,
+				matchNumber: draft.matchNumber,
+				sideSwapped: draft.sideSwapped,
+				blueTeamName: draft.blueTeamName,
+				redTeamName: draft.redTeamName,
+				pickTimeout: draft.pickTimeout,
+				nicknames: draft.nicknames,
 			};
+
 			socket.emit("draftState", data);
 		} catch (error) {
 			log(`Error getting data: ${error.message}`);
