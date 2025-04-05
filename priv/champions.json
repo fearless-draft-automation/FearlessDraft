@@ -416,6 +416,14 @@
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nasus/skins/base/images/nasus_splash_centered_0.jpg"
 	},
 	{
+		"id": 78,
+		"name": "Poppy",
+		"key": "poppy",
+		"positions": ["utility"],
+		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/78.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/poppy/skins/base/images/poppy_splash_centered_0.jpg"
+	},
+	{
 		"id": 79,
 		"name": "Gragas",
 		"key": "gragas",

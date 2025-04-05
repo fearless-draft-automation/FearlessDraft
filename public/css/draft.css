@@ -223,8 +223,8 @@ body {
 }
 
 .ban-slot {
-	width: 45px;
-	height: 45px;
+	width: 40px;
+	height: 40px;
 	border-radius: 4px;
 	display: flex;
 	justify-content: center;
@@ -328,4 +328,8 @@ body {
 }
 .header-default-outline {
 	outline: 2px solid black; /*default 2px solid black*/
+}
+
+svg.strike-line {
+	position: absolute;
 }

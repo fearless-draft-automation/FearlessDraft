@@ -18,7 +18,16 @@
 
       isAdvancedSettingsEnabled = document.getElementById("enable-advanced-settings").checked;
       if (isAdvancedSettingsEnabled) {
-        params.nicknames = document.querySelectorAll("table#player-nicknames input").values().map(x => x.value).toArray()
+        const blueNicknames = [];
+        const redNicknames = [];
+        for (const [index, element] of document.querySelectorAll("table#player-nicknames input").entries()) {
+          if (index % 2 == 0) {
+            blueNicknames.push(element.value)
+          } else {
+            redNicknames.push(element.value);
+          }
+        }
+        params.nicknames = [...blueNicknames, ...redNicknames];
         params.pickTimeout = document.getElementById('pick-timeout').value
       }
 
