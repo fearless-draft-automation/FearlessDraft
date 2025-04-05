@@ -21,8 +21,8 @@ router.get("/draft/:draftId/:side", async (req, res) => {
 			side: getSideId(teamId),
 			blueTeamName: draft.blueTeamName,
 			redTeamName: draft.redTeamName,
-			pickTimeout: draft.pickTimeout,
-			nicknames: draft.nicknames,
+			pickTimeout: draft.options?.pickTimeout || draft.pickTimeout,
+			nicknames: draft.options?.nicknames  || draft.nicknames,
 		});
 	} catch (error) {
 		console.log(`Error rendering draft: ${error.message}`);

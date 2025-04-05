@@ -11,7 +11,6 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
-const currStates = {};
 const draftManager = LiveDraftManager.getInstance();
 
 app.set("view engine", "ejs");
@@ -74,52 +73,62 @@ io.on("connection", (socket) => {
 	socket.on("playerReady", (data) => {
 		try {
 			const { draftId, side } = data;
-			if (!currStates[draftId]) {
+			const draft = draftManager.getDraft(draftId);
+			if (!draft) {
 				io.to(draftId).emit("draftNotAvailable");
 				return;
 			}
+
 			if (side === "blue") {
-				currStates[draftId].blueReady = true;
+				draft.blueReady = true;
 			} else if (side === "red") {
-				currStates[draftId].redReady = true;
+				draft.redReady = true;
 			}
-			currStates[draftId].lastActivity = Date.now();
-			if (currStates[draftId].blueReady && currStates[draftId].redReady) {
-				if (!currStates[draftId].fearlessBans) {
-					currStates[draftId].fearlessBans = [];
+
+			draft.lastActivity = Date.now();
+			if (draft.blueReady && draft.redReady) {
+				if (!draft.fearlessBans) {
+					draft.fearlessBans = [];
 				}
-				currStates[draftId].fearlessBans = currStates[draftId].fearlessBans
-					.concat(currStates[draftId].picks.slice(6, 12))
-					.concat(currStates[draftId].picks.slice(16, 20));
-				currStates[draftId].picks = [];
-				currStates[draftId].started = true;
-				io.to(draftId).emit("startDraft", currStates[draftId]);
+
+				draft.fearlessBans = draft.fearlessBans
+					.concat(draft.picks.slice(6, 12))
+					.concat(draft.picks.slice(16, 20));
+				draft.picks = [];
+				draft.started = true;
+
+				io.to(draftId).emit("startDraft", draft);
 			}
 		} catch (error) {
 			log(`Error setting player ready: ${error.message}`);
 		}
 	});
 
-	socket.on("startTimer", (data) => {
+	socket.on("startTimer", (draftId) => {
 		try {
-			const draftId = data;
-			currStates[draftId].started = true;
-			currStates[draftId].lastActivity = Date.now();
-			if (currStates[draftId].timer) {
-				clearInterval(currStates[draftId].timer);
-				currStates[draftId].timer = null;
+			const draft = draftManager.getDraft(draftId);
+			if (!draft) {
+				return;
 			}
-			let timeLeft = currStates[draftId].pickTimeout || 30;
-			currStates[draftId].timer = setInterval(() => {
+
+			draft.started = true;
+			draft.lastActivity = Date.now();
+			if (draft.timer) {
+				clearInterval(draft.timer);
+				draft.timer = null;
+			}
+
+			let timeLeft = draft.pickTimeout || 30;
+			draft.timer = setInterval(() => {
 				timeLeft--;
 				io.to(draftId).emit("timerUpdate", {
 					timeLeft,
 				});
 				if (timeLeft <= -3) {
-					clearInterval(currStates[draftId].timer);
-					currStates[draftId].timer = null;
+					clearInterval(draft.timer);
+					draft.timer = null;
 					setTimeout(() => {
-						if (!currStates[draftId].isLocking) {
+						if (!draft.isLocking) {
 							io.to(draftId).emit("lockChamp");
 						}
 					}, 100);
@@ -174,20 +183,20 @@ io.on("connection", (socket) => {
 		//new pick made
 		const { draftId, pick } = data;
 		try {
-			if (currStates[draftId].isLocking) {
+			const draft = draftManager.getDraft(draftId);
+			if (!draft || draft.isLocking) {
 				return;
 			}
-			currStates[draftId].isLocking = true;
-			currStates[draftId].lastActivity = Date.now();
-			if (currStates[draftId]) {
-				currStates[draftId].picks.push(pick);
-				io.to(draftId).emit("pickUpdate", currStates[draftId].picks);
-				setTimeout(() => {
-					currStates[draftId].isLocking = false;
-				}, 100);
-			}
+
+			draft.isLocking = true;
+			draft.lastActivity = Date.now();
+			draft.picks.push(pick);
+			io.to(draftId).emit("pickUpdate", draft.picks);
+			setTimeout(() => {
+				draft.isLocking = false;
+			}, 100);
 		} catch (error) {
-			log("Pick selection error:", currStates[draftId], error);
+			log("Pick selection error:", draft, error);
 			return;
 		}
 	});
@@ -195,36 +204,42 @@ io.on("connection", (socket) => {
 	socket.on("endDraft", async (draftId) => {
 		//ends draft
 		try {
-			if (currStates[draftId].timer) {
-				clearInterval(currStates[draftId].timer);
-				currStates[draftId].timer = null;
+			const draft = draftManager.getDraft(draftId);
+			if (!draft) {
+				return;
 			}
-			currStates[draftId].blueReady = false;
-			currStates[draftId].redReady = false;
-			currStates[draftId].started = false;
 
-			let draft = new Draft({
+			if (draft.timer) {
+				clearInterval(draft.timer);
+				draft.timer = null;
+			}
+			draft.blueReady = false;
+			draft.redReady = false;
+			draft.started = false;
+
+			const dbDraft = new Draft({
 				draftId: draftId,
-				picks: currStates[draftId].picks,
-				fearlessBans: currStates[draftId].fearlessBans,
-				matchNumber: currStates[draftId].matchNumber,
-				blueTeamName: currStates[draftId].blueTeamName,
-				redTeamName: currStates[draftId].redTeamName,
+				picks: draft.picks,
+				fearlessBans: draft.fearlessBans,
+				matchNumber: draft.matchNumber,
+				blueTeamName: draft.blueTeamName,
+				redTeamName: draft.redTeamName,
 				options: {
-					pickTimeout: currStates[draftId].pickTimeout,
-					nicknames: currStates[draftId].nicknames,
+					pickTimeout: draft.pickTimeout,
+					nicknames: draft.nicknames,
 				},
 			});
 
-			draft = await draft.save();
+			await dbDraft.save();
 
-			currStates[draftId].matchNumber++;
-			currStates[draftId].lastActivity = Date.now();
-			if (currStates[draftId].matchNumber > 5) {
+			draft.matchNumber++;
+			draft.lastActivity = Date.now();
+			if (draft.matchNumber > 5) {
 				//5 games total
-				currStates[draftId].finished = true;
+				draft.finished = true;
 			}
-			io.to(draftId).emit("showNextGameButton", currStates[draftId]);
+
+			io.to(draftId).emit("showNextGameButton", draft);
 		} catch (error) {
 			log(`Error ending draft: ${error.message}`);
 		}
@@ -233,15 +248,16 @@ io.on("connection", (socket) => {
 	socket.on("switchSides", (draftId) => {
 		//switches sides
 		try {
-			if (!currStates[draftId]) {
+			const draft = draftManager.getDraft(draftId);
+			if (!draft) {
 				return;
 			}
 
-			currStates[draftId].sideSwapped = !currStates[draftId].sideSwapped;
-			currStates[draftId].blueReady = false;
-			currStates[draftId].redReady = false;
+			draft.sideSwapped = !draft.sideSwapped;
+			draft.blueReady = false;
+			draft.redReady = false;
 
-			io.to(draftId).emit("switchSidesResponse", currStates[draftId]);
+			io.to(draftId).emit("switchSidesResponse", draft);
 		} catch (error) {
 			log(`Error switching sides: ${error.message}`);
 		}
@@ -250,11 +266,13 @@ io.on("connection", (socket) => {
 	socket.on("endSeries", (draftId) => {
 		//ends draft
 		try {
-			if (currStates[draftId]) {
-				currStates[draftId].finished = true;
-				io.to(draftId).emit("showNextGameButton", currStates[draftId]);
-				delete currStates[draftId];
+			const draft = draftManager.getDraft(draftId);
+			if (!draft) {
+				return;
 			}
+
+			draft.finished = true;
+			io.to(draftId).emit("showNextGameButton", draft);
 		} catch (error) {
 			log(`Error ending series: ${error.message}`);
 		}
