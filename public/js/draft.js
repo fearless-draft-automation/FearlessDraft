@@ -419,6 +419,9 @@ function fearlessBan(previousPicks) {
 				);
 				banImage = banSlot.querySelector("img");
 				banImage.src = champions[pick].iconLink;
+
+				banSlot = docu;
+
 				blueCounter++;
 				break;
 			case 2:
