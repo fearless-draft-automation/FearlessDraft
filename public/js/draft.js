@@ -413,29 +413,46 @@ function fearlessBan(previousPicks) {
 			case 4:
 			case 5:
 			case 8:
-			case 9:
+			case 9: {
 				banSlot = document.querySelector(
 					`#blue-fearless-bans .fearless-ban-slot:nth-child(${blueCounter})`,
 				);
 				banImage = banSlot.querySelector("img");
 				banImage.src = champions[pick].iconLink;
 
-				banSlot = docu;
+				const gameIndex = Math.ceil(blueCounter / 5);
+				const banSlotIndex = blueCounter % 5 || 5;
+				banSlot = document.querySelector(
+					`.fearless-bans-container .fearless-bans-row:nth-child(${gameIndex}) .fearless-ban-slot:nth-child(${banSlotIndex})`,
+				);
+				banImage = banSlot.querySelector("img");
+				banImage.src = champions[pick].iconLink;
 
 				blueCounter++;
 				break;
+			}
 			case 2:
 			case 3:
 			case 6:
 			case 7:
-			case 0:
+			case 0: {
 				banSlot = document.querySelector(
 					`#red-fearless-bans .fearless-ban-slot:nth-child(${redCounter})`,
 				);
 				banImage = banSlot.querySelector("img");
 				banImage.src = champions[pick].iconLink;
+
+				const gameIndex = Math.ceil(redCounter / 5);
+				const banSlotIndex = 5 + 1 + (redCounter % 5 || 5);
+				banSlot = document.querySelector(
+					`.fearless-bans-container .fearless-bans-row:nth-child(${gameIndex}) .fearless-ban-slot:nth-child(${banSlotIndex})`,
+				);
+				banImage = banSlot.querySelector("img");
+				banImage.src = champions[pick].iconLink;
+
 				redCounter++;
 				break;
+			}
 			default:
 				break;
 		}

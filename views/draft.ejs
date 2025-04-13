@@ -158,13 +158,15 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+        <div class="fearless-bans-container"
+            style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
             <% for (let i=1; i <=4; i++) { %>
-                <div style="display: flex; flex-direction: row; align-items: center; column-gap: 10px;">
+                <div class="fearless-bans-row"
+                    style="display: flex; flex-direction: row; align-items: center; column-gap: 10px;">
                     <% for (let j=1; j <=10; j++) { %>
                         <%- include("components/fearless_ban_slot", { alt: `BFB${(i - 1) * 10 + j}`}); %>
                             <% if (j===5) { %>
-                                Game <%= i %>
+                                <span style="color: white; font-weight: bold;">Game <%= i %></span>
                                     <% } %>
                                         <% } %>
                 </div>
