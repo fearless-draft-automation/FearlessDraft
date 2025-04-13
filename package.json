@@ -6,8 +6,8 @@
 	"scripts": {
 		"start": "npx dotenvx run -f .env.local -f .env -- node ./server.js",
 		"generate-champions-json": "node ./scripts/assemble_champions_json.js",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"check": "npx @biomejs/biome check --write ."
+		"check": "npx @biomejs/biome check --write .",
+		"test:e2e": "npx playwright test"
 	},
 	"keywords": [],
 	"author": "",
@@ -25,6 +25,8 @@
 		"uuid": "^10.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4"
+		"@biomejs/biome": "1.9.4",
+		"@playwright/test": "^1.51.1",
+		"@types/node": "^22.14.1"
 	}
 }
