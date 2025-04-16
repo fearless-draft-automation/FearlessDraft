@@ -141,7 +141,7 @@ for (const iconElem of roleIcons) {
 			selectedRole = "";
 			iconElem.classList.remove("active");
 		} else {
-			selectedRole = role;
+			selectedRole = role === 'all' ? '' : role;
 			// TODO I do not like that "click" even have to access to all other icons
 			resetSelectedRoles();
 			iconElem.classList.add("active");

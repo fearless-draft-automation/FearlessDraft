@@ -1,3 +1,4 @@
+
 [
 	{
 		"id": -1,
@@ -19,7 +20,7 @@
 		"id": 2,
 		"name": "Olaf",
 		"key": "olaf",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/2.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/olaf/skins/base/images/olaf_splash_centered_0.jpg"
 	},
@@ -27,7 +28,7 @@
 		"id": 3,
 		"name": "Galio",
 		"key": "galio",
-		"positions": ["middle"],
+		"positions": ["middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/3.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/galio/skins/base/images/galio_splash_centered_0.jpg"
 	},
@@ -75,7 +76,7 @@
 		"id": 10,
 		"name": "Kayle",
 		"key": "kayle",
-		"positions": ["top"],
+		"positions": ["top", "jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/10.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kayle/skins/base/images/kayle_splash_centered_0.jpg"
 	},
@@ -91,9 +92,17 @@
 		"id": 12,
 		"name": "Alistar",
 		"key": "alistar",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/12.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/alistar/skins/base/images/alistar_splash_centered_0.jpg"
+	},
+	{
+		"id": 14,
+		"name": "Sion",
+		"key": "sion",
+		"positions": ["top"],
+		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/14.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/sivir/skins/base/images/sion_splash_centered_0.jpg"
 	},
 	{
 		"id": 15,
@@ -107,7 +116,7 @@
 		"id": 16,
 		"name": "Soraka",
 		"key": "soraka",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/16.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/soraka/skins/base/images/soraka_splash_centered_0.jpg"
 	},
@@ -115,9 +124,9 @@
 		"id": 17,
 		"name": "Teemo",
 		"key": "teemo",
-		"positions": ["top"],
+		"positions": ["top", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/17.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg"
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.jpg"
 	},
 	{
 		"id": 18,
@@ -155,7 +164,7 @@
 		"id": 22,
 		"name": "Ashe",
 		"key": "ashe",
-		"positions": ["bottom"],
+		"positions": ["bottom", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/22.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ashe/skins/base/images/ashe_splash_centered_0.jpg"
 	},
@@ -163,7 +172,7 @@
 		"id": 23,
 		"name": "Tryndamere",
 		"key": "tryndamere",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/23.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/tryndamere/skins/base/images/tryndamere_splash_centered_0.jpg"
 	},
@@ -171,7 +180,7 @@
 		"id": 24,
 		"name": "Jax",
 		"key": "jax",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/24.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/jax/skins/base/images/jax_splash_centered_0.jpg"
 	},
@@ -179,7 +188,7 @@
 		"id": 25,
 		"name": "Morgana",
 		"key": "morgana",
-		"positions": ["utility"],
+		"positions": ["jungle", "middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/25.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/morgana/skins/base/images/morgana_splash_centered_0.jpg"
 	},
@@ -187,7 +196,7 @@
 		"id": 27,
 		"name": "Singed",
 		"key": "singed",
-		"positions": ["top"],
+		"positions": ["top", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/27.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/singed/skins/base/images/singed_splash_centered_0.jpg"
 	},
@@ -203,7 +212,7 @@
 		"id": 29,
 		"name": "Twitch",
 		"key": "twitch",
-		"positions": ["bottom"],
+		"positions": ["jungle", "bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/29.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/twitch/skins/base/images/twitch_splash_centered_0.jpg"
 	},
@@ -227,7 +236,7 @@
 		"id": 36,
 		"name": "Dr. Mundo",
 		"key": "drmundo",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/36.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/drmundo/skins/base/images/drmundo_splash_centered_0.jpg"
 	},
@@ -235,7 +244,7 @@
 		"id": 37,
 		"name": "Sona",
 		"key": "sona",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/37.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/sona/skins/base/images/sona_splash_centered_0.jpg"
 	},
@@ -251,7 +260,7 @@
 		"id": 39,
 		"name": "Irelia",
 		"key": "irelia",
-		"positions": ["top", "middle"],
+		"positions": ["top", "jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/39.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/irelia/skins/base/images/irelia_splash_centered_0.jpg"
 	},
@@ -259,7 +268,7 @@
 		"id": 40,
 		"name": "Janna",
 		"key": "janna",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/40.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/janna/skins/base/images/janna_splash_centered_0.jpg"
 	},
@@ -267,7 +276,7 @@
 		"id": 42,
 		"name": "Corki",
 		"key": "corki",
-		"positions": ["bottom"],
+		"positions": ["bottom", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/42.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/corki/skins/base/images/corki_splash_centered_0.jpg"
 	},
@@ -275,7 +284,7 @@
 		"id": 43,
 		"name": "Karma",
 		"key": "karma",
-		"positions": ["utility"],
+		"positions": ["support", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/43.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/karma/skins/base/images/karma_splash_centered_0.jpg"
 	},
@@ -291,7 +300,7 @@
 		"id": 50,
 		"name": "Swain",
 		"key": "swain",
-		"positions": ["utility"],
+		"positions": ["support", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/50.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/swain/skins/base/images/swain_splash_centered_0.jpg"
 	},
@@ -307,7 +316,7 @@
 		"id": 53,
 		"name": "Blitzcrank",
 		"key": "blitzcrank",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/53.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/blitzcrank/skins/base/images/blitzcrank_splash_centered_0.jpg"
 	},
@@ -331,7 +340,7 @@
 		"id": 57,
 		"name": "Maokai",
 		"key": "maokai",
-		"positions": ["utility"],
+		"positions": ["support", "top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/57.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/maokai/skins/base/images/maokai_splash_centered_0.jpg"
 	},
@@ -347,7 +356,7 @@
 		"id": 59,
 		"name": "Jarvan IV",
 		"key": "jarvaniv",
-		"positions": ["jungle"],
+		"positions": ["jungle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/59.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/jarvaniv/skins/base/images/jarvaniv_splash_centered_0.jpg"
 	},
@@ -363,7 +372,7 @@
 		"id": 62,
 		"name": "Wukong",
 		"key": "monkeyking",
-		"positions": ["jungle"],
+		"positions": ["jungle", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/62.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/monkeyking/skins/base/images/monkeyking_splash_centered_0.jpg"
 	},
@@ -371,7 +380,7 @@
 		"id": 63,
 		"name": "Brand",
 		"key": "brand",
-		"positions": ["utility"],
+		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/63.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/brand/skins/base/images/brand_splash_centered_0.jpg"
 	},
@@ -395,7 +404,7 @@
 		"id": 68,
 		"name": "Rumble",
 		"key": "rumble",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/68.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/rumble/skins/base/images/rumble_splash_centered_0.jpg"
 	},
@@ -403,7 +412,7 @@
 		"id": 74,
 		"name": "Heimerdinger",
 		"key": "heimerdinger",
-		"positions": ["top"],
+		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/74.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/heimerdinger/skins/base/images/heimerdinger_splash_centered_0.jpg"
 	},
@@ -419,7 +428,7 @@
 		"id": 78,
 		"name": "Poppy",
 		"key": "poppy",
-		"positions": ["utility"],
+		"positions": ["support", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/78.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/poppy/skins/base/images/poppy_splash_centered_0.jpg"
 	},
@@ -427,7 +436,7 @@
 		"id": 79,
 		"name": "Gragas",
 		"key": "gragas",
-		"positions": ["top", "jungle"],
+		"positions": ["top", "jungle", "middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/79.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/gragas/skins/base/images/gragas_splash_centered_0.jpg"
 	},
@@ -435,7 +444,7 @@
 		"id": 80,
 		"name": "Pantheon",
 		"key": "pantheon",
-		"positions": ["top", "jungle", "utility"],
+		"positions": ["top", "jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/80.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/pantheon/skins/base/images/pantheon_splash_centered_0.jpg"
 	},
@@ -459,7 +468,7 @@
 		"id": 84,
 		"name": "Akali",
 		"key": "akali",
-		"positions": ["middle"],
+		"positions": ["middle", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/84.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/akali/skins/base/images/akali_splash_centered_0.jpg"
 	},
@@ -467,7 +476,7 @@
 		"id": 85,
 		"name": "Kennen",
 		"key": "kennen",
-		"positions": ["top"],
+		"positions": ["top", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/85.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kennen/skins/base/images/kennen_splash_centered_0.jpg"
 	},
@@ -483,7 +492,7 @@
 		"id": 89,
 		"name": "Leona",
 		"key": "leona",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/89.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/leona/skins/base/images/leona_splash_centered_0.jpg"
 	},
@@ -499,7 +508,7 @@
 		"id": 92,
 		"name": "Riven",
 		"key": "riven",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/92.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/riven/skins/base/images/riven_splash_centered_0.jpg"
 	},
@@ -507,7 +516,7 @@
 		"id": 98,
 		"name": "Shen",
 		"key": "shen",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/98.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/shen/skins/base/images/shen_splash_centered_0.jpg"
 	},
@@ -515,7 +524,7 @@
 		"id": 99,
 		"name": "Lux",
 		"key": "lux",
-		"positions": ["middle", "utility"],
+		"positions": ["middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/99.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/lux/skins/base/images/lux_splash_centered_0.jpg"
 	},
@@ -539,7 +548,7 @@
 		"id": 104,
 		"name": "Graves",
 		"key": "graves",
-		"positions": ["jungle"],
+		"positions": ["jungle", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/104.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/graves/skins/base/images/graves_splash_centered_0.jpg"
 	},
@@ -547,7 +556,7 @@
 		"id": 105,
 		"name": "Fizz",
 		"key": "fizz",
-		"positions": ["middle"],
+		"positions": ["middle", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/105.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/fizz/skins/base/images/fizz_splash_centered_0.jpg"
 	},
@@ -579,7 +588,7 @@
 		"id": 111,
 		"name": "Nautilus",
 		"key": "nautilus",
-		"positions": ["utility"],
+		"positions": ["support", "top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/111.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nautilus/skins/base/images/nautilus_splash_centered_0.jpg"
 	},
@@ -595,7 +604,7 @@
 		"id": 114,
 		"name": "Fiora",
 		"key": "fiora",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/114.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/fiora/skins/base/images/fiora_splash_centered_0.jpg"
 	},
@@ -603,7 +612,7 @@
 		"id": 115,
 		"name": "Ziggs",
 		"key": "ziggs",
-		"positions": ["bottom"],
+		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/115.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ziggs/skins/base/images/ziggs_splash_centered_0.jpg"
 	},
@@ -611,7 +620,7 @@
 		"id": 117,
 		"name": "Lulu",
 		"key": "lulu",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/117.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/lulu/skins/base/images/lulu_splash_centered_0.jpg"
 	},
@@ -651,7 +660,7 @@
 		"id": 126,
 		"name": "Jayce",
 		"key": "jayce",
-		"positions": ["top"],
+		"positions": ["top", "jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/126.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/jayce/skins/base/images/jayce_splash_centered_0.jpg"
 	},
@@ -707,7 +716,7 @@
 		"id": 143,
 		"name": "Zyra",
 		"key": "zyra",
-		"positions": ["jungle", "utility"],
+		"positions": ["middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/143.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zyra/skins/base/images/zyra_splash_centered_0.jpg"
 	},
@@ -723,7 +732,7 @@
 		"id": 147,
 		"name": "Seraphine",
 		"key": "seraphine",
-		"positions": ["utility"],
+		"positions": ["support", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/147.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/seraphine/skins/base/images/seraphine_splash_centered_0.jpg"
 	},
@@ -739,7 +748,7 @@
 		"id": 157,
 		"name": "Yasuo",
 		"key": "yasuo",
-		"positions": ["top", "middle"],
+		"positions": ["middle", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/157.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yasuo/skins/base/images/yasuo_splash_centered_0.jpg"
 	},
@@ -747,7 +756,7 @@
 		"id": 164,
 		"name": "Camille",
 		"key": "camille",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/164.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/camille/skins/base/images/camille_splash_centered_0.jpg"
 	},
@@ -763,7 +772,7 @@
 		"id": 201,
 		"name": "Braum",
 		"key": "braum",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/201.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/braum/skins/base/images/braum_splash_centered_0.jpg"
 	},
@@ -811,7 +820,7 @@
 		"id": 235,
 		"name": "Senna",
 		"key": "senna",
-		"positions": ["utility"],
+		"positions": ["support", "bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/235.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/senna/skins/base/images/senna_splash_centered_0.jpg"
 	},
@@ -827,7 +836,7 @@
 		"id": 238,
 		"name": "Zed",
 		"key": "zed",
-		"positions": ["jungle", "middle"],
+		"positions": ["middle", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/238.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zed/skins/base/images/zed_splash_centered_0.jpg"
 	},
@@ -851,7 +860,7 @@
 		"id": 266,
 		"name": "Aatrox",
 		"key": "aatrox",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/266.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aatrox/skins/base/images/aatrox_splash_centered_0.jpg"
 	},
@@ -859,7 +868,7 @@
 		"id": 267,
 		"name": "Nami",
 		"key": "nami",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/267.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nami/skins/base/images/nami_splash_centered_0.jpg"
 	},
@@ -867,7 +876,7 @@
 		"id": 350,
 		"name": "Yuumi",
 		"key": "yuumi",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/350.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yuumi/skins/base/images/yuumi_splash_centered_0.jpg"
 	},
@@ -883,7 +892,7 @@
 		"id": 412,
 		"name": "Thresh",
 		"key": "thresh",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/412.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/thresh/skins/base/images/thresh_splash_centered_0.jpg"
 	},
@@ -899,7 +908,7 @@
 		"id": 497,
 		"name": "Rakan",
 		"key": "rakan",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/497.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/rakan/skins/base/images/rakan_splash_centered_0.jpg"
 	},
@@ -915,7 +924,7 @@
 		"id": 516,
 		"name": "Ornn",
 		"key": "ornn",
-		"positions": ["top"],
+		"positions": ["top", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/516.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ornn/skins/base/images/ornn_splash_centered_0.jpg"
 	},
@@ -923,7 +932,7 @@
 		"id": 555,
 		"name": "Pyke",
 		"key": "pyke",
-		"positions": ["utility"],
+		"positions": ["support", "middle", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/555.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/pyke/skins/base/images/pyke_splash_centered_0.jpg"
 	},
@@ -939,7 +948,7 @@
 		"id": 777,
 		"name": "Yone",
 		"key": "yone",
-		"positions": ["top", "middle"],
+		"positions": ["top", "middle", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/777.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yone/skins/base/images/yone_splash_centered_0.jpg"
 	},
@@ -947,7 +956,7 @@
 		"id": 799,
 		"name": "Ambessa",
 		"key": "ambessa",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/799.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ambessa/skins/base/images/ambessa_splash_centered_0.jpg"
 	},
@@ -955,7 +964,7 @@
 		"id": 875,
 		"name": "Sett",
 		"key": "sett",
-		"positions": ["top"],
+		"positions": ["top", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/875.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/sett/skins/base/images/sett_splash_centered_0.jpg"
 	},
@@ -971,7 +980,7 @@
 		"id": 887,
 		"name": "Gwen",
 		"key": "gwen",
-		"positions": ["top"],
+		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/887.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/gwen/skins/base/images/gwen_splash_centered_0.jpg"
 	},
@@ -979,7 +988,7 @@
 		"id": 895,
 		"name": "Nilah",
 		"key": "nilah",
-		"positions": ["bottom"],
+		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/895.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nilah/skins/base/images/nilah_splash_centered_0.jpg"
 	},
@@ -987,8 +996,9 @@
 		"id": 902,
 		"name": "Milio",
 		"key": "milio",
-		"positions": ["utility"],
+		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/902.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/milio/skins/base/images/milio_splash_centered_0.jpg"
 	}
 ]
+
