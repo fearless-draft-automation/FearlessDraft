@@ -129,6 +129,7 @@ body {
 	grid-template-columns: repeat(auto-fill, minmax(75px, 0fr));
 	grid-gap: 2px;
 	justify-items: center;
+	justify-content: center;
 }
 
 .blue-side {
@@ -332,4 +333,23 @@ body {
 
 svg.strike-line {
 	position: absolute;
+}
+
+.fearless-bans-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.fearless-bans-row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	column-gap: 10px;
+}
+
+.fearless-bans-container .game-label {
+	color: white;
+	font-weight: bold;
 }

@@ -68,15 +68,11 @@
                         <img src="/img/placeholder.png" alt="BB5">
                     </div>
                 </div>
-                <div id="blue-fearless-bans">
-                    <% for (let i=1; i <=20; i++) { %>
-                        <%- include("components/fearless_ban_slot", { alt: `BFB#{i}`}); %>
-                            <%} %>
-                </div>
             </div>
             <div class="champion-pool-container">
                 <div class="filter-container">
                     <div class="role-filter">
+                        <img src="/img/all_icon.png" alt="All" data-role="all" class="role-icon">
                         <img src="/img/top_icon.png" alt="Top" data-role="top" class="role-icon">
                         <img src="/img/jg_icon.png" alt="Jungle" data-role="jungle" class="role-icon">
                         <img src="/img/mid_icon.png" alt="Mid" data-role="middle" class="role-icon">
@@ -151,22 +147,15 @@
                         <img src="/img/placeholder.png" alt="RB5">
                     </div>
                 </div>
-                <div id="red-fearless-bans">
-                    <% for (let i=1; i <=20; i++) { %>
-                        <%- include("components/fearless_ban_slot", { alt: `RFB#{i}`}); %>
-                            <%} %>
-                </div>
             </div>
         </div>
-        <div class="fearless-bans-container"
-            style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+        <div class="fearless-bans-container">
             <% for (let i=1; i <=4; i++) { %>
-                <div class="fearless-bans-row"
-                    style="display: flex; flex-direction: row; align-items: center; column-gap: 10px;">
+                <div class="fearless-bans-row">
                     <% for (let j=1; j <=10; j++) { %>
                         <%- include("components/fearless_ban_slot", { alt: `BFB${(i - 1) * 10 + j}`}); %>
                             <% if (j===5) { %>
-                                <span style="color: white; font-weight: bold;">Game <%= i %></span>
+                                <span class="game-label">Game <%= i %></span>
                                     <% } %>
                                         <% } %>
                 </div>
