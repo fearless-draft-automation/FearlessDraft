@@ -9,7 +9,6 @@ const timeLeft = pickTimeout;
 let side = null;
 let blueReady = false;
 let redReady = false;
-const championGrid = document.getElementById("champion-grid");
 const searchInput = document.getElementById("searchInput");
 const confirmButton = document.getElementById("confirmButton");
 const switchSidesButton = document.getElementById("switchSidesButton");
@@ -37,37 +36,40 @@ function getCurrSlot(currentPick) {
 }
 
 function displayChampions(champions) {
-	//display champion grid
-	championGrid.innerHTML = "";
+	const gridEl = document.getElementById("champion-grid");
+	gridEl.innerHTML = "";
+
 	for (const champion of Object.values(champions)) {
-		const championIcon = document.createElement("img");
-		championIcon.src = champion.iconLink;
-		championIcon.alt = champion.name;
-		championIcon.classList.add("champion-icon");
-		championIcon.setAttribute("data-key", champion.key);
+		const championIconEl = document.createElement("img");
+		championIconEl.src = champion.iconLink;
+		championIconEl.alt = champion.name;
+		championIconEl.classList.add("champion-icon");
+		championIconEl.setAttribute("data-key", champion.key);
+
 		if (champion.key === "none") {
 			//placeholder image for none pick
-			championIcon.style.objectFit = "cover";
-			championIcon.style.objectPosition = "center";
+			championIconEl.style.objectFit = "cover";
+			championIconEl.style.objectPosition = "center";
 		}
 
 		if (
 			champion.key !== "none" &&
 			(usedChamps.has(champion.key) || fearlessChamps.has(champion.key))
 		) {
-			championIcon.classList.add("used");
-			championIcon.style.filter = "grayscale(100%)";
-			//remove event listener
-			championIcon.removeEventListener("click", () => {});
+			championIconEl.classList.add("used");
+			championIconEl.style.filter = "grayscale(100%)";
+			championIconEl.removeEventListener("click", () => {});
 		} else {
-			championIcon.addEventListener("click", () => {
+			championIconEl.addEventListener("click", () => {
 				const currSlot = getCurrSlot(currentPick);
 				if (currSlot === "done") {
 					return;
 				}
+
 				if (currSlot[0] !== side) {
 					return;
 				}
+
 				if (currSlot[1] === "B") {
 					//ban
 					let banSlot = document.querySelector(
@@ -102,13 +104,14 @@ function displayChampions(champions) {
 				}
 
 				// Add the 'selected' class to the clicked champion
-				championIcon.classList.add("selected");
-				selectedChampion = championIcon;
+				championIconEl.classList.add("selected");
+				selectedChampion = championIconEl;
 				socket.emit("hover", { draftId, side: side, champion: champion.key });
 				confirmButton.disabled = false;
 			});
 		}
-		championGrid.appendChild(championIcon);
+
+		gridEl.appendChild(championIconEl);
 	}
 }
 
@@ -138,7 +141,7 @@ for (const iconElem of roleIcons) {
 			selectedRole = "";
 			iconElem.classList.remove("active");
 		} else {
-			selectedRole = role;
+			selectedRole = role === 'all' ? '' : role;
 			// TODO I do not like that "click" even have to access to all other icons
 			resetSelectedRoles();
 			iconElem.classList.add("active");
@@ -478,8 +481,8 @@ function hover(pick) {
 }
 
 function addChampionNameText(pickSlot, pick) {
-	const championName = pickSlot.querySelector(".champion-name");
-	championName.textContent = champions[pick].name;
+	const championNameEl = pickSlot.querySelector(".champion-name");
+	championNameEl.textContent = champions[pick].name;
 }
 
 function newPick(picks) {
