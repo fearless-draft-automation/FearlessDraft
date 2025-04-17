@@ -141,7 +141,7 @@ for (const iconElem of roleIcons) {
 			selectedRole = "";
 			iconElem.classList.remove("active");
 		} else {
-			selectedRole = role === 'all' ? '' : role;
+			selectedRole = role === "all" ? "" : role;
 			// TODO I do not like that "click" even have to access to all other icons
 			resetSelectedRoles();
 			iconElem.classList.add("active");
@@ -292,45 +292,13 @@ function resetBorders() {
 }
 
 function updateFearlessBanSlots() {
-	//controls fearless bans
-	const blueFearlessBanSlots = document.querySelectorAll(
-		"#blue-fearless-bans .fearless-ban-slot",
-	);
-	const redFearlessBanSlots = document.querySelectorAll(
-		"#red-fearless-bans .fearless-ban-slot",
-	);
-	const blueFearlessBansDiv = document.querySelector("#blue-fearless-bans");
-	const redFearlessBansDiv = document.querySelector("#red-fearless-bans");
+	for (let i = 1; i < 5; i++) {
+		const gameFearlessBansRowEl = document.querySelector(
+			`.fearless-bans-container .fearless-bans-row:nth-child(${i})`,
+		);
 
-	switch (matchNumber) {
-		case 1:
-			fearlessBansPerSide = 0;
-			break;
-		case 2:
-			fearlessBansPerSide = 5;
-			break;
-		case 3:
-			fearlessBansPerSide = 10;
-			break;
-		case 4:
-			fearlessBansPerSide = 15;
-			break;
-		case 5:
-			fearlessBansPerSide = 20;
-			break;
-		default:
-			fearlessBansPerSide = 0;
-			break;
+		gameFearlessBansRowEl.style.display = i < matchNumber ? "flex" : "none";
 	}
-	blueFearlessBanSlots.forEach((slot, index) => {
-		slot.style.display = index < fearlessBansPerSide ? "flex" : "none";
-	});
-
-	redFearlessBanSlots.forEach((slot, index) => {
-		slot.style.display = index < fearlessBansPerSide ? "flex" : "none";
-	});
-	// blueFearlessBansDiv.style.marginLeft = '0px';
-	// redFearlessBansDiv.style.marginRight = `-4px`;
 }
 
 function lockChamp() {
@@ -403,43 +371,23 @@ function resetPickBanVisuals() {
 	}
 }
 
+/*
+	previousPicks = array of all previous picks (in order) from games before current
+*/
 function fearlessBan(previousPicks) {
-	let fearlessBanSlot = 0;
-	blueCounter = 1;
-	redCounter = 1;
-	previousPicks.forEach((pick, index) => {
-		fearlessBanSlot = (index + 1) % 10;
-		let banSlot = null;
-		let banImage = null;
-		switch (fearlessBanSlot) {
-			case 1:
-			case 4:
-			case 5:
-			case 8:
-			case 9:
-				banSlot = document.querySelector(
-					`#blue-fearless-bans .fearless-ban-slot:nth-child(${blueCounter})`,
-				);
-				banImage = banSlot.querySelector("img");
-				banImage.src = champions[pick].iconLink;
-				blueCounter++;
-				break;
-			case 2:
-			case 3:
-			case 6:
-			case 7:
-			case 0:
-				banSlot = document.querySelector(
-					`#red-fearless-bans .fearless-ban-slot:nth-child(${redCounter})`,
-				);
-				banImage = banSlot.querySelector("img");
-				banImage.src = champions[pick].iconLink;
-				redCounter++;
-				break;
-			default:
-				break;
-		}
-	});
+	const gamesFinished = Math.ceil(previousPicks.length / 10);
+	for (let i = 1; i <= gamesFinished; i++) {
+		const gameFearlessBansRowEl = document.querySelector(
+			`.fearless-bans-container .fearless-bans-row:nth-child(${i})`,
+		);
+
+		gameFearlessBansRowEl
+			.querySelectorAll(".fearless-ban-slot img")
+			.forEach((imgEl, index) => {
+				pick = previousPicks[(i - 1) * 10 + index];
+				imgEl.src = champions[pick].iconLink;
+			});
+	}
 }
 
 function hover(pick) {

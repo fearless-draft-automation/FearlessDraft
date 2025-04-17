@@ -1,4 +1,3 @@
-
 [
 	{
 		"id": -1,
@@ -126,7 +125,7 @@
 		"key": "teemo",
 		"positions": ["top", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/17.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.jpg"
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg"
 	},
 	{
 		"id": 18,
@@ -1001,4 +1000,3 @@
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/milio/skins/base/images/milio_splash_centered_0.jpg"
 	}
 ]
-

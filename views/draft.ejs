@@ -16,146 +16,151 @@
 </head>
 
 <body>
-    <div class="draft-container">
-        <div class="blue-side">
-            <div id="blue-side-header" class="blue-side-header">
-                <h2 id="blue-team-name">
-                    <%= blueTeamName %>
-                </h2>
+    <div style="display: flex; flex-direction: column;">
+        <div class="draft-container">
+            <div class="blue-side">
+                <div id="blue-side-header" class="blue-side-header">
+                    <h2 id="blue-team-name">
+                        <%= blueTeamName %>
+                    </h2>
+                </div>
+                <div id="blue-picks">
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="B1">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="B2">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="B3">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="B4">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="B5">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                </div>
+                <div id="blue-bans">
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="BB1">
+                    </div>
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="BB2">
+                    </div>
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="BB3">
+                    </div>
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="BB4">
+                    </div>
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="BB5">
+                    </div>
+                </div>
             </div>
-            <div id="blue-picks">
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="B1">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
+            <div class="champion-pool-container">
+                <div class="filter-container">
+                    <div class="role-filter">
+                        <img src="/img/all_icon.png" alt="All" data-role="all" class="role-icon">
+                        <img src="/img/top_icon.png" alt="Top" data-role="top" class="role-icon">
+                        <img src="/img/jg_icon.png" alt="Jungle" data-role="jungle" class="role-icon">
+                        <img src="/img/mid_icon.png" alt="Mid" data-role="middle" class="role-icon">
+                        <img src="/img/bot_icon.png" alt="Bot" data-role="bottom" class="role-icon">
+                        <img src="/img/supp_icon.png" alt="Support" data-role="support" class="role-icon">
+                    </div>
+                    <div id="timer">
+                        <%= pickTimeout %>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search champion...">
+                    </div>
                 </div>
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="B2">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
-                </div>
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="B3">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
-                </div>
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="B4">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
-                </div>
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="B5">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
-                </div>
-            </div>
-            <div id="blue-bans">
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="BB1">
-                </div>
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="BB2">
-                </div>
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="BB3">
-                </div>
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="BB4">
-                </div>
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="BB5">
+                <div class="champion-pool-wrapper">
+                    <div class="champion-pool">
+                        <div id="champion-grid"></div>
+                    </div>
+                    <button id="confirmButton" enabled>Ready</button>
+                    <div class="button-container">
+                        <button id="switchSidesButton" style="display: none;">Switch Sides?</button>
+                        <button id="finishSeriesButton" style="display: none;">Finish Series</button>
+                    </div>
                 </div>
             </div>
-            <div id="blue-fearless-bans">
-                <% for (let i=1; i <=20; i++) { %>
-                    <%- include("components/fearless_ban_slot", { alt: `BFB#{i}`}); %>
-                        <%} %>
+            <div class="red-side">
+                <div id="red-side-header" class="red-side-header">
+                    <h2 id="red-team-name">
+                        <%= redTeamName %>
+                    </h2>
+                </div>
+                <div id="red-picks">
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="R1">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="R2">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="R3">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="R4">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                    <div class="pick-slot">
+                        <img src="/img/placeholder.png" alt="R5">
+                        <div class="champion-name"></div>
+                        <div class="nickname"></div>
+                    </div>
+                </div>
+                <div id="red-bans">
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="RB1">
+                    </div>
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="RB2">
+                    </div>
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="RB3">
+                    </div>
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="RB4">
+                    </div>
+                    <div class="ban-slot">
+                        <img src="/img/placeholder.png" alt="RB5">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="champion-pool-container">
-            <div class="filter-container">
-                <div class="role-filter">
-                    <img src="/img/all_icon.png" alt="All" data-role="all" class="role-icon">
-                    <img src="/img/top_icon.png" alt="Top" data-role="top" class="role-icon">
-                    <img src="/img/jg_icon.png" alt="Jungle" data-role="jungle" class="role-icon">
-                    <img src="/img/mid_icon.png" alt="Mid" data-role="middle" class="role-icon">
-                    <img src="/img/bot_icon.png" alt="Bot" data-role="bottom" class="role-icon">
-                    <img src="/img/supp_icon.png" alt="Support" data-role="support" class="role-icon">
+        <div class="fearless-bans-container">
+            <% for (let i=1; i <=4; i++) { %>
+                <div class="fearless-bans-row">
+                    <% for (let j=1; j <=10; j++) { %>
+                        <%- include("components/fearless_ban_slot", { alt: `BFB${(i - 1) * 10 + j}`}); %>
+                            <% if (j===5) { %>
+                                <span class="game-label">Game <%= i %></span>
+                                    <% } %>
+                                        <% } %>
                 </div>
-                <div id="timer">
-                    <%= pickTimeout %>
-                </div>
-                <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search champion...">
-                </div>
-            </div>
-            <div class="champion-pool-wrapper">
-                <div class="champion-pool">
-                    <div id="champion-grid"></div>
-                </div>
-                <button id="confirmButton" enabled>Ready</button>
-                <div class="button-container">
-                    <button id="switchSidesButton" style="display: none;">Switch Sides?</button>
-                    <button id="finishSeriesButton" style="display: none;">Finish Series</button>
-                </div>
-            </div>
-        </div>
-        <div class="red-side">
-            <div id="red-side-header" class="red-side-header">
-                <h2 id="red-team-name">
-                    <%= redTeamName %>
-                </h2>
-            </div>
-            <div id="red-picks">
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="R1">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
-                </div>
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="R2">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
-                </div>
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="R3">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
-                </div>
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="R4">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
-                </div>
-                <div class="pick-slot">
-                    <img src="/img/placeholder.png" alt="R5">
-                    <div class="champion-name"></div>
-                    <div class="nickname"></div>
-                </div>
-            </div>
-            <div id="red-bans">
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="RB1">
-                </div>
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="RB2">
-                </div>
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="RB3">
-                </div>
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="RB4">
-                </div>
-                <div class="ban-slot">
-                    <img src="/img/placeholder.png" alt="RB5">
-                </div>
-            </div>
-            <div id="red-fearless-bans">
-                <% for (let i=1; i <=20; i++) { %>
-                    <%- include("components/fearless_ban_slot", { alt: `RFB#{i}`}); %>
-                        <%} %>
-            </div>
+
+                <% } %>
         </div>
     </div>
     <script src="/js/draft.js"></script>
