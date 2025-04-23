@@ -336,8 +336,7 @@ function lockChamp() {
 		colorBorder();
 		startTimer();
 	} else {
-		confirmButton.textContent = "Ready Next Game";
-		confirmButton.disabled = false;
+		resetConfirmButton();
 		currentPick = 0;
 		endDraft(draftId);
 	}
@@ -526,7 +525,7 @@ socket.on("draftState", (data) => {
 		if (side !== "S") {
 			switchSidesButton.style.display = "block";
 			switchSidesButton.onclick = () => {
-				socket.emit("switchSides", draftId);
+				requestSidesSwitch(socket, draftId, side);
 			};
 			finishSeriesButton.style.display = "block";
 			finishSeriesButton.onclick = () => {
@@ -586,12 +585,11 @@ socket.on("showNextGameButton", (data) => {
 		return;
 	}
 	currentPick = 0;
-	confirmButton.textContent = "Ready Next Game";
-	confirmButton.disabled = false;
+	resetConfirmButton();
 	if (side !== "S") {
 		switchSidesButton.style.display = "block";
 		switchSidesButton.onclick = () => {
-			socket.emit("switchSides", draftId);
+			requestSidesSwitch(socket, draftId, side);
 		};
 		finishSeriesButton.style.display = "block";
 		finishSeriesButton.onclick = () => {
@@ -610,8 +608,7 @@ socket.on("switchSidesResponse", (data) => {
 	//sides swapped
 	blueReady = data.blueReady;
 	redReady = data.redReady;
-	confirmButton.textContent = "Ready Next Game";
-	confirmButton.disabled = false;
+	resetConfirmButton();
 	updateSide(data.sideSwapped, data.blueTeamName, data.redTeamName);
 });
 
@@ -690,3 +687,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 		switchSidesButton.style.display = "none";
 	}
 });
+
+function getConfirmButton() {
+	return document.getElementById("confirmButton");
+}
+
+function resetConfirmButton() {
+	const confirmButton = getConfirmButton();
+
+	confirmButton.textContent = "Ready Next Game";
+	confirmButton.disabled = false;
+}
+
+function requestSidesSwitch(socket, draftId, currentSide) {
+	socket.emit("switchSides", {
+		draftId: draftId,
+		requestorSide: currentSide,
+	});
+}

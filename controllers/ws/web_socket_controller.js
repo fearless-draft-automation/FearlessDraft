@@ -187,7 +187,8 @@ function attach(io, socket) {
 		}
 	});
 
-	socket.on("switchSides", (draftId) => {
+	socket.on("switchSides", (params) => {
+		const { draftId, _requestorSide } = params;
 		//switches sides
 		try {
 			const draft = draftManager.getDraft(draftId);
