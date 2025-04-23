@@ -28,5 +28,5 @@ export default defineConfig({
 		command: "npm run start",
 		url: "http://127.0.0.1:3333",
 		reuseExistingServer: !process.env.CI,
-	},
+	}
 });
