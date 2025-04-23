@@ -96,6 +96,14 @@
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/alistar/skins/base/images/alistar_splash_centered_0.jpg"
 	},
 	{
+		"id": 13,
+		"name": "Ryze",
+		"key": "ryze",
+		"positions": ["middle"],
+		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/13.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ryze/skins/base/images/ryze_splash_centered_0.jpg"
+	},
+	{
 		"id": 14,
 		"name": "Sion",
 		"key": "sion",
