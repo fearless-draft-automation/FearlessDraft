@@ -80,13 +80,13 @@ test("can switch sides", async ({ page, context }) => {
 		).toBeVisible();
 	}
 
-	blueSidePage.on("dialog", async (dialog) => {
+	blueSidePage.once("dialog", async (dialog) => {
 		expect(dialog.type()).toContain("alert");
 		expect(dialog.message()).toContain("You are now on Red Side");
 		await dialog.accept();
 	});
 
-	redSidePage.on("dialog", async (dialog) => {
+	redSidePage.once("dialog", async (dialog) => {
 		expect(dialog.type()).toContain("alert");
 		expect(dialog.message()).toContain("You are now on Blue Side");
 		await dialog.accept();
@@ -97,5 +97,24 @@ test("can switch sides", async ({ page, context }) => {
 	for (const page of pages) {
 		await expect(page.locator("#blue-team-name")).toHaveText("Team 2");
 		await expect(page.locator("#red-team-name")).toHaveText("Team 1");
+	}
+
+	blueSidePage.once("dialog", async (dialog) => {
+		expect(dialog.type()).toContain("alert");
+		expect(dialog.message()).toContain("You are now on Blue Side");
+		await dialog.accept();
+	});
+
+	redSidePage.once("dialog", async (dialog) => {
+		expect(dialog.type()).toContain("alert");
+		expect(dialog.message()).toContain("You are now on Red Side");
+		await dialog.accept();
+	});
+
+	await redSidePage.getByRole("button", { name: "Switch Sides?" }).click();
+
+	for (const page of pages) {
+		await expect(page.locator("#blue-team-name")).toHaveText("Team 1");
+		await expect(page.locator("#red-team-name")).toHaveText("Team 2");
 	}
 });
