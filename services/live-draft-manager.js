@@ -61,7 +61,7 @@ class LiveDraftManager {
 
 	cleanFinishedDrafts() {
 		for (const [draftId, draft] of Object.entries(this.#state)) {
-			if (!this.#isDraftFinished(draft)) {
+			if (this.#isDraftFinished(draft)) {
 				delete this.#state[draftId];
 			}
 		}

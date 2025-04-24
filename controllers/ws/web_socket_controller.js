@@ -187,25 +187,6 @@ function attach(io, socket) {
 		}
 	});
 
-	socket.on("switchSides", (params) => {
-		const { draftId, _requestorSide } = params;
-		//switches sides
-		try {
-			const draft = draftManager.getDraft(draftId);
-			if (!draft) {
-				return;
-			}
-
-			draft.sideSwapped = !draft.sideSwapped;
-			draft.blueReady = false;
-			draft.redReady = false;
-
-			io.to(draftId).emit("switchSidesResponse", draft);
-		} catch (error) {
-			console.log(`Error switching sides: ${error.message}`);
-		}
-	});
-
 	socket.on("endSeries", (draftId) => {
 		//ends draft
 		try {
@@ -244,6 +225,50 @@ function attach(io, socket) {
 			});
 		} catch (error) {
 			console.log("Error showing draft:", error);
+		}
+	});
+
+	socket.on("client.switch_sides.init", async (params) => {
+		const { draftId, clientSide } = params;
+		const draft = draftManager.getDraft(draftId);
+		if (!draft) {
+			return;
+		}
+
+		draft.switchSides = {
+			blueReady: clientSide === "B",
+			redReady: clientSide === "R",
+		};
+
+		io.to(draftId).emit("server.switch_sides.init", {
+			requesterSide: clientSide,
+		});
+	});
+
+	socket.on("client.switch_sides.refuse", async (draftId) => {
+		const draft = draftManager.getDraft(draftId);
+		if (!draft) {
+			return;
+		}
+
+		draft.switchSides = undefined;
+		io.to(draftId).emit("server.switch_sides.rollback");
+	});
+
+	socket.on("client.switch_sides.accept", async (draftId, clientSide) => {
+		const draft = draftManager.getDraft(draftId);
+		if (!draft?.switchSides) {
+			return;
+		}
+
+		const blueReady = draft.switchSides.blueReady || clientSide === "B";
+		const redReady = draft.switchSides.redReady || clientSide === "R";
+		if (blueReady && redReady) {
+			draft.sideSwapped = !draft.sideSwapped;
+			draft.blueReady = false;
+			draft.redReady = false;
+
+			io.to(draftId).emit("server.switch_sides.commit", draft);
 		}
 	});
 }

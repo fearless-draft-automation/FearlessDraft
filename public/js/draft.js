@@ -604,12 +604,25 @@ socket.on("showNextGameButton", (data) => {
 	draftStarted = data.started;
 });
 
-socket.on("switchSidesResponse", (data) => {
-	//sides swapped
-	blueReady = data.blueReady;
-	redReady = data.redReady;
+socket.on("server.switch_sides.init", (params) => {
+	const { requesterSide } = params;
+	if (side === "S" || side === requesterSide) {
+		return;
+	}
+
+	socket.emit("client.switch_sides.accept", draftId, side);
+});
+
+socket.on("server.switch_sides.commit", (draft) => {
+	blueReady = draft.blueReady;
+	redReady = draft.redReady;
+
 	resetConfirmButton();
-	updateSide(data.sideSwapped, data.blueTeamName, data.redTeamName);
+	updateSide(draft.sideSwapped, draft.blueTeamName, draft.redTeamName);
+});
+
+socket.on("server.switch_sides.rollback", () => {
+	// TODO
 });
 
 socket.on("draftNotAvailable", () => {
@@ -700,8 +713,8 @@ function resetConfirmButton() {
 }
 
 function requestSidesSwitch(socket, draftId, currentSide) {
-	socket.emit("switchSides", {
+	socket.emit("client.switch_sides.init", {
 		draftId: draftId,
-		requestorSide: currentSide,
+		clientSide: currentSide,
 	});
 }
