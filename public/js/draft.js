@@ -123,9 +123,20 @@ function filterChampions() {
 			const matchesRole =
 				selectedRole === "" ||
 				champion.positions.includes(selectedRole.toLowerCase());
-			const matchesSearch = champion.key.toLowerCase().includes(searchTerm);
+			const matchesSearch = champion.key.toLowerCase().startsWith(searchTerm) || champion['name_ru'].toLowerCase().startsWith(searchTerm);
 			return matchesRole && matchesSearch;
 		})
+		.sort((a, b) => {
+			const champ1 = a.name_ru;
+			const champ2 = b.name_ru;
+			if (champ1.toLowerCase() < champ2.toLowerCase()) {
+			  return -1;
+			}
+			if (champ1.toLowerCase() > champ2.toLowerCase()) {
+			  return 1;
+			}
+			return 0;
+		  })
 		.reduce((acc, elem) => {
 			acc[elem.key] = elem;
 			return acc;
@@ -140,6 +151,7 @@ for (const iconElem of roleIcons) {
 		if (selectedRole === role) {
 			selectedRole = "";
 			iconElem.classList.remove("active");
+			roleIcons[0].classList.add("active");
 		} else {
 			selectedRole = role === "all" ? "" : role;
 			// TODO I do not like that "click" even have to access to all other icons
