@@ -376,10 +376,6 @@ function resetPickBanVisuals() {
 	for (const pickImageElem of document.querySelectorAll(".pick-slot img")) {
 		pickImageElem.src = "/img/placeholder.png";
 	}
-
-	for (const championLabelElem of document.querySelectorAll(".champion-name")) {
-		championLabelElem.textContent = "";
-	}
 }
 
 /*
@@ -420,8 +416,8 @@ function hover(pick) {
 }
 
 function addChampionNameText(pickSlot, pick) {
-	const championNameEl = pickSlot.querySelector(".champion-name");
-	championNameEl.textContent = champions[pick].name;
+	const championNameEl = pickSlot.querySelector(".nickname");
+	championNameEl.textContent = championNameEl.textContent || champions[pick].name_ru;
 }
 
 function newPick(picks) {
