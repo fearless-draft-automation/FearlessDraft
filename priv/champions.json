@@ -2,6 +2,7 @@
 	{
 		"id": -1,
 		"name": "None",
+		"name_ru": "",
 		"key": "none",
 		"positions": [],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/-1.png",
@@ -10,6 +11,7 @@
 	{
 		"id": 1,
 		"name": "Annie",
+		"name_ru": "Энни",
 		"key": "annie",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/1.png",
@@ -18,6 +20,7 @@
 	{
 		"id": 2,
 		"name": "Olaf",
+		"name_ru": "Олаф",
 		"key": "olaf",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/2.png",
@@ -26,6 +29,7 @@
 	{
 		"id": 3,
 		"name": "Galio",
+		"name_ru": "Галио",
 		"key": "galio",
 		"positions": ["middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/3.png",
@@ -34,6 +38,7 @@
 	{
 		"id": 4,
 		"name": "Twisted Fate",
+		"name_ru": "Твистед Фэйт",
 		"key": "twistedfate",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/4.png",
@@ -42,6 +47,7 @@
 	{
 		"id": 5,
 		"name": "Xin Zhao",
+		"name_ru": "Ксин Жао",
 		"key": "xinzhao",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/5.png",
@@ -50,6 +56,7 @@
 	{
 		"id": 6,
 		"name": "Urgot",
+		"name_ru": "Ургот",
 		"key": "urgot",
 		"positions": ["top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/6.png",
@@ -58,6 +65,7 @@
 	{
 		"id": 8,
 		"name": "Vladimir",
+		"name_ru": "Владимир",
 		"key": "vladimir",
 		"positions": ["top", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/8.png",
@@ -66,6 +74,7 @@
 	{
 		"id": 9,
 		"name": "Fiddlesticks",
+		"name_ru": "Фиддлстикс",
 		"key": "fiddlesticks",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/9.png",
@@ -74,6 +83,7 @@
 	{
 		"id": 10,
 		"name": "Kayle",
+		"name_ru": "Кейл",
 		"key": "kayle",
 		"positions": ["top", "jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/10.png",
@@ -82,6 +92,7 @@
 	{
 		"id": 11,
 		"name": "Master Yi",
+		"name_ru": "Мастер Йи",
 		"key": "masteryi",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/11.png",
@@ -90,6 +101,7 @@
 	{
 		"id": 12,
 		"name": "Alistar",
+		"name_ru": "Алистар",
 		"key": "alistar",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/12.png",
@@ -98,6 +110,7 @@
 	{
 		"id": 13,
 		"name": "Ryze",
+		"name_ru": "Райз",
 		"key": "ryze",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/13.png",
@@ -106,6 +119,7 @@
 	{
 		"id": 14,
 		"name": "Sion",
+		"name_ru": "Сион",
 		"key": "sion",
 		"positions": ["top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/14.png",
@@ -114,6 +128,7 @@
 	{
 		"id": 15,
 		"name": "Sivir",
+		"name_ru": "Сивир",
 		"key": "sivir",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/15.png",
@@ -122,6 +137,7 @@
 	{
 		"id": 16,
 		"name": "Soraka",
+		"name_ru": "Сорака",
 		"key": "soraka",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/16.png",
@@ -130,6 +146,7 @@
 	{
 		"id": 17,
 		"name": "Teemo",
+		"name_ru": "Тимо",
 		"key": "teemo",
 		"positions": ["top", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/17.png",
@@ -138,6 +155,7 @@
 	{
 		"id": 18,
 		"name": "Tristana",
+		"name_ru": "Тристана",
 		"key": "tristana",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/18.png",
@@ -146,6 +164,7 @@
 	{
 		"id": 19,
 		"name": "Warwick",
+		"name_ru": "Варвик",
 		"key": "warwick",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/19.png",
@@ -154,6 +173,7 @@
 	{
 		"id": 20,
 		"name": "Nunu & Willump",
+		"name_ru": "Нуну и Виллуип",
 		"key": "nunu",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/20.png",
@@ -162,6 +182,7 @@
 	{
 		"id": 21,
 		"name": "Miss Fortune",
+		"name_ru": "Мисс Фортуна",
 		"key": "missfortune",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/21.png",
@@ -170,6 +191,7 @@
 	{
 		"id": 22,
 		"name": "Ashe",
+		"name_ru": "Эш",
 		"key": "ashe",
 		"positions": ["bottom", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/22.png",
@@ -178,6 +200,7 @@
 	{
 		"id": 23,
 		"name": "Tryndamere",
+		"name_ru": "Триндамир",
 		"key": "tryndamere",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/23.png",
@@ -186,6 +209,7 @@
 	{
 		"id": 24,
 		"name": "Jax",
+		"name_ru": "Джакс",
 		"key": "jax",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/24.png",
@@ -194,6 +218,7 @@
 	{
 		"id": 25,
 		"name": "Morgana",
+		"name_ru": "Моргана",
 		"key": "morgana",
 		"positions": ["jungle", "middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/25.png",
@@ -202,6 +227,7 @@
 	{
 		"id": 27,
 		"name": "Singed",
+		"name_ru": "Синджед",
 		"key": "singed",
 		"positions": ["top", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/27.png",
@@ -210,6 +236,7 @@
 	{
 		"id": 28,
 		"name": "Evelynn",
+		"name_ru": "Эвелинн",
 		"key": "evelynn",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/28.png",
@@ -218,6 +245,7 @@
 	{
 		"id": 29,
 		"name": "Twitch",
+		"name_ru": "Твич",
 		"key": "twitch",
 		"positions": ["jungle", "bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/29.png",
@@ -226,6 +254,7 @@
 	{
 		"id": 32,
 		"name": "Amumu",
+		"name_ru": "Амуму",
 		"key": "amumu",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/32.png",
@@ -234,6 +263,7 @@
 	{
 		"id": 33,
 		"name": "Rammus",
+		"name_ru": "Раммус",
 		"key": "rammus",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/33.png",
@@ -242,6 +272,7 @@
 	{
 		"id": 36,
 		"name": "Dr. Mundo",
+		"name_ru": "Доктор Мундо",
 		"key": "drmundo",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/36.png",
@@ -250,6 +281,7 @@
 	{
 		"id": 37,
 		"name": "Sona",
+		"name_ru": "Сона",
 		"key": "sona",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/37.png",
@@ -258,6 +290,7 @@
 	{
 		"id": 38,
 		"name": "Kassadin",
+		"name_ru": "Кассадин",
 		"key": "kassadin",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/38.png",
@@ -266,6 +299,7 @@
 	{
 		"id": 39,
 		"name": "Irelia",
+		"name_ru": "Ирелия",
 		"key": "irelia",
 		"positions": ["top", "jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/39.png",
@@ -274,6 +308,7 @@
 	{
 		"id": 40,
 		"name": "Janna",
+		"name_ru": "Жанна",
 		"key": "janna",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/40.png",
@@ -282,6 +317,7 @@
 	{
 		"id": 42,
 		"name": "Corki",
+		"name_ru": "Корки",
 		"key": "corki",
 		"positions": ["bottom", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/42.png",
@@ -290,6 +326,7 @@
 	{
 		"id": 43,
 		"name": "Karma",
+		"name_ru": "Карма",
 		"key": "karma",
 		"positions": ["support", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/43.png",
@@ -298,6 +335,7 @@
 	{
 		"id": 45,
 		"name": "Veigar",
+		"name_ru": "Вейгар",
 		"key": "veigar",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/45.png",
@@ -306,6 +344,7 @@
 	{
 		"id": 50,
 		"name": "Swain",
+		"name_ru": "Свейн",
 		"key": "swain",
 		"positions": ["support", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/50.png",
@@ -314,6 +353,7 @@
 	{
 		"id": 51,
 		"name": "Caitlyn",
+		"name_ru": "Кейтлин",
 		"key": "caitlyn",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/51.png",
@@ -322,6 +362,7 @@
 	{
 		"id": 53,
 		"name": "Blitzcrank",
+		"name_ru": "Блицкранк",
 		"key": "blitzcrank",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/53.png",
@@ -330,6 +371,7 @@
 	{
 		"id": 54,
 		"name": "Malphite",
+		"name_ru": "Мальфит",
 		"key": "malphite",
 		"positions": ["top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/54.png",
@@ -338,6 +380,7 @@
 	{
 		"id": 55,
 		"name": "Katarina",
+		"name_ru": "Катарина",
 		"key": "katarina",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/55.png",
@@ -346,6 +389,7 @@
 	{
 		"id": 57,
 		"name": "Maokai",
+		"name_ru": "Маокай",
 		"key": "maokai",
 		"positions": ["support", "top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/57.png",
@@ -354,6 +398,7 @@
 	{
 		"id": 58,
 		"name": "Renekton",
+		"name_ru": "Ренектон",
 		"key": "renekton",
 		"positions": ["top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/58.png",
@@ -362,6 +407,7 @@
 	{
 		"id": 59,
 		"name": "Jarvan IV",
+		"name_ru": "Джарван 4",
 		"key": "jarvaniv",
 		"positions": ["jungle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/59.png",
@@ -370,6 +416,7 @@
 	{
 		"id": 61,
 		"name": "Orianna",
+		"name_ru": "Орианна",
 		"key": "orianna",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/61.png",
@@ -378,6 +425,7 @@
 	{
 		"id": 62,
 		"name": "Wukong",
+		"name_ru": "Вуконг",
 		"key": "monkeyking",
 		"positions": ["jungle", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/62.png",
@@ -386,6 +434,7 @@
 	{
 		"id": 63,
 		"name": "Brand",
+		"name_ru": "Бренд",
 		"key": "brand",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/63.png",
@@ -394,6 +443,7 @@
 	{
 		"id": 64,
 		"name": "Lee Sin",
+		"name_ru": "Ли Син",
 		"key": "leesin",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/64.png",
@@ -402,6 +452,7 @@
 	{
 		"id": 67,
 		"name": "Vayne",
+		"name_ru": "Вейн",
 		"key": "vayne",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/67.png",
@@ -410,6 +461,7 @@
 	{
 		"id": 68,
 		"name": "Rumble",
+		"name_ru": "Рамбл",
 		"key": "rumble",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/68.png",
@@ -418,6 +470,7 @@
 	{
 		"id": 74,
 		"name": "Heimerdinger",
+		"name_ru": "Хеймердингер",
 		"key": "heimerdinger",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/74.png",
@@ -426,6 +479,7 @@
 	{
 		"id": 75,
 		"name": "Nasus",
+		"name_ru": "Насус",
 		"key": "nasus",
 		"positions": ["top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/75.png",
@@ -434,6 +488,7 @@
 	{
 		"id": 78,
 		"name": "Poppy",
+		"name_ru": "Поппи",
 		"key": "poppy",
 		"positions": ["support", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/78.png",
@@ -442,6 +497,7 @@
 	{
 		"id": 79,
 		"name": "Gragas",
+		"name_ru": "Грагас",
 		"key": "gragas",
 		"positions": ["top", "jungle", "middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/79.png",
@@ -450,6 +506,7 @@
 	{
 		"id": 80,
 		"name": "Pantheon",
+		"name_ru": "Пантеон",
 		"key": "pantheon",
 		"positions": ["top", "jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/80.png",
@@ -458,6 +515,7 @@
 	{
 		"id": 81,
 		"name": "Ezreal",
+		"name_ru": "Эзреаль",
 		"key": "ezreal",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/81.png",
@@ -466,6 +524,7 @@
 	{
 		"id": 82,
 		"name": "Mordekaiser",
+		"name_ru": "Мордекайзер",
 		"key": "mordekaiser",
 		"positions": ["top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/82.png",
@@ -474,6 +533,7 @@
 	{
 		"id": 84,
 		"name": "Akali",
+		"name_ru": "Акали",
 		"key": "akali",
 		"positions": ["middle", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/84.png",
@@ -482,6 +542,7 @@
 	{
 		"id": 85,
 		"name": "Kennen",
+		"name_ru": "Кеннен",
 		"key": "kennen",
 		"positions": ["top", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/85.png",
@@ -490,6 +551,7 @@
 	{
 		"id": 86,
 		"name": "Garen",
+		"name_ru": "Гарен",
 		"key": "garen",
 		"positions": ["top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/86.png",
@@ -498,6 +560,7 @@
 	{
 		"id": 89,
 		"name": "Leona",
+		"name_ru": "Леона",
 		"key": "leona",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/89.png",
@@ -506,6 +569,7 @@
 	{
 		"id": 91,
 		"name": "Talon",
+		"name_ru": "Талон",
 		"key": "talon",
 		"positions": ["jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/91.png",
@@ -514,6 +578,7 @@
 	{
 		"id": 92,
 		"name": "Riven",
+		"name_ru": "Ривен",
 		"key": "riven",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/92.png",
@@ -522,6 +587,7 @@
 	{
 		"id": 98,
 		"name": "Shen",
+		"name_ru": "Шен",
 		"key": "shen",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/98.png",
@@ -530,6 +596,7 @@
 	{
 		"id": 99,
 		"name": "Lux",
+		"name_ru": "Люкс",
 		"key": "lux",
 		"positions": ["middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/99.png",
@@ -538,6 +605,7 @@
 	{
 		"id": 102,
 		"name": "Shyvana",
+		"name_ru": "Шиванна",
 		"key": "shyvana",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/102.png",
@@ -546,6 +614,7 @@
 	{
 		"id": 103,
 		"name": "Ahri",
+		"name_ru": "Ари",
 		"key": "ahri",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/103.png",
@@ -554,6 +623,7 @@
 	{
 		"id": 104,
 		"name": "Graves",
+		"name_ru": "Грейвз",
 		"key": "graves",
 		"positions": ["jungle", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/104.png",
@@ -562,6 +632,7 @@
 	{
 		"id": 105,
 		"name": "Fizz",
+		"name_ru": "Физз",
 		"key": "fizz",
 		"positions": ["middle", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/105.png",
@@ -570,6 +641,7 @@
 	{
 		"id": 106,
 		"name": "Volibear",
+		"name_ru": "Волибир",
 		"key": "volibear",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/106.png",
@@ -578,6 +650,7 @@
 	{
 		"id": 107,
 		"name": "Rengar",
+		"name_ru": "Ренгар",
 		"key": "rengar",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/107.png",
@@ -586,6 +659,7 @@
 	{
 		"id": 110,
 		"name": "Varus",
+		"name_ru": "Варус",
 		"key": "varus",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/110.png",
@@ -594,6 +668,7 @@
 	{
 		"id": 111,
 		"name": "Nautilus",
+		"name_ru": "Наутилус",
 		"key": "nautilus",
 		"positions": ["support", "top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/111.png",
@@ -602,6 +677,7 @@
 	{
 		"id": 112,
 		"name": "Viktor",
+		"name_ru": "Виктор",
 		"key": "viktor",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/112.png",
@@ -610,6 +686,7 @@
 	{
 		"id": 114,
 		"name": "Fiora",
+		"name_ru": "Фиора",
 		"key": "fiora",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/114.png",
@@ -618,6 +695,7 @@
 	{
 		"id": 115,
 		"name": "Ziggs",
+		"name_ru": "Зиггс",
 		"key": "ziggs",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/115.png",
@@ -626,6 +704,7 @@
 	{
 		"id": 117,
 		"name": "Lulu",
+		"name_ru": "Лулу",
 		"key": "lulu",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/117.png",
@@ -634,6 +713,7 @@
 	{
 		"id": 119,
 		"name": "Draven",
+		"name_ru": "Дрейвен",
 		"key": "draven",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/119.png",
@@ -642,6 +722,7 @@
 	{
 		"id": 120,
 		"name": "Hecarim",
+		"name_ru": "Гекарим",
 		"key": "hecarim",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/120.png",
@@ -650,6 +731,7 @@
 	{
 		"id": 121,
 		"name": "Kha'Zix",
+		"name_ru": "Казикс",
 		"key": "khazix",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/121.png",
@@ -658,6 +740,7 @@
 	{
 		"id": 122,
 		"name": "Darius",
+		"name_ru": "Дариус",
 		"key": "darius",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/122.png",
@@ -666,6 +749,7 @@
 	{
 		"id": 126,
 		"name": "Jayce",
+		"name_ru": "Джейс",
 		"key": "jayce",
 		"positions": ["top", "jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/126.png",
@@ -674,6 +758,7 @@
 	{
 		"id": 127,
 		"name": "Lissandra",
+		"name_ru": "Лиссандра",
 		"key": "lissandra",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/127.png",
@@ -682,6 +767,7 @@
 	{
 		"id": 131,
 		"name": "Diana",
+		"name_ru": "Диана",
 		"key": "diana",
 		"positions": ["jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/131.png",
@@ -690,6 +776,7 @@
 	{
 		"id": 134,
 		"name": "Syndra",
+		"name_ru": "Синдра",
 		"key": "syndra",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/134.png",
@@ -698,6 +785,7 @@
 	{
 		"id": 136,
 		"name": "Aurelion Sol",
+		"name_ru": "Аурелион Сол",
 		"key": "aurelionsol",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/136.png",
@@ -706,6 +794,7 @@
 	{
 		"id": 141,
 		"name": "Kayn",
+		"name_ru": "Каин",
 		"key": "kayn",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/141.png",
@@ -714,6 +803,7 @@
 	{
 		"id": 142,
 		"name": "Zoe",
+		"name_ru": "Зои",
 		"key": "zoe",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/142.png",
@@ -722,6 +812,7 @@
 	{
 		"id": 143,
 		"name": "Zyra",
+		"name_ru": "Зайра",
 		"key": "zyra",
 		"positions": ["middle", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/143.png",
@@ -730,6 +821,7 @@
 	{
 		"id": 145,
 		"name": "Kai'Sa",
+		"name_ru": "Кайса",
 		"key": "kaisa",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/145.png",
@@ -738,6 +830,7 @@
 	{
 		"id": 147,
 		"name": "Seraphine",
+		"name_ru": "Серафина",
 		"key": "seraphine",
 		"positions": ["support", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/147.png",
@@ -746,6 +839,7 @@
 	{
 		"id": 150,
 		"name": "Gnar",
+		"name_ru": "Гнар",
 		"key": "gnar",
 		"positions": ["top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/150.png",
@@ -754,6 +848,7 @@
 	{
 		"id": 157,
 		"name": "Yasuo",
+		"name_ru": "Ясуо",
 		"key": "yasuo",
 		"positions": ["middle", "top"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/157.png",
@@ -762,6 +857,7 @@
 	{
 		"id": 164,
 		"name": "Camille",
+		"name_ru": "Камилла",
 		"key": "camille",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/164.png",
@@ -770,6 +866,7 @@
 	{
 		"id": 166,
 		"name": "Akshan",
+		"name_ru": "Акшан",
 		"key": "akshan",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/166.png",
@@ -778,6 +875,7 @@
 	{
 		"id": 201,
 		"name": "Braum",
+		"name_ru": "Браум",
 		"key": "braum",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/201.png",
@@ -786,6 +884,7 @@
 	{
 		"id": 202,
 		"name": "Jhin",
+		"name_ru": "Джин",
 		"key": "jhin",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/202.png",
@@ -794,6 +893,7 @@
 	{
 		"id": 203,
 		"name": "Kindred",
+		"name_ru": "Киндред",
 		"key": "kindred",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/203.png",
@@ -802,6 +902,7 @@
 	{
 		"id": 221,
 		"name": "Zeri",
+		"name_ru": "Зери",
 		"key": "zeri",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/221.png",
@@ -810,6 +911,7 @@
 	{
 		"id": 222,
 		"name": "Jinx",
+		"name_ru": "Джинкс",
 		"key": "jinx",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/222.png",
@@ -818,6 +920,7 @@
 	{
 		"id": 234,
 		"name": "Viego",
+		"name_ru": "Виего",
 		"key": "viego",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/234.png",
@@ -826,6 +929,7 @@
 	{
 		"id": 235,
 		"name": "Senna",
+		"name_ru": "Сенна",
 		"key": "senna",
 		"positions": ["support", "bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/235.png",
@@ -834,6 +938,7 @@
 	{
 		"id": 236,
 		"name": "Lucian",
+		"name_ru": "Люциан",
 		"key": "lucian",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/236.png",
@@ -842,6 +947,7 @@
 	{
 		"id": 238,
 		"name": "Zed",
+		"name_ru": "Зед",
 		"key": "zed",
 		"positions": ["middle", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/238.png",
@@ -850,6 +956,7 @@
 	{
 		"id": 245,
 		"name": "Ekko",
+		"name_ru": "Экко",
 		"key": "ekko",
 		"positions": ["jungle", "middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/245.png",
@@ -858,6 +965,7 @@
 	{
 		"id": 254,
 		"name": "Vi",
+		"name_ru": "Вай",
 		"key": "vi",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/254.png",
@@ -866,6 +974,7 @@
 	{
 		"id": 266,
 		"name": "Aatrox",
+		"name_ru": "Атрокс",
 		"key": "aatrox",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/266.png",
@@ -874,6 +983,7 @@
 	{
 		"id": 267,
 		"name": "Nami",
+		"name_ru": "Нами",
 		"key": "nami",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/267.png",
@@ -882,6 +992,7 @@
 	{
 		"id": 350,
 		"name": "Yuumi",
+		"name_ru": "Юми",
 		"key": "yuumi",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/350.png",
@@ -890,6 +1001,7 @@
 	{
 		"id": 360,
 		"name": "Samira",
+		"name_ru": "Самира",
 		"key": "samira",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/360.png",
@@ -898,6 +1010,7 @@
 	{
 		"id": 412,
 		"name": "Thresh",
+		"name_ru": "Треш",
 		"key": "thresh",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/412.png",
@@ -906,6 +1019,7 @@
 	{
 		"id": 429,
 		"name": "Kalista",
+		"name_ru": "Калиста",
 		"key": "kalista",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/429.png",
@@ -914,6 +1028,7 @@
 	{
 		"id": 497,
 		"name": "Rakan",
+		"name_ru": "Рейкан",
 		"key": "rakan",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/497.png",
@@ -922,6 +1037,7 @@
 	{
 		"id": 498,
 		"name": "Xayah",
+		"name_ru": "Шая",
 		"key": "xayah",
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/498.png",
@@ -930,6 +1046,7 @@
 	{
 		"id": 516,
 		"name": "Ornn",
+		"name_ru": "Орнн",
 		"key": "ornn",
 		"positions": ["top", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/516.png",
@@ -938,6 +1055,7 @@
 	{
 		"id": 555,
 		"name": "Pyke",
+		"name_ru": "Пайк",
 		"key": "pyke",
 		"positions": ["support", "middle", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/555.png",
@@ -946,6 +1064,7 @@
 	{
 		"id": 711,
 		"name": "Vex",
+		"name_ru": "Векс",
 		"key": "vex",
 		"positions": ["middle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/711.png",
@@ -954,6 +1073,7 @@
 	{
 		"id": 777,
 		"name": "Yone",
+		"name_ru": "Енэ",
 		"key": "yone",
 		"positions": ["top", "middle", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/777.png",
@@ -962,6 +1082,7 @@
 	{
 		"id": 799,
 		"name": "Ambessa",
+		"name_ru": "Амбесса",
 		"key": "ambessa",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/799.png",
@@ -970,6 +1091,7 @@
 	{
 		"id": 875,
 		"name": "Sett",
+		"name_ru": "Сетт",
 		"key": "sett",
 		"positions": ["top", "support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/875.png",
@@ -978,6 +1100,7 @@
 	{
 		"id": 876,
 		"name": "Lillia",
+		"name_ru": "Лиллия",
 		"key": "lillia",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png",
@@ -986,6 +1109,7 @@
 	{
 		"id": 887,
 		"name": "Gwen",
+		"name_ru": "Гвен",
 		"key": "gwen",
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/887.png",
@@ -994,6 +1118,7 @@
 	{
 		"id": 895,
 		"name": "Nilah",
+		"name_ru": "Нила",
 		"key": "nilah",
 		"positions": ["jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/895.png",
@@ -1002,6 +1127,7 @@
 	{
 		"id": 902,
 		"name": "Milio",
+		"name_ru": "Милио",
 		"key": "milio",
 		"positions": ["support"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/902.png",
