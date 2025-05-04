@@ -123,7 +123,7 @@ function filterChampions() {
 			const matchesRole =
 				selectedRole === "" ||
 				champion.positions.includes(selectedRole.toLowerCase());
-			const matchesSearch = champion.key.toLowerCase().startsWith(searchTerm) || champion['name_ru'].toLowerCase().startsWith(searchTerm);
+			const matchesSearch = champion.key.toLowerCase().startsWith(searchTerm) || champion.name.toLowerCase().startsWith(searchTerm) || champion['name_ru'].toLowerCase().startsWith(searchTerm);
 			return matchesRole && matchesSearch;
 		})
 		.sort((a, b) => {
