@@ -23,6 +23,9 @@ router.get("/draft/:draftId/:side", async (req, res) => {
 			redTeamName: draft.redTeamName,
 			pickTimeout: draft.options?.pickTimeout || draft.pickTimeout,
 			nicknames: draft.options?.nicknames || draft.nicknames,
+			customizations: {
+				hideFilters: req.query.hideFilters === "true",
+			},
 		});
 	} catch (error) {
 		console.log(`Error rendering draft: ${error.message}`);
