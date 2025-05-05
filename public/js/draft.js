@@ -123,20 +123,23 @@ function filterChampions() {
 			const matchesRole =
 				selectedRole === "" ||
 				champion.positions.includes(selectedRole.toLowerCase());
-			const matchesSearch = champion.key.toLowerCase().startsWith(searchTerm) || champion.name.toLowerCase().startsWith(searchTerm) || champion['name_ru'].toLowerCase().startsWith(searchTerm);
+			const matchesSearch =
+				champion.key.toLowerCase().startsWith(searchTerm) ||
+				champion.name.toLowerCase().startsWith(searchTerm) ||
+				champion.name_ru.toLowerCase().startsWith(searchTerm);
 			return matchesRole && matchesSearch;
 		})
 		.sort((a, b) => {
 			const champ1 = a.name_ru;
 			const champ2 = b.name_ru;
 			if (champ1.toLowerCase() < champ2.toLowerCase()) {
-			  return -1;
+				return -1;
 			}
 			if (champ1.toLowerCase() > champ2.toLowerCase()) {
-			  return 1;
+				return 1;
 			}
 			return 0;
-		  })
+		})
 		.reduce((acc, elem) => {
 			acc[elem.key] = elem;
 			return acc;
@@ -709,7 +712,7 @@ function maybeRenderNicknames(sideSwapped = false) {
 
 function shouldRenderNicknames() {
 	// List has at least one truthy value
-	return nicknames?.some((x) => x)
+	return nicknames?.some((x) => x);
 }
 
 document.addEventListener("DOMContentLoaded", async () => {

@@ -19,6 +19,7 @@ const fs = require("node:fs/promises");
 	champions = filterWildRift(champions);
 	champions = await addPositions(champions);
 	champions = addImageLinks(champions);
+	champions = await addLocale(champions, "ru_ru");
 
 	await saveFile(champions);
 })();
@@ -93,10 +94,36 @@ function addImageLinks(champions) {
 					x.splashArtLink =
 						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg";
 					break;
+				case "viktor":
+					x.splashArtLink =
+						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/viktor/skins/base/images/viktor_splash_centered_0.viktorvgu.jpg";
+					break;
 			}
 
 			return x;
 		});
+}
+
+// Expects two-segment lowercase locale code (e.g. ru_ru, en_us, etc.)
+async function addLocale(champions, locale) {
+	const stringTable = await fetchStringTable(locale);
+
+	const [localeCode, _] = locale.split("_");
+	const localKey = `name_${localeCode}`;
+
+	return champions.map((x) => {
+		x[localKey] =
+			stringTable.entries[`game_character_displayname_${x.key}`] || "";
+		return x;
+	});
+}
+
+async function fetchStringTable(locale) {
+	const response = await fetch(
+		`https://raw.communitydragon.org/latest/game/${locale}/data/menu/en_us/lol.stringtable.json`,
+	);
+
+	return await response.json();
 }
 
 async function saveFile(champions) {
