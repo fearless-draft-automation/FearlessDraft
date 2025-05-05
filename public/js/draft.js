@@ -96,7 +96,7 @@ function displayChampions(champions) {
 					}
 					const pickImage = pickSlot.querySelector("img");
 					pickImage.src = champion.splashArtLink;
-					addChampionNameText(pickSlot, champion.key);
+					maybeRenderChampionName(pickSlot, champion.key);
 				}
 
 				if (selectedChampion) {
@@ -364,6 +364,7 @@ function startDraft() {
 	switchSidesButton.style.display = "none";
 	finishSeriesButton.style.display = "none";
 	displayChampions(champions);
+	maybeRenderNicknames();
 	colorBorder();
 	startTimer();
 }
@@ -375,6 +376,10 @@ function resetPickBanVisuals() {
 
 	for (const pickImageElem of document.querySelectorAll(".pick-slot img")) {
 		pickImageElem.src = "/img/placeholder.png";
+	}
+
+	for (const pickLabelElem of document.querySelectorAll(".pick-label")) {
+		pickLabelElem.textContent = "";
 	}
 }
 
@@ -411,13 +416,17 @@ function hover(pick) {
 		);
 		const pickImage = pickSlot.querySelector("img");
 		pickImage.src = champions[pick].iconLink;
-		addChampionNameText(pickSlot, pick);
+		maybeRenderChampionName(pickSlot, pick);
 	}
 }
 
-function addChampionNameText(pickSlot, pick) {
-	const championNameEl = pickSlot.querySelector(".nickname");
-	championNameEl.textContent = championNameEl.textContent || champions[pick].name_ru;
+function maybeRenderChampionName(pickSlot, pick) {
+	if (shouldRenderNicknames()) {
+		return;
+	}
+
+	const championNameEl = pickSlot.querySelector(".pick-label");
+	championNameEl.textContent = champions[pick].name_ru;
 }
 
 function newPick(picks) {
@@ -437,7 +446,7 @@ function newPick(picks) {
 			const pickImage = pickSlot.querySelector("img");
 			pickImage.src = champions[pick].splashArtLink;
 			//text that shows champion name
-			addChampionNameText(pickSlot, pick);
+			maybeRenderChampionName(pickSlot, pick);
 		}
 		usedChamps.add(pick);
 		currentPick++;
@@ -466,7 +475,7 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 		document.getElementById("red-team-name").textContent = redName;
 	}
 
-	maybeFillNicknames(sideSwapped);
+	maybeRenderNicknames(sideSwapped);
 
 	if (!sideSwapped) {
 		if (!initialLoad)
@@ -658,7 +667,7 @@ socket.on("showDraftResponse", (data) => {
 	updateFearlessBanSlots();
 	fearlessBan(data.fearlessBans);
 	newPick(picks);
-	maybeFillNicknames();
+	maybeRenderNicknames();
 	confirmButton.style.display = "block";
 	confirmButton.textContent = "Show Next Game";
 	confirmButton.disabled = false;
@@ -677,8 +686,8 @@ async function loadChampionsV2() {
 	}, {});
 }
 
-function maybeFillNicknames(sideSwapped = false) {
-	if (nicknames?.every((x) => !x)) {
+function maybeRenderNicknames(sideSwapped = false) {
+	if (!shouldRenderNicknames()) {
 		return;
 	}
 
@@ -692,10 +701,15 @@ function maybeFillNicknames(sideSwapped = false) {
 		localNicknames = [...teamRedNicknames, ...teamBlueNicknames];
 	}
 
-	const nicknameElements = document.querySelectorAll(".nickname").entries();
-	for (const [index, playerNicknameElem] of nicknameElements) {
-		playerNicknameElem.textContent = localNicknames[index];
+	const pickLabelElements = document.querySelectorAll(".pick-label").entries();
+	for (const [index, element] of pickLabelElements) {
+		element.textContent = localNicknames[index];
 	}
+}
+
+function shouldRenderNicknames() {
+	// List has at least one truthy value
+	return nicknames?.some((x) => x)
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
