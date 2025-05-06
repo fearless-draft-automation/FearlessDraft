@@ -39,7 +39,8 @@ function displayChampions(champions) {
 	const gridEl = document.getElementById("champion-grid");
 	gridEl.innerHTML = "";
 
-	for (const champion of Object.values(champions)) {
+	championsList = Object.values(champions).sort(championNameComparator("ru"))
+	for (const champion of championsList) {
 		const championIconEl = document.createElement("img");
 		championIconEl.src = champion.iconLink;
 		championIconEl.alt = champion.name;
@@ -128,24 +129,34 @@ function filterChampions() {
 				champion.name.toLowerCase().startsWith(searchTerm) ||
 				champion.name_ru.toLowerCase().startsWith(searchTerm);
 			return matchesRole && matchesSearch;
-		})
-		.sort((a, b) => {
-			const champ1 = a.name_ru;
-			const champ2 = b.name_ru;
-			if (champ1.toLowerCase() < champ2.toLowerCase()) {
-				return -1;
-			}
-			if (champ1.toLowerCase() > champ2.toLowerCase()) {
-				return 1;
-			}
-			return 0;
-		})
+		})		
 		.reduce((acc, elem) => {
 			acc[elem.key] = elem;
 			return acc;
 		}, {});
 
 	displayChampions(filteredChampions);
+}
+
+function championNameComparator(locale = "en") {
+	let localKey = "name";
+	if (locale !== "en") {
+		localKey = `name_${locale}`;
+	}
+
+	return (a, b) => {
+		const name_a = a[localKey].toLowerCase();
+		const name_b = b[localKey].toLowerCase();
+		if (name_a < name_b) {
+			return -1;
+		}
+
+		if (name_a > name_b) {
+			return 1;
+		}
+
+		return 0;
+	}
 }
 
 for (const iconElem of roleIcons) {
