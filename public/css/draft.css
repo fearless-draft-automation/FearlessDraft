@@ -171,12 +171,13 @@ body {
 	margin-bottom: 5px;
 	overflow: hidden;
 }
-.blue-side .champion-name {
+
+.blue-side .pick-label {
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	color: rgb(255, 255, 255);
-	font-size: 12px;
+	font-size: 14px;
 	text-align: right;
 	padding: 2px 4px;
 	white-space: nowrap;
@@ -184,38 +185,12 @@ body {
 	text-overflow: ellipsis;
 }
 
-.red-side .champion-name {
+.red-side .pick-label {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	color: rgb(255, 255, 255);
-	font-size: 12px;
-	text-align: left;
-	padding: 2px 4px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.blue-side .nickname {
-	position: absolute;
-	top: 0;
-	right: 0;
-	color: rgb(255, 255, 255);
-	font-size: 12px;
-	text-align: right;
-	padding: 2px 4px;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.red-side .nickname {
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: rgb(255, 255, 255);
-	font-size: 12px;
+	font-size: 14px;
 	text-align: left;
 	padding: 2px 4px;
 	white-space: nowrap;
