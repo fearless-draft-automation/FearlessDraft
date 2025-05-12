@@ -39,7 +39,8 @@ function displayChampions(champions) {
 	const gridEl = document.getElementById("champion-grid");
 	gridEl.innerHTML = "";
 
-	for (const champion of Object.values(champions)) {
+	championsList = Object.values(champions).sort(championNameComparator("ru"));
+	for (const champion of championsList) {
 		const championIconEl = document.createElement("img");
 		championIconEl.src = champion.iconLink;
 		championIconEl.alt = champion.name;
@@ -96,7 +97,7 @@ function displayChampions(champions) {
 					}
 					const pickImage = pickSlot.querySelector("img");
 					pickImage.src = champion.splashArtLink;
-					addChampionNameText(pickSlot, champion.key);
+					maybeRenderChampionName(pickSlot, champion.key);
 				}
 
 				if (selectedChampion) {
@@ -123,26 +124,39 @@ function filterChampions() {
 			const matchesRole =
 				selectedRole === "" ||
 				champion.positions.includes(selectedRole.toLowerCase());
-			const matchesSearch = champion.key.toLowerCase().startsWith(searchTerm) || champion.name.toLowerCase().startsWith(searchTerm) || champion['name_ru'].toLowerCase().startsWith(searchTerm);
+			const matchesSearch =
+				champion.key.toLowerCase().startsWith(searchTerm) ||
+				champion.name.toLowerCase().startsWith(searchTerm) ||
+				champion.name_ru.toLowerCase().startsWith(searchTerm);
 			return matchesRole && matchesSearch;
 		})
-		.sort((a, b) => {
-			const champ1 = a.name_ru;
-			const champ2 = b.name_ru;
-			if (champ1.toLowerCase() < champ2.toLowerCase()) {
-			  return -1;
-			}
-			if (champ1.toLowerCase() > champ2.toLowerCase()) {
-			  return 1;
-			}
-			return 0;
-		  })
 		.reduce((acc, elem) => {
 			acc[elem.key] = elem;
 			return acc;
 		}, {});
 
 	displayChampions(filteredChampions);
+}
+
+function championNameComparator(locale = "en") {
+	let localKey = "name";
+	if (locale !== "en") {
+		localKey = `name_${locale}`;
+	}
+
+	return (a, b) => {
+		const name_a = a[localKey].toLowerCase();
+		const name_b = b[localKey].toLowerCase();
+		if (name_a < name_b) {
+			return -1;
+		}
+
+		if (name_a > name_b) {
+			return 1;
+		}
+
+		return 0;
+	};
 }
 
 for (const iconElem of roleIcons) {
@@ -364,6 +378,7 @@ function startDraft() {
 	switchSidesButton.style.display = "none";
 	finishSeriesButton.style.display = "none";
 	displayChampions(champions);
+	maybeRenderNicknames();
 	colorBorder();
 	startTimer();
 }
@@ -377,8 +392,8 @@ function resetPickBanVisuals() {
 		pickImageElem.src = "/img/placeholder.png";
 	}
 
-	for (const championLabelElem of document.querySelectorAll(".champion-name")) {
-		championLabelElem.textContent = "";
+	for (const pickLabelElem of document.querySelectorAll(".pick-label")) {
+		pickLabelElem.textContent = "";
 	}
 }
 
@@ -415,13 +430,17 @@ function hover(pick) {
 		);
 		const pickImage = pickSlot.querySelector("img");
 		pickImage.src = champions[pick].iconLink;
-		addChampionNameText(pickSlot, pick);
+		maybeRenderChampionName(pickSlot, pick);
 	}
 }
 
-function addChampionNameText(pickSlot, pick) {
-	const championNameEl = pickSlot.querySelector(".champion-name");
-	championNameEl.textContent = champions[pick].name;
+function maybeRenderChampionName(pickSlot, pick) {
+	if (shouldRenderNicknames()) {
+		return;
+	}
+
+	const championNameEl = pickSlot.querySelector(".pick-label");
+	championNameEl.textContent = champions[pick].name_ru;
 }
 
 function newPick(picks) {
@@ -441,7 +460,7 @@ function newPick(picks) {
 			const pickImage = pickSlot.querySelector("img");
 			pickImage.src = champions[pick].splashArtLink;
 			//text that shows champion name
-			addChampionNameText(pickSlot, pick);
+			maybeRenderChampionName(pickSlot, pick);
 		}
 		usedChamps.add(pick);
 		currentPick++;
@@ -470,7 +489,7 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 		document.getElementById("red-team-name").textContent = redName;
 	}
 
-	maybeFillNicknames(sideSwapped);
+	maybeRenderNicknames(sideSwapped);
 
 	if (!sideSwapped) {
 		if (!initialLoad)
@@ -662,7 +681,7 @@ socket.on("showDraftResponse", (data) => {
 	updateFearlessBanSlots();
 	fearlessBan(data.fearlessBans);
 	newPick(picks);
-	maybeFillNicknames();
+	maybeRenderNicknames();
 	confirmButton.style.display = "block";
 	confirmButton.textContent = "Show Next Game";
 	confirmButton.disabled = false;
@@ -681,8 +700,8 @@ async function loadChampionsV2() {
 	}, {});
 }
 
-function maybeFillNicknames(sideSwapped = false) {
-	if (nicknames?.every((x) => !x)) {
+function maybeRenderNicknames(sideSwapped = false) {
+	if (!shouldRenderNicknames()) {
 		return;
 	}
 
@@ -696,10 +715,15 @@ function maybeFillNicknames(sideSwapped = false) {
 		localNicknames = [...teamRedNicknames, ...teamBlueNicknames];
 	}
 
-	const nicknameElements = document.querySelectorAll(".nickname").entries();
-	for (const [index, playerNicknameElem] of nicknameElements) {
-		playerNicknameElem.textContent = localNicknames[index];
+	const pickLabelElements = document.querySelectorAll(".pick-label").entries();
+	for (const [index, element] of pickLabelElements) {
+		element.textContent = localNicknames[index];
 	}
+}
+
+function shouldRenderNicknames() {
+	// List has at least one truthy value
+	return nicknames?.some((x) => x);
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
