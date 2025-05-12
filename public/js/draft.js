@@ -39,7 +39,7 @@ function displayChampions(champions) {
 	const gridEl = document.getElementById("champion-grid");
 	gridEl.innerHTML = "";
 
-	championsList = Object.values(champions).sort(championNameComparator("ru"))
+	championsList = Object.values(champions).sort(championNameComparator("ru"));
 	for (const champion of championsList) {
 		const championIconEl = document.createElement("img");
 		championIconEl.src = champion.iconLink;
@@ -129,7 +129,7 @@ function filterChampions() {
 				champion.name.toLowerCase().startsWith(searchTerm) ||
 				champion.name_ru.toLowerCase().startsWith(searchTerm);
 			return matchesRole && matchesSearch;
-		})		
+		})
 		.reduce((acc, elem) => {
 			acc[elem.key] = elem;
 			return acc;
@@ -156,7 +156,7 @@ function championNameComparator(locale = "en") {
 		}
 
 		return 0;
-	}
+	};
 }
 
 for (const iconElem of roleIcons) {
