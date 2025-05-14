@@ -25,6 +25,7 @@ router.get("/draft/:draftId/:side", async (req, res) => {
 			nicknames: draft.options?.nicknames || draft.nicknames,
 			customizations: {
 				hideFilters: req.query.hideFilters === "true",
+				hideScrollbar: req.query.hideScrollbar === "true",
 			},
 		});
 	} catch (error) {
