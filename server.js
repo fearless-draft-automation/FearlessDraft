@@ -17,9 +17,12 @@ app.use(express.static("public"));
 app.use(express.json());
 
 app.use(require("./controllers/api/api_controller"));
+app.use(require("./controllers/api/admin_controller"));
 
 app.use(require("./controllers/web/index_controller"));
 app.use(require("./controllers/web/draft_controller"));
+
+app.set("io", io);
 
 io.on("connection", (socket) => {
 	require("./controllers/ws/web_socket_controller").attach(io, socket);
