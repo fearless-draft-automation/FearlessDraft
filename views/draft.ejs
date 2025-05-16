@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="champion-pool-wrapper">
-                    <div class="champion-pool">
+                    <div <%- customizations.hideScrollbar ? `class="champion-pool hidden-scrollbar"` : `class="champion-pool"` %>>
                         <div id="champion-grid"></div>
                     </div>
                     <button id="confirmButton" enabled>Ready</button>

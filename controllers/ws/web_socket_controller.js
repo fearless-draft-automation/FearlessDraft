@@ -268,6 +268,7 @@ function attach(io, socket) {
 			draft.blueReady = false;
 			draft.redReady = false;
 
+			draft.switchSides = undefined;
 			io.to(draftId).emit("server.switch_sides.commit", draft);
 		}
 	});

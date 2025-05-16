@@ -23,6 +23,7 @@ function startTimer() {
 	socket.emit("startTimer", draftId);
 }
 
+// TODO: Inject via pre-processors?
 // biome-ignore format: lines reflect various pick/ban phases
 const pickOrder = [
 	"BB1", "RB1", "BB2", "RB2", "BB3", "RB3",
@@ -491,20 +492,29 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 
 	maybeRenderNicknames(sideSwapped);
 
-	if (!sideSwapped) {
-		if (!initialLoad)
-			if (side !== "S") {
-				if (side === "B") alert("You are now on Blue Side");
-				else if (side === "R") alert("You are now on Red Side");
-			} else alert("Sides Swapped");
+	if (initialLoad) {
 		return;
 	}
-	if (side === "B") {
-		side = "R";
-		if (!initialLoad) alert("You are now on Red Side");
-	} else if (side === "R") {
-		side = "B";
-		if (!initialLoad) alert("You are now on Blue Side");
+
+	switch (side) {
+		case "B":
+			side = sideSwapped ? "R" : "B";
+			break;
+		case "R":
+			side = sideSwapped ? "B" : "R";
+			break;
+	}
+
+	switch (side) {
+		case "B":
+			alert("You are now on Blue Side");
+			break;
+		case "R":
+			alert("You are now on Red Side");
+			break;
+		case "S":
+			alert("Sides Swapped");
+			break;
 	}
 }
 
@@ -527,10 +537,9 @@ socket.on("startDraft", (data) => {
 });
 
 socket.on("timerUpdate", (data) => {
-	//updates timer
 	const { timeLeft } = data;
 	const timerElement = document.getElementById("timer");
-	timerElement.textContent = timeLeft >= 0 ? timeLeft : 0;
+	timerElement.textContent = Math.max(timeLeft, 0);
 });
 
 socket.on("draftState", (data) => {

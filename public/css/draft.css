@@ -328,3 +328,12 @@ svg.strike-line {
 	color: white;
 	font-weight: bold;
 }
+
+.hidden-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+	display: none;
+}
