@@ -18,6 +18,7 @@ let selectedRole = "";
 let selectedChampion = null;
 let viewingPreviousDraft = false;
 let isLocking = false;
+let sideSwapped = false;
 
 function startTimer() {
 	socket.emit("startTimer", draftId);
@@ -379,7 +380,7 @@ function startDraft() {
 	switchSidesButton.style.display = "none";
 	finishSeriesButton.style.display = "none";
 	displayChampions(champions);
-	maybeRenderNicknames();
+	maybeRenderNicknames(sideSwapped);
 	colorBorder();
 	startTimer();
 }
@@ -656,6 +657,7 @@ socket.on("server.switch_sides.init", (params) => {
 socket.on("server.switch_sides.commit", (draft) => {
 	blueReady = draft.blueReady;
 	redReady = draft.redReady;
+	sideSwapped = draft.sideSwapped;
 
 	resetConfirmButton();
 	updateSide(draft.sideSwapped, draft.blueTeamName, draft.redTeamName);
@@ -690,7 +692,7 @@ socket.on("showDraftResponse", (data) => {
 	updateFearlessBanSlots();
 	fearlessBan(data.fearlessBans);
 	newPick(picks);
-	maybeRenderNicknames();
+	maybeRenderNicknames(sideSwapped);
 	confirmButton.style.display = "block";
 	confirmButton.textContent = "Show Next Game";
 	confirmButton.disabled = false;
@@ -709,7 +711,7 @@ async function loadChampionsV2() {
 	}, {});
 }
 
-function maybeRenderNicknames(sideSwapped = false) {
+function maybeRenderNicknames(sideSwapped) {
 	if (!shouldRenderNicknames()) {
 		return;
 	}
