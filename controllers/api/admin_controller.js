@@ -40,7 +40,7 @@ router.put(
 		const { index: nicknameIndexStr } = req.params;
 		const index = Number(nicknameIndexStr);
 
-		if (!_.inRange(index, 0, 9)) {
+		if (!_.inRange(index, 0, 10)) {
 			res
 				.status(400)
 				.json({ error: "Nickname index should be withing [0, 10) range" });

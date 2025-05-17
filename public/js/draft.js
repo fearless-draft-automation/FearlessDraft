@@ -404,6 +404,26 @@ function resetPickBanVisuals() {
 */
 function fearlessBan(previousPicks) {
 	const gamesFinished = Math.ceil(previousPicks.length / 10);
+	const linearIndicies = pickOrder
+		// Exclude bans from order
+		.filter((x) => x[1] === "P")
+		// Remember original index
+		.map((x, index) => {
+			return [x, index];
+		})
+		// Sort pick order by sides
+		.sort((a, b) => {
+			if (a[0] < b[0]) {
+				return -1;
+			}
+
+			if (a[0] > b[0]) {
+				return 1;
+			}
+
+			return 0;
+		});
+
 	for (let i = 1; i <= gamesFinished; i++) {
 		const gameFearlessBansRowEl = document.querySelector(
 			`.fearless-bans-container .fearless-bans-row:nth-child(${i})`,
@@ -412,7 +432,8 @@ function fearlessBan(previousPicks) {
 		gameFearlessBansRowEl
 			.querySelectorAll(".fearless-ban-slot img")
 			.forEach((imgEl, index) => {
-				pick = previousPicks[(i - 1) * 10 + index];
+				const [_pickSlotId, pickIndex] = linearIndicies[index];
+				pick = previousPicks[(i - 1) * 10 + pickIndex];
 				imgEl.src = champions[pick].iconLink;
 			});
 	}
