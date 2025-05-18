@@ -497,9 +497,9 @@ function newPick(picks) {
 
 function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 	if (sideSelect === "blue") {
-		side = "B";
+		side = sideSwapped ? "R" : "B";
 	} else if (sideSelect === "red") {
-		side = "R";
+		side = sideSwapped ? "B" : "R";
 	} else {
 		side = "S";
 	}
@@ -516,15 +516,6 @@ function updateSide(sideSwapped, blueName, redName, initialLoad = false) {
 
 	if (initialLoad) {
 		return;
-	}
-
-	switch (side) {
-		case "B":
-			side = sideSwapped ? "R" : "B";
-			break;
-		case "R":
-			side = sideSwapped ? "B" : "R";
-			break;
 	}
 
 	switch (side) {
