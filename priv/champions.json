@@ -387,6 +387,15 @@
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/katarina/skins/base/images/katarina_splash_centered_0.jpg"
 	},
 	{
+		"id": 56,
+		"name": "Nocturne",
+		"key": "nocturne",
+		"positions": ["jungle"],
+		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/56.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nocturne/skins/base/images/nocturne_splash_centered_0.jpg",
+		"name_ru": "Ноктюрн"
+	},
+	{
 		"id": 57,
 		"name": "Maokai",
 		"name_ru": "Маокай",
