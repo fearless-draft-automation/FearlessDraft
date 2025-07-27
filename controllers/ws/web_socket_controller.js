@@ -176,8 +176,8 @@ function attach(io, socket) {
 
 			draft.matchNumber++;
 			draft.lastActivity = Date.now();
-			if (draft.matchNumber > 5) {
-				//5 games total
+			if (draft.matchNumber > 7) {
+				//7 games total
 				draft.finished = true;
 			}
 

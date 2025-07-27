@@ -320,7 +320,7 @@ function resetBorders() {
 }
 
 function updateFearlessBanSlots() {
-	for (let i = 1; i < 5; i++) {
+	for (let i = 1; i < 7; i++) {
 		const gameFearlessBansRowEl = document.querySelector(
 			`.fearless-bans-container .fearless-bans-row:nth-child(${i})`,
 		);
