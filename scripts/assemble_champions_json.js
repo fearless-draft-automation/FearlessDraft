@@ -94,6 +94,10 @@ function addImageLinks(champions) {
 					x.splashArtLink =
 						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ambessa/skins/base/images/ambessa_splash_centered_0.domina.jpg";
 					break;
+				case "aurora":
+					x.splashArtLink =
+						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aurora/skins/base/images/aurora_splash_centered_0.aurora.jpg";
+					break;
 				case "teemo":
 					x.splashArtLink =
 						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg";

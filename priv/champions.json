@@ -225,6 +225,15 @@
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/morgana/skins/base/images/morgana_splash_centered_0.jpg"
 	},
 	{
+		"id": 26,
+		"name": "Zilean",
+		"key": "zilean",
+		"positions": ["support"],
+		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/26.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zilean/skins/base/images/zilean_splash_centered_0.jpg",
+		"name_ru": "Зилеан"
+	},
+	{
 		"id": 27,
 		"name": "Singed",
 		"name_ru": "Синджед",
@@ -1123,6 +1132,15 @@
 		"positions": ["top", "jungle"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/887.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/gwen/skins/base/images/gwen_splash_centered_0.jpg"
+	},
+	{
+		"id": 893,
+		"name": "Aurora",
+		"key": "aurora",
+		"positions": ["middle"],
+		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/893.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aurora/skins/base/images/aurora_splash_centered_0.aurora.jpg",
+		"name_ru": "Аврора"
 	},
 	{
 		"id": 895,
