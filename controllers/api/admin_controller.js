@@ -2,7 +2,7 @@ const _ = require("lodash");
 const express = require("express");
 const router = express.Router();
 
-const LiveDraftManager = require("../../services/live-draft-manager");
+const LiveDraftManager = require("../../services/live_draft_manager");
 
 module.exports = router;
 

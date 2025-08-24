@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { Draft } = require("../../models");
-const LiveDraftManager = require("../../services/live-draft-manager");
+const LiveDraftManager = require("../../services/live_draft_manager");
 
 module.exports = router;
 

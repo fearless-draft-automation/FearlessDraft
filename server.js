@@ -1,10 +1,12 @@
+// Should be at the very top
+require("dotenv").config();
+
 const express = require("express");
 const http = require("node:http");
-require("dotenv").config();
 const socketIO = require("socket.io");
 const mongoose = require("mongoose");
 
-const LiveDraftManager = require("./services/live-draft-manager");
+const LiveDraftManager = require("./services/live_draft_manager");
 
 const draftManager = LiveDraftManager.getInstance();
 

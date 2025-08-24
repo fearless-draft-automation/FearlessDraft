@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const LiveDraftManager = require("../../services/live-draft-manager");
+const LiveDraftManager = require("../../services/live_draft_manager");
 const NodeCache = require("node-cache");
 
 const cache = new NodeCache({ stdTTL: 86400 });

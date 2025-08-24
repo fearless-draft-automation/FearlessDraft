@@ -1,5 +1,5 @@
 const { Draft } = require("../../models");
-const LiveDraftManager = require("../../services/live-draft-manager");
+const LiveDraftManager = require("../../services/live_draft_manager");
 
 function attach(io, socket) {
 	const draftManager = LiveDraftManager.getInstance();
