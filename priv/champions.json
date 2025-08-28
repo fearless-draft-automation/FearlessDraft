@@ -50,8 +50,8 @@
 		"name_ru": "Ксин Жао",
 		"key": "xinzhao",
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/5.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/xinzhao/skins/base/images/xinzhao_splash_centered_0.jpg"
+		"iconLink": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/5.png",
+		"splashArtLink": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/characters/xinzhao/skins/base/images/xinzhao_splash_centered_0.jpg"
 	},
 	{
 		"id": 6,
