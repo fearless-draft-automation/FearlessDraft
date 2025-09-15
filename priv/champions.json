@@ -873,6 +873,15 @@
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yasuo/skins/base/images/yasuo_splash_centered_0.jpg"
 	},
 	{
+		"id": 161,
+		"name": "Vel'Koz",
+		"key": "velkoz",
+		"positions": ["middle", "support"],
+		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/161.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/velkoz/skins/base/images/velkoz_splash_centered_0.jpg",
+		"name_ru": "Вел'Коз"
+	},
+	{
 		"id": 164,
 		"name": "Camille",
 		"name_ru": "Камилла",
@@ -1042,6 +1051,15 @@
 		"positions": ["bottom"],
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/429.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kalista/skins/base/images/kalista_splash_centered_0.jpg"
+	},
+	{
+		"id": 432,
+		"name": "Bard",
+		"key": "bard",
+		"positions": ["support"],
+		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/432.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/bard/skins/base/images/bard_splash_centered_0.jpg",
+		"name_ru": "Бард"
 	},
 	{
 		"id": 497,
