@@ -504,6 +504,17 @@
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nasus/skins/base/images/nasus_splash_centered_0.jpg"
 	},
 	{
+        "id": 76,
+        "name": "Nidalee",
+        "key": "nidalee",
+        "positions": [
+            "jungle"
+        ],
+        "iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/76.png",
+        "splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nidalee/skins/base/images/nidalee_splash_centered_0.jpg",
+        "name_ru": "Нидали"
+    },
+	{
 		"id": 78,
 		"name": "Poppy",
 		"name_ru": "Поппи",
@@ -1088,6 +1099,17 @@
 		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/516.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ornn/skins/base/images/ornn_splash_centered_0.jpg"
 	},
+    {
+        "id": 526,
+        "name": "Rell",
+        "key": "rell",
+        "positions": [
+            "support"
+        ],
+        "iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/526.png",
+        "splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/rell/skins/base/images/rell_splash_centered_0.jpg",
+        "name_ru": "Релл"
+    },
 	{
 		"id": 555,
 		"name": "Pyke",
