@@ -1,5 +1,17 @@
+import fs from "node:fs";
+import path from "node:path";
 import { expect, test } from "@playwright/test";
 import { createDraft, fillGame, startDraft } from "./utilities";
+
+const champions = JSON.parse(
+	fs.readFileSync(path.join(__dirname, "../../priv/champions.json"), "utf8"),
+);
+
+// Icon links are generated and the app is free to rewrite the host, so the path
+// is the only part stable enough to assert on.
+function iconPath(key) {
+	return new URL(champions.find((x) => x.key === key).iconLink).pathname;
+}
 
 test("can start draft", async ({ page, context }) => {
 	const [blueSideUrl, redSideUrl, _spectatorUrl] = await createDraft(page);
@@ -46,7 +58,7 @@ test("hover state is broadcasted to all participants", async ({
 
 	for (const page of pages) {
 		const iconSrc = await page.getByAltText("BB1").getAttribute("src");
-		expect(iconSrc).toContain("1.png");
+		expect(iconSrc).toContain(iconPath("annie"));
 	}
 });
 
