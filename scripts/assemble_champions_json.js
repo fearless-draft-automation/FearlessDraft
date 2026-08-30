@@ -86,7 +86,7 @@ function determinePositions(positionPlayRates) {
 function addImageLinks(champions) {
 	return champions
 		.map((x) => {
-			x.iconLink = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${x.id}.png`;
+			x.iconLink = `https://images.fearless-draft-wr.net/assets/champions/head-icons/${x.wrId}.png`;
 			x.splashArtLink = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/${x.key}/skins/base/images/${x.key}_splash_centered_0.jpg`;
 
 			return x;
@@ -94,6 +94,9 @@ function addImageLinks(champions) {
 		.map((x) => {
 			switch (x.key) {
 				case "none":
+					// No Wild Rift id, so no icon in our bucket
+					x.iconLink =
+						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/-1.png";
 					x.splashArtLink = "/img/placeholder.png";
 					break;
 				case "ambessa":

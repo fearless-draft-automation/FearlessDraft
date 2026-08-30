@@ -15,7 +15,7 @@
 		"key": "annie",
 		"wrId": 10036,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/1.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10036.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/annie/skins/base/images/annie_splash_centered_0.jpg",
 		"name_ru": "Энни"
 	},
@@ -25,7 +25,7 @@
 		"key": "olaf",
 		"wrId": 10106,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/2.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10106.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/olaf/skins/base/images/olaf_splash_centered_0.jpg",
 		"name_ru": "Олаф"
 	},
@@ -35,7 +35,7 @@
 		"key": "galio",
 		"wrId": 10099,
 		"positions": ["middle", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/3.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10099.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/galio/skins/base/images/galio_splash_centered_0.jpg",
 		"name_ru": "Галио"
 	},
@@ -45,7 +45,7 @@
 		"key": "twistedfate",
 		"wrId": 10025,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/4.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10025.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/twistedfate/skins/base/images/twistedfate_splash_centered_0.jpg",
 		"name_ru": "Твистед Фэйт"
 	},
@@ -55,7 +55,7 @@
 		"key": "xinzhao",
 		"wrId": 10016,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/5.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10016.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/xinzhao/skins/base/images/xinzhao_splash_centered_0.jpg",
 		"name_ru": "Ксин Жао"
 	},
@@ -65,7 +65,7 @@
 		"key": "urgot",
 		"wrId": 10102,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/6.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10102.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/urgot/skins/base/images/urgot_splash_centered_0.jpg",
 		"name_ru": "Ургот"
 	},
@@ -75,7 +75,7 @@
 		"key": "vladimir",
 		"wrId": 10090,
 		"positions": ["top", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/8.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10090.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/vladimir/skins/base/images/vladimir_splash_centered_0.jpg",
 		"name_ru": "Владимир"
 	},
@@ -85,7 +85,7 @@
 		"key": "fiddlesticks",
 		"wrId": 10133,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/9.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10133.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/fiddlesticks/skins/base/images/fiddlesticks_splash_centered_0.jpg",
 		"name_ru": "Фиддлстикс"
 	},
@@ -95,7 +95,7 @@
 		"key": "kayle",
 		"wrId": 10041,
 		"positions": ["top", "jungle", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/10.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10041.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kayle/skins/base/images/kayle_splash_centered_0.jpg",
 		"name_ru": "Кейл"
 	},
@@ -105,7 +105,7 @@
 		"key": "masteryi",
 		"wrId": 10070,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/11.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10070.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/masteryi/skins/base/images/masteryi_splash_centered_0.jpg",
 		"name_ru": "Мастер Йи"
 	},
@@ -115,7 +115,7 @@
 		"key": "alistar",
 		"wrId": 10081,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/12.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10081.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/alistar/skins/base/images/alistar_splash_centered_0.jpg",
 		"name_ru": "Алистар"
 	},
@@ -125,7 +125,7 @@
 		"key": "ryze",
 		"wrId": 10137,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/13.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10137.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ryze/skins/base/images/ryze_splash_centered_0.jpg",
 		"name_ru": "Райз"
 	},
@@ -135,7 +135,7 @@
 		"key": "sion",
 		"wrId": 10125,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/14.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10125.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/sion/skins/base/images/sion_splash_centered_0.jpg",
 		"name_ru": "Сион"
 	},
@@ -145,7 +145,7 @@
 		"key": "sivir",
 		"wrId": 10107,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/15.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10107.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/sivir/skins/base/images/sivir_splash_centered_0.jpg",
 		"name_ru": "Сивир"
 	},
@@ -155,7 +155,7 @@
 		"key": "soraka",
 		"wrId": 10097,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/16.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10097.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/soraka/skins/base/images/soraka_splash_centered_0.jpg",
 		"name_ru": "Сорака"
 	},
@@ -165,7 +165,7 @@
 		"key": "teemo",
 		"wrId": 10046,
 		"positions": ["top", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/17.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10046.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg",
 		"name_ru": "Тимо"
 	},
@@ -175,7 +175,7 @@
 		"key": "tristana",
 		"wrId": 10045,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/18.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10045.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/tristana/skins/base/images/tristana_splash_centered_0.jpg",
 		"name_ru": "Тристана"
 	},
@@ -185,7 +185,7 @@
 		"key": "warwick",
 		"wrId": 10131,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/19.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10131.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/warwick/skins/base/images/warwick_splash_centered_0.jpg",
 		"name_ru": "Варвик"
 	},
@@ -195,7 +195,7 @@
 		"key": "nunu",
 		"wrId": 10008,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/20.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10008.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nunu/skins/base/images/nunu_splash_centered_0.jpg",
 		"name_ru": "Нуну и Виллумп"
 	},
@@ -205,7 +205,7 @@
 		"key": "missfortune",
 		"wrId": 10066,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/21.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10066.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/missfortune/skins/base/images/missfortune_splash_centered_0.jpg",
 		"name_ru": "Мисс Фортуна"
 	},
@@ -215,7 +215,7 @@
 		"key": "ashe",
 		"wrId": 10079,
 		"positions": ["bottom", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/22.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10079.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ashe/skins/base/images/ashe_splash_centered_0.jpg",
 		"name_ru": "Эш"
 	},
@@ -225,7 +225,7 @@
 		"key": "tryndamere",
 		"wrId": 10015,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/23.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10015.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/tryndamere/skins/base/images/tryndamere_splash_centered_0.jpg",
 		"name_ru": "Триндамир"
 	},
@@ -235,7 +235,7 @@
 		"key": "jax",
 		"wrId": 10040,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/24.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10040.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/jax/skins/base/images/jax_splash_centered_0.jpg",
 		"name_ru": "Джакс"
 	},
@@ -245,7 +245,7 @@
 		"key": "morgana",
 		"wrId": 10028,
 		"positions": ["jungle", "middle", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/25.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10028.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/morgana/skins/base/images/morgana_splash_centered_0.jpg",
 		"name_ru": "Моргана"
 	},
@@ -255,7 +255,7 @@
 		"key": "zilean",
 		"wrId": 10080,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/26.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10080.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zilean/skins/base/images/zilean_splash_centered_0.jpg",
 		"name_ru": "Зилеан"
 	},
@@ -265,7 +265,7 @@
 		"key": "singed",
 		"wrId": 10096,
 		"positions": ["top", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/27.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10096.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/singed/skins/base/images/singed_splash_centered_0.jpg",
 		"name_ru": "Синджед"
 	},
@@ -275,7 +275,7 @@
 		"key": "evelynn",
 		"wrId": 10029,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/28.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10029.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/evelynn/skins/base/images/evelynn_splash_centered_0.jpg",
 		"name_ru": "Эвелинн"
 	},
@@ -285,7 +285,7 @@
 		"key": "twitch",
 		"wrId": 10053,
 		"positions": ["jungle", "bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/29.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10053.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/twitch/skins/base/images/twitch_splash_centered_0.jpg",
 		"name_ru": "Твич"
 	},
@@ -295,7 +295,7 @@
 		"key": "chogath",
 		"wrId": 10088,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/31.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10088.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/chogath/skins/base/images/chogath_splash_centered_0.jpg",
 		"name_ru": "Чо'Гат"
 	},
@@ -305,7 +305,7 @@
 		"key": "amumu",
 		"wrId": 10004,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/32.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10004.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/amumu/skins/base/images/amumu_splash_centered_0.jpg",
 		"name_ru": "Амуму"
 	},
@@ -315,7 +315,7 @@
 		"key": "rammus",
 		"wrId": 10064,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/33.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10064.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/rammus/skins/base/images/rammus_splash_centered_0.jpg",
 		"name_ru": "Раммус"
 	},
@@ -325,7 +325,7 @@
 		"key": "drmundo",
 		"wrId": 10062,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/36.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10062.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/drmundo/skins/base/images/drmundo_splash_centered_0.jpg",
 		"name_ru": "Доктор Мундо"
 	},
@@ -335,7 +335,7 @@
 		"key": "sona",
 		"wrId": 10047,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/37.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10047.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/sona/skins/base/images/sona_splash_centered_0.jpg",
 		"name_ru": "Сона"
 	},
@@ -345,7 +345,7 @@
 		"key": "kassadin",
 		"wrId": 10103,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/38.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10103.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kassadin/skins/base/images/kassadin_splash_centered_0.jpg",
 		"name_ru": "Кассадин"
 	},
@@ -355,7 +355,7 @@
 		"key": "irelia",
 		"wrId": 10094,
 		"positions": ["top", "jungle", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/39.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10094.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/irelia/skins/base/images/irelia_splash_centered_0.jpg",
 		"name_ru": "Ирелия"
 	},
@@ -365,7 +365,7 @@
 		"key": "janna",
 		"wrId": 10075,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/40.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10075.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/janna/skins/base/images/janna_splash_centered_0.jpg",
 		"name_ru": "Жанна"
 	},
@@ -375,7 +375,7 @@
 		"key": "corki",
 		"wrId": 10060,
 		"positions": ["bottom", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/42.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10060.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/corki/skins/base/images/corki_splash_centered_0.jpg",
 		"name_ru": "Корки"
 	},
@@ -385,7 +385,7 @@
 		"key": "karma",
 		"wrId": 10007,
 		"positions": ["support", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/43.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10007.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/karma/skins/base/images/karma_splash_centered_0.jpg",
 		"name_ru": "Карма"
 	},
@@ -395,7 +395,7 @@
 		"key": "veigar",
 		"wrId": 10122,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/45.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10122.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/veigar/skins/base/images/veigar_splash_centered_0.jpg",
 		"name_ru": "Вейгар"
 	},
@@ -405,7 +405,7 @@
 		"key": "swain",
 		"wrId": 10126,
 		"positions": ["support", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/50.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10126.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/swain/skins/base/images/swain_splash_centered_0.jpg",
 		"name_ru": "Свейн"
 	},
@@ -415,7 +415,7 @@
 		"key": "caitlyn",
 		"wrId": 10112,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/51.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10112.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/caitlyn/skins/base/images/caitlyn_splash_centered_0.jpg",
 		"name_ru": "Кейтлин"
 	},
@@ -425,7 +425,7 @@
 		"key": "blitzcrank",
 		"wrId": 10033,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/53.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10033.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/blitzcrank/skins/base/images/blitzcrank_splash_centered_0.jpg",
 		"name_ru": "Блицкранк"
 	},
@@ -435,7 +435,7 @@
 		"key": "malphite",
 		"wrId": 10083,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/54.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10083.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/malphite/skins/base/images/malphite_splash_centered_0.jpg",
 		"name_ru": "Мальфит"
 	},
@@ -445,7 +445,7 @@
 		"key": "katarina",
 		"wrId": 10095,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/55.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10095.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/katarina/skins/base/images/katarina_splash_centered_0.jpg",
 		"name_ru": "Катарина"
 	},
@@ -455,7 +455,7 @@
 		"key": "nocturne",
 		"wrId": 10151,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/56.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10151.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nocturne/skins/base/images/nocturne_splash_centered_0.jpg",
 		"name_ru": "Ноктюрн"
 	},
@@ -465,7 +465,7 @@
 		"key": "maokai",
 		"wrId": 10074,
 		"positions": ["support", "top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/57.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10074.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/maokai/skins/base/images/maokai_splash_centered_0.jpg",
 		"name_ru": "Маокай"
 	},
@@ -475,7 +475,7 @@
 		"key": "renekton",
 		"wrId": 10121,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/58.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10121.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/renekton/skins/base/images/renekton_splash_centered_0.jpg",
 		"name_ru": "Ренектон"
 	},
@@ -485,7 +485,7 @@
 		"key": "jarvaniv",
 		"wrId": 10056,
 		"positions": ["jungle", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/59.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10056.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/jarvaniv/skins/base/images/jarvaniv_splash_centered_0.jpg",
 		"name_ru": "Джарван IV"
 	},
@@ -495,7 +495,7 @@
 		"key": "orianna",
 		"wrId": 10012,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/61.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10012.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/orianna/skins/base/images/orianna_splash_centered_0.jpg",
 		"name_ru": "Орианна"
 	},
@@ -505,7 +505,7 @@
 		"key": "monkeyking",
 		"wrId": 10009,
 		"positions": ["jungle", "top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/62.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10009.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/monkeyking/skins/base/images/monkeyking_splash_centered_0.jpg",
 		"name_ru": "Вуконг"
 	},
@@ -515,7 +515,7 @@
 		"key": "brand",
 		"wrId": 10119,
 		"positions": ["middle", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/63.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10119.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/brand/skins/base/images/brand_splash_centered_0.jpg",
 		"name_ru": "Брэнд"
 	},
@@ -525,7 +525,7 @@
 		"key": "leesin",
 		"wrId": 10059,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/64.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10059.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/leesin/skins/base/images/leesin_splash_centered_0.jpg",
 		"name_ru": "Ли Син"
 	},
@@ -535,7 +535,7 @@
 		"key": "vayne",
 		"wrId": 10010,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/67.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10010.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/vayne/skins/base/images/vayne_splash_centered_0.jpg",
 		"name_ru": "Вейн"
 	},
@@ -545,7 +545,7 @@
 		"key": "rumble",
 		"wrId": 10140,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/68.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10140.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/rumble/skins/base/images/rumble_splash_centered_0.jpg",
 		"name_ru": "Рамбл"
 	},
@@ -555,7 +555,7 @@
 		"key": "skarner",
 		"wrId": 10117,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/72.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10117.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/skarner/skins/base/images/skarner_splash_centered_0.jpg",
 		"name_ru": "Скарнер"
 	},
@@ -565,7 +565,7 @@
 		"key": "heimerdinger",
 		"wrId": 10127,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/74.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10127.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/heimerdinger/skins/base/images/heimerdinger_splash_centered_0.jpg",
 		"name_ru": "Хеймердингер"
 	},
@@ -575,7 +575,7 @@
 		"key": "nasus",
 		"wrId": 10065,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/75.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10065.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nasus/skins/base/images/nasus_splash_centered_0.jpg",
 		"name_ru": "Насус"
 	},
@@ -585,7 +585,7 @@
 		"key": "nidalee",
 		"wrId": 10084,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/76.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10084.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nidalee/skins/base/images/nidalee_splash_centered_0.jpg",
 		"name_ru": "Нидали"
 	},
@@ -595,7 +595,7 @@
 		"key": "poppy",
 		"wrId": 10076,
 		"positions": ["support", "top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/78.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10076.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/poppy/skins/base/images/poppy_splash_centered_0.jpg",
 		"name_ru": "Поппи"
 	},
@@ -605,7 +605,7 @@
 		"key": "gragas",
 		"wrId": 10089,
 		"positions": ["top", "jungle", "middle", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/79.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10089.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/gragas/skins/base/images/gragas_splash_centered_0.jpg",
 		"name_ru": "Грагас"
 	},
@@ -615,7 +615,7 @@
 		"key": "pantheon",
 		"wrId": 10030,
 		"positions": ["top", "jungle", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/80.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10030.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/pantheon/skins/base/images/pantheon_splash_centered_0.jpg",
 		"name_ru": "Пантеон"
 	},
@@ -625,7 +625,7 @@
 		"key": "ezreal",
 		"wrId": 10098,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/81.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10098.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ezreal/skins/base/images/ezreal_splash_centered_0.jpg",
 		"name_ru": "Эзреаль"
 	},
@@ -635,7 +635,7 @@
 		"key": "mordekaiser",
 		"wrId": 10035,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/82.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10035.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/mordekaiser/skins/base/images/mordekaiser_splash_centered_0.jpg",
 		"name_ru": "Мордекайзер"
 	},
@@ -645,7 +645,7 @@
 		"key": "akali",
 		"wrId": 10031,
 		"positions": ["middle", "top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/84.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10031.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/akali/skins/base/images/akali_splash_centered_0.jpg",
 		"name_ru": "Акали"
 	},
@@ -655,7 +655,7 @@
 		"key": "kennen",
 		"wrId": 10061,
 		"positions": ["top", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/85.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10061.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kennen/skins/base/images/kennen_splash_centered_0.jpg",
 		"name_ru": "Кеннен"
 	},
@@ -665,7 +665,7 @@
 		"key": "garen",
 		"wrId": 10001,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/86.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10001.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/garen/skins/base/images/garen_splash_centered_0.jpg",
 		"name_ru": "Гарен"
 	},
@@ -675,7 +675,7 @@
 		"key": "leona",
 		"wrId": 10044,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/89.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10044.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/leona/skins/base/images/leona_splash_centered_0.jpg",
 		"name_ru": "Леона"
 	},
@@ -685,7 +685,7 @@
 		"key": "talon",
 		"wrId": 10128,
 		"positions": ["jungle", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/91.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10128.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/talon/skins/base/images/talon_splash_centered_0.jpg",
 		"name_ru": "Талон"
 	},
@@ -695,7 +695,7 @@
 		"key": "riven",
 		"wrId": 10092,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/92.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10092.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/riven/skins/base/images/riven_splash_centered_0.jpg",
 		"name_ru": "Ривен"
 	},
@@ -705,7 +705,7 @@
 		"key": "kogmaw",
 		"wrId": 10110,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/96.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10110.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kogmaw/skins/base/images/kogmaw_splash_centered_0.jpg",
 		"name_ru": "Ког'Мао"
 	},
@@ -715,7 +715,7 @@
 		"key": "shen",
 		"wrId": 10118,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/98.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10118.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/shen/skins/base/images/shen_splash_centered_0.jpg",
 		"name_ru": "Шен"
 	},
@@ -725,7 +725,7 @@
 		"key": "lux",
 		"wrId": 10003,
 		"positions": ["middle", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/99.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10003.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/lux/skins/base/images/lux_splash_centered_0.jpg",
 		"name_ru": "Люкс"
 	},
@@ -735,7 +735,7 @@
 		"key": "shyvana",
 		"wrId": 10049,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/102.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10049.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/shyvana/skins/base/images/shyvana_splash_centered_0.jpg",
 		"name_ru": "Шивана"
 	},
@@ -745,7 +745,7 @@
 		"key": "ahri",
 		"wrId": 10038,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/103.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10038.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/base/images/ahri_splash_centered_0.jpg",
 		"name_ru": "Ари"
 	},
@@ -755,7 +755,7 @@
 		"key": "graves",
 		"wrId": 10072,
 		"positions": ["jungle", "top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/104.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10072.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/graves/skins/base/images/graves_splash_centered_0.jpg",
 		"name_ru": "Грейвз"
 	},
@@ -765,7 +765,7 @@
 		"key": "fizz",
 		"wrId": 10086,
 		"positions": ["middle", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/105.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10086.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/fizz/skins/base/images/fizz_splash_centered_0.jpg",
 		"name_ru": "Физз"
 	},
@@ -775,7 +775,7 @@
 		"key": "volibear",
 		"wrId": 10058,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/106.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10058.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/volibear/skins/base/images/volibear_splash_centered_0.jpg",
 		"name_ru": "Волибир"
 	},
@@ -785,7 +785,7 @@
 		"key": "rengar",
 		"wrId": 10006,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/107.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10006.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/rengar/skins/base/images/rengar_splash_centered_0.jpg",
 		"name_ru": "Ренгар"
 	},
@@ -795,7 +795,7 @@
 		"key": "varus",
 		"wrId": 10093,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/110.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10093.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/varus/skins/base/images/varus_splash_centered_0.jpg",
 		"name_ru": "Варус"
 	},
@@ -805,7 +805,7 @@
 		"key": "nautilus",
 		"wrId": 10132,
 		"positions": ["support", "top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/111.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10132.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nautilus/skins/base/images/nautilus_splash_centered_0.jpg",
 		"name_ru": "Наутилус"
 	},
@@ -815,7 +815,7 @@
 		"key": "viktor",
 		"wrId": 10144,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/112.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10144.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/viktor/skins/base/images/viktor_splash_centered_0.viktorvgu.jpg",
 		"name_ru": "Виктор"
 	},
@@ -825,7 +825,7 @@
 		"key": "fiora",
 		"wrId": 10032,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/114.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10032.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/fiora/skins/base/images/fiora_splash_centered_0.jpg",
 		"name_ru": "Фиора"
 	},
@@ -835,7 +835,7 @@
 		"key": "ziggs",
 		"wrId": 10087,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/115.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10087.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ziggs/skins/base/images/ziggs_splash_centered_0.jpg",
 		"name_ru": "Зиггс"
 	},
@@ -845,7 +845,7 @@
 		"key": "lulu",
 		"wrId": 10048,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/117.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10048.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/lulu/skins/base/images/lulu_splash_centered_0.jpg",
 		"name_ru": "Лулу"
 	},
@@ -855,7 +855,7 @@
 		"key": "draven",
 		"wrId": 10077,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/119.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10077.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/draven/skins/base/images/draven_splash_centered_0.jpg",
 		"name_ru": "Дрейвен"
 	},
@@ -865,7 +865,7 @@
 		"key": "hecarim",
 		"wrId": 10019,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/120.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10019.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/hecarim/skins/base/images/hecarim_splash_centered_0.jpg",
 		"name_ru": "Гекарим"
 	},
@@ -875,7 +875,7 @@
 		"key": "khazix",
 		"wrId": 10017,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/121.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10017.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/khazix/skins/base/images/khazix_splash_centered_0.jpg",
 		"name_ru": "Ка'Зикс"
 	},
@@ -885,7 +885,7 @@
 		"key": "darius",
 		"wrId": 10071,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/122.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10071.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/darius/skins/base/images/darius_splash_centered_0.jpg",
 		"name_ru": "Дариус"
 	},
@@ -895,7 +895,7 @@
 		"key": "jayce",
 		"wrId": 10101,
 		"positions": ["top", "jungle", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/126.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10101.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/jayce/skins/base/images/jayce_splash_centered_0.jpg",
 		"name_ru": "Джейс"
 	},
@@ -905,7 +905,7 @@
 		"key": "lissandra",
 		"wrId": 10109,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/127.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10109.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/lissandra/skins/base/images/lissandra_splash_centered_0.jpg",
 		"name_ru": "Лиссандра"
 	},
@@ -915,7 +915,7 @@
 		"key": "diana",
 		"wrId": 10013,
 		"positions": ["jungle", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/131.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10013.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/diana/skins/base/images/diana_splash_centered_0.jpg",
 		"name_ru": "Диана"
 	},
@@ -925,7 +925,7 @@
 		"key": "syndra",
 		"wrId": 10024,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/134.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10024.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/syndra/skins/base/images/syndra_splash_centered_0.jpg",
 		"name_ru": "Синдра"
 	},
@@ -935,7 +935,7 @@
 		"key": "aurelionsol",
 		"wrId": 10023,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/136.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10023.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aurelionsol/skins/base/images/aurelionsol_splash_centered_0.jpg",
 		"name_ru": "Аурелион Сол"
 	},
@@ -945,7 +945,7 @@
 		"key": "kayn",
 		"wrId": 10005,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/141.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10005.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kayn/skins/base/images/kayn_splash_centered_0.jpg",
 		"name_ru": "Каин"
 	},
@@ -955,7 +955,7 @@
 		"key": "zoe",
 		"wrId": 10014,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/142.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10014.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zoe/skins/base/images/zoe_splash_centered_0.jpg",
 		"name_ru": "Зои"
 	},
@@ -965,7 +965,7 @@
 		"key": "zyra",
 		"wrId": 10063,
 		"positions": ["middle", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/143.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10063.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zyra/skins/base/images/zyra_splash_centered_0.jpg",
 		"name_ru": "Зайра"
 	},
@@ -975,7 +975,7 @@
 		"key": "kaisa",
 		"wrId": 10026,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/145.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10026.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kaisa/skins/base/images/kaisa_splash_centered_0.jpg",
 		"name_ru": "Кай'Са"
 	},
@@ -985,7 +985,7 @@
 		"key": "seraphine",
 		"wrId": 10034,
 		"positions": ["support", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/147.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10034.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/seraphine/skins/base/images/seraphine_splash_centered_0.jpg",
 		"name_ru": "Серафина"
 	},
@@ -995,7 +995,7 @@
 		"key": "gnar",
 		"wrId": 10078,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/150.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10078.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/gnar/skins/base/images/gnar_splash_centered_0.jpg",
 		"name_ru": "Гнар"
 	},
@@ -1005,7 +1005,7 @@
 		"key": "yasuo",
 		"wrId": 10037,
 		"positions": ["middle", "top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/157.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10037.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yasuo/skins/base/images/yasuo_splash_centered_0.jpg",
 		"name_ru": "Ясуо"
 	},
@@ -1015,7 +1015,7 @@
 		"key": "velkoz",
 		"wrId": 10129,
 		"positions": ["middle", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/161.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10129.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/velkoz/skins/base/images/velkoz_splash_centered_0.jpg",
 		"name_ru": "Вел'Коз"
 	},
@@ -1025,7 +1025,7 @@
 		"key": "taliyah",
 		"wrId": 10146,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/163.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10146.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/taliyah/skins/base/images/taliyah_splash_centered_0.jpg",
 		"name_ru": "Талия"
 	},
@@ -1035,7 +1035,7 @@
 		"key": "camille",
 		"wrId": 10055,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/164.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10055.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/camille/skins/base/images/camille_splash_centered_0.jpg",
 		"name_ru": "Камилла"
 	},
@@ -1045,7 +1045,7 @@
 		"key": "akshan",
 		"wrId": 10100,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/166.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10100.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/akshan/skins/base/images/akshan_splash_centered_0.jpg",
 		"name_ru": "Акшан"
 	},
@@ -1055,7 +1055,7 @@
 		"key": "braum",
 		"wrId": 10021,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/201.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10021.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/braum/skins/base/images/braum_splash_centered_0.jpg",
 		"name_ru": "Браум"
 	},
@@ -1065,7 +1065,7 @@
 		"key": "jhin",
 		"wrId": 10022,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/202.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10022.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/jhin/skins/base/images/jhin_splash_centered_0.jpg",
 		"name_ru": "Джин"
 	},
@@ -1075,7 +1075,7 @@
 		"key": "kindred",
 		"wrId": 10073,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/203.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10073.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kindred/skins/base/images/kindred_splash_centered_0.jpg",
 		"name_ru": "Киндред"
 	},
@@ -1085,7 +1085,7 @@
 		"key": "zeri",
 		"wrId": 10067,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/221.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10067.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zeri/skins/base/images/zeri_splash_centered_0.jpg",
 		"name_ru": "Зери"
 	},
@@ -1095,7 +1095,7 @@
 		"key": "jinx",
 		"wrId": 10018,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/222.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10018.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/jinx/skins/base/images/jinx_splash_centered_0.jpg",
 		"name_ru": "Джинкс"
 	},
@@ -1105,7 +1105,7 @@
 		"key": "viego",
 		"wrId": 10057,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/234.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10057.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/viego/skins/base/images/viego_splash_centered_0.jpg",
 		"name_ru": "Виего"
 	},
@@ -1115,7 +1115,7 @@
 		"key": "senna",
 		"wrId": 10123,
 		"positions": ["support", "bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/235.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10123.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/senna/skins/base/images/senna_splash_centered_0.jpg",
 		"name_ru": "Сенна"
 	},
@@ -1125,7 +1125,7 @@
 		"key": "lucian",
 		"wrId": 10042,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/236.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10042.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/lucian/skins/base/images/lucian_splash_centered_0.jpg",
 		"name_ru": "Люциан"
 	},
@@ -1135,7 +1135,7 @@
 		"key": "zed",
 		"wrId": 10039,
 		"positions": ["middle", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/238.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10039.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zed/skins/base/images/zed_splash_centered_0.jpg",
 		"name_ru": "Зед"
 	},
@@ -1145,7 +1145,7 @@
 		"key": "ekko",
 		"wrId": 10011,
 		"positions": ["jungle", "middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/245.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10011.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ekko/skins/base/images/ekko_splash_centered_0.jpg",
 		"name_ru": "Экко"
 	},
@@ -1155,7 +1155,7 @@
 		"key": "vi",
 		"wrId": 10050,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/254.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10050.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/vi/skins/base/images/vi_splash_centered_0.jpg",
 		"name_ru": "Вай"
 	},
@@ -1165,7 +1165,7 @@
 		"key": "aatrox",
 		"wrId": 10002,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/266.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10002.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aatrox/skins/base/images/aatrox_splash_centered_0.jpg",
 		"name_ru": "Атрокс"
 	},
@@ -1175,7 +1175,7 @@
 		"key": "nami",
 		"wrId": 10091,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/267.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10091.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nami/skins/base/images/nami_splash_centered_0.jpg",
 		"name_ru": "Нами"
 	},
@@ -1185,7 +1185,7 @@
 		"key": "yuumi",
 		"wrId": 10020,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/350.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10020.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yuumi/skins/base/images/yuumi_splash_centered_0.jpg",
 		"name_ru": "Юми"
 	},
@@ -1195,7 +1195,7 @@
 		"key": "samira",
 		"wrId": 10104,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/360.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10104.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/samira/skins/base/images/samira_splash_centered_0.jpg",
 		"name_ru": "Самира"
 	},
@@ -1205,7 +1205,7 @@
 		"key": "thresh",
 		"wrId": 10130,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/412.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10130.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/thresh/skins/base/images/thresh_splash_centered_0.jpg",
 		"name_ru": "Треш"
 	},
@@ -1215,7 +1215,7 @@
 		"key": "kalista",
 		"wrId": 10134,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/429.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10134.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kalista/skins/base/images/kalista_splash_centered_0.jpg",
 		"name_ru": "Калиста"
 	},
@@ -1225,7 +1225,7 @@
 		"key": "bard",
 		"wrId": 10105,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/432.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10105.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/bard/skins/base/images/bard_splash_centered_0.jpg",
 		"name_ru": "Бард"
 	},
@@ -1235,7 +1235,7 @@
 		"key": "rakan",
 		"wrId": 10052,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/497.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10052.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/rakan/skins/base/images/rakan_splash_centered_0.jpg",
 		"name_ru": "Рэйкан"
 	},
@@ -1245,7 +1245,7 @@
 		"key": "xayah",
 		"wrId": 10051,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/498.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10051.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/xayah/skins/base/images/xayah_splash_centered_0.jpg",
 		"name_ru": "Шая"
 	},
@@ -1255,7 +1255,7 @@
 		"key": "ornn",
 		"wrId": 10136,
 		"positions": ["top", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/516.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10136.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ornn/skins/base/images/ornn_splash_centered_0.jpg",
 		"name_ru": "Орн"
 	},
@@ -1265,7 +1265,7 @@
 		"key": "rell",
 		"wrId": 10116,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/526.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10116.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/rell/skins/base/images/rell_splash_centered_0.jpg",
 		"name_ru": "Релл"
 	},
@@ -1275,7 +1275,7 @@
 		"key": "pyke",
 		"wrId": 10124,
 		"positions": ["support", "middle", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/555.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10124.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/pyke/skins/base/images/pyke_splash_centered_0.jpg",
 		"name_ru": "Пайк"
 	},
@@ -1285,7 +1285,7 @@
 		"key": "vex",
 		"wrId": 10141,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/711.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10141.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/vex/skins/base/images/vex_splash_centered_0.jpg",
 		"name_ru": "Векс"
 	},
@@ -1295,7 +1295,7 @@
 		"key": "yone",
 		"wrId": 10069,
 		"positions": ["top", "middle", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/777.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10069.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yone/skins/base/images/yone_splash_centered_0.jpg",
 		"name_ru": "Ёнэ"
 	},
@@ -1305,7 +1305,7 @@
 		"key": "ambessa",
 		"wrId": 10082,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/799.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10082.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ambessa/skins/base/images/ambessa_splash_centered_0.domina.jpg",
 		"name_ru": "Амбесса"
 	},
@@ -1315,7 +1315,7 @@
 		"key": "mel",
 		"wrId": 10139,
 		"positions": ["middle", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/800.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10139.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/mel/skins/base/images/mel_splash_centered_0.jpg",
 		"name_ru": "Мэл"
 	},
@@ -1325,7 +1325,7 @@
 		"key": "yunara",
 		"wrId": 10148,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/804.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10148.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yunara/skins/base/images/yunara_splash_centered_0.jpg",
 		"name_ru": "Юнара"
 	},
@@ -1335,7 +1335,7 @@
 		"key": "sett",
 		"wrId": 10068,
 		"positions": ["top", "support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/875.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10068.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/sett/skins/base/images/sett_splash_centered_0.jpg",
 		"name_ru": "Сетт"
 	},
@@ -1345,7 +1345,7 @@
 		"key": "lillia",
 		"wrId": 10135,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/876.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10135.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/lillia/skins/base/images/lillia_splash_centered_0.jpg",
 		"name_ru": "Лиллия"
 	},
@@ -1355,7 +1355,7 @@
 		"key": "gwen",
 		"wrId": 10054,
 		"positions": ["top", "jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/887.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10054.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/gwen/skins/base/images/gwen_splash_centered_0.jpg",
 		"name_ru": "Гвен"
 	},
@@ -1365,7 +1365,7 @@
 		"key": "aurora",
 		"wrId": 10085,
 		"positions": ["middle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/893.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10085.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aurora/skins/base/images/aurora_splash_centered_0.aurora.jpg",
 		"name_ru": "Аврора"
 	},
@@ -1375,7 +1375,7 @@
 		"key": "nilah",
 		"wrId": 10027,
 		"positions": ["jungle"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/895.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10027.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nilah/skins/base/images/nilah_splash_centered_0.jpg",
 		"name_ru": "Нила"
 	},
@@ -1385,7 +1385,7 @@
 		"key": "ksante",
 		"wrId": 10152,
 		"positions": ["top"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/897.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10152.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ksante/skins/base/images/ksante_splash_centered_0.jpg",
 		"name_ru": "К'Санте"
 	},
@@ -1395,7 +1395,7 @@
 		"key": "smolder",
 		"wrId": 10138,
 		"positions": ["bottom"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/901.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10138.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/smolder/skins/base/images/smolder_splash_centered_0.jpg",
 		"name_ru": "Смолдер"
 	},
@@ -1405,7 +1405,7 @@
 		"key": "milio",
 		"wrId": 10108,
 		"positions": ["support"],
-		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/902.png",
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10108.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/milio/skins/base/images/milio_splash_centered_0.jpg",
 		"name_ru": "Милио"
 	}
