@@ -37,6 +37,23 @@ function getCurrSlot(currentPick) {
 	return pickOrder[currentPick - 1] || "done";
 }
 
+// Champion icons in our bucket are served through Cloudflare Image
+// Transformations, which re-encode them (AVIF/WebP) on the fly. Links pointing
+// anywhere else are left alone.
+const ICON_CDN_HOST = "images.fearless-draft-wr.net";
+
+function optimizedIconLink(link) {
+	const url = new URL(link, window.location.origin);
+	if (url.hostname !== ICON_CDN_HOST) {
+		return link;
+	}
+
+	const iconSizePx = 128;
+	const options = `width=${iconSizePx},height=${iconSizePx},fit=scale-down,format=auto`;
+
+	return `${url.origin}/cdn-cgi/image/${options}${url.pathname}`;
+}
+
 function displayChampions(champions) {
 	const gridEl = document.getElementById("champion-grid");
 	gridEl.innerHTML = "";
@@ -718,6 +735,7 @@ async function loadChampionsV2() {
 	const response = await fetch("/champions");
 	const champions = await response.json();
 	return champions.reduce((acc, elem) => {
+		elem.iconLink = optimizedIconLink(elem.iconLink);
 		acc[elem.key] = elem;
 		return acc;
 	}, {});
