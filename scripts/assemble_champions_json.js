@@ -16,7 +16,7 @@ const fs = require("node:fs/promises");
 			key: x.key.toLowerCase(),
 		};
 	});
-	champions = addWildRiftIds(champions);
+	champions = filterWildRift(champions);
 	champions = await addPositions(champions);
 	champions = addImageLinks(champions);
 	champions = await addLocale(champions, "ru_ru");
@@ -31,9 +31,7 @@ async function fetchChampions() {
 	return await response.json();
 }
 
-// Keeps only the champions available in Wild Rift and tags them with their
-// in-game Wild Rift id. The "none" placeholder is kept without an id.
-function addWildRiftIds(champions) {
+function filterWildRift(champions) {
 	const filepath = path.join(__dirname, "../priv/wildrift_ids.json");
 	const wildRiftIds = require(filepath);
 
@@ -44,6 +42,8 @@ function addWildRiftIds(champions) {
 			acc.push({ ...x, wrId: null });
 		} else if (wildRiftIds[key]) {
 			acc.push({ ...x, wrId: wildRiftIds[key] });
+		} else {
+			console.log(`[WARN] Cannot find champion ${key} in Wild Rift`);
 		}
 
 		return acc;
