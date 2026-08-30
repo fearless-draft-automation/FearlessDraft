@@ -16,7 +16,7 @@ const fs = require("node:fs/promises");
 			key: x.key.toLowerCase(),
 		};
 	});
-	champions = filterWildRift(champions);
+	champions = addWildRiftIds(champions);
 	champions = await addPositions(champions);
 	champions = addImageLinks(champions);
 	champions = await addLocale(champions, "ru_ru");
@@ -31,17 +31,23 @@ async function fetchChampions() {
 	return await response.json();
 }
 
-function filterWildRift(champions) {
-	const filepath = path.join(
-		__dirname,
-		"../priv/non_wild_rift_champtions.json",
-	);
-	const nonWRChampionsSet = new Set(require(filepath));
+// Keeps only the champions available in Wild Rift and tags them with their
+// in-game Wild Rift id. The "none" placeholder is kept without an id.
+function addWildRiftIds(champions) {
+	const filepath = path.join(__dirname, "../priv/wildrift_ids.json");
+	const wildRiftIds = require(filepath);
 
-	return champions.filter((x) => {
+	return champions.reduce((acc, x) => {
 		const key = x.key.toLowerCase();
-		return !nonWRChampionsSet.has(key);
-	});
+
+		if (key === "none") {
+			acc.push({ ...x, wrId: null });
+		} else if (wildRiftIds[key]) {
+			acc.push({ ...x, wrId: wildRiftIds[key] });
+		}
+
+		return acc;
+	}, []);
 }
 
 async function addPositions(champions) {
