@@ -83,6 +83,10 @@ function determinePositions(positionPlayRates) {
 	}, []);
 }
 
+function communityDragonIconLink(id) {
+	return `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/${id}.png`;
+}
+
 function addImageLinks(champions) {
 	return champions
 		.map((x) => {
@@ -95,8 +99,7 @@ function addImageLinks(champions) {
 			switch (x.key) {
 				case "none":
 					// No Wild Rift id, so no icon in our bucket
-					x.iconLink =
-						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/-1.png";
+					x.iconLink = communityDragonIconLink(x.id);
 					x.splashArtLink = "/img/placeholder.png";
 					break;
 				case "ambessa":
@@ -106,6 +109,10 @@ function addImageLinks(champions) {
 				case "aurora":
 					x.splashArtLink =
 						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aurora/skins/base/images/aurora_splash_centered_0.aurora.jpg";
+					break;
+				// TODO: temporary, drop once the icon in our bucket is fixed
+				case "kennen":
+					x.iconLink = communityDragonIconLink(x.id);
 					break;
 				case "teemo":
 					x.splashArtLink =

@@ -655,7 +655,7 @@
 		"key": "kennen",
 		"wrId": 10061,
 		"positions": ["top", "middle"],
-		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10061.png",
+		"iconLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/85.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/kennen/skins/base/images/kennen_splash_centered_0.jpg",
 		"name_ru": "Кеннен"
 	},
