@@ -20,6 +20,7 @@ const fs = require("node:fs/promises");
 	champions = await addPositions(champions);
 	champions = addImageLinks(champions);
 	champions = await addLocale(champions, "ru_ru");
+	champions = includeWrOnly(champions);
 
 	await saveFile(champions);
 })();
@@ -110,6 +111,24 @@ function addImageLinks(champions) {
 
 			return x;
 		});
+}
+
+function includeWrOnly(champions) {
+	return [
+		...champions,
+		{
+			id: null,
+			name: "Norra",
+			key: "norra",
+			wrId: 10166,
+			positions: ["middle"],
+			iconLink:
+				"https://images.fearless-draft-wr.net/assets/champions/head-icons/10166.png",
+			splashArtLink:
+				"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/annie/skins/base/images/annie_splash_centered_0.jpg",
+			name_ru: "Норра",
+		},
+	];
 }
 
 // Expects two-segment lowercase locale code (e.g. ru_ru, en_us, etc.)
