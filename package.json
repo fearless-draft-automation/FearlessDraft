@@ -6,6 +6,7 @@
 	"scripts": {
 		"start": "npx dotenvx run -f .env.local -f .env -- node ./server.js",
 		"generate-champions-json": "node ./scripts/assemble_champions_json.js",
+		"check-champions-links": "node ./scripts/check_champions_links.js",
 		"check": "npx @biomejs/biome check --write .",
 		"test:e2e": "npx playwright test"
 	},

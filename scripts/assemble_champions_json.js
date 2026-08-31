@@ -102,21 +102,9 @@ function addImageLinks(champions) {
 					x.iconLink = communityDragonIconLink(x.id);
 					x.splashArtLink = "/img/placeholder.png";
 					break;
-				case "ambessa":
+				case "xinzhao":
 					x.splashArtLink =
-						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ambessa/skins/base/images/ambessa_splash_centered_0.domina.jpg";
-					break;
-				case "aurora":
-					x.splashArtLink =
-						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aurora/skins/base/images/aurora_splash_centered_0.aurora.jpg";
-					break;
-				case "teemo":
-					x.splashArtLink =
-						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg";
-					break;
-				case "viktor":
-					x.splashArtLink =
-						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/viktor/skins/base/images/viktor_splash_centered_0.viktorvgu.jpg";
+						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/xinzhao/skins/base/images/xinzhaorework_splash_centered_0.jpg";
 					break;
 			}
 

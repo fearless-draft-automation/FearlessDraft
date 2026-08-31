@@ -56,7 +56,7 @@
 		"wrId": 10016,
 		"positions": ["jungle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10016.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/xinzhao/skins/base/images/xinzhao_splash_centered_0.jpg",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/xinzhao/skins/base/images/xinzhaorework_splash_centered_0.jpg",
 		"name_ru": "Ксин Жао"
 	},
 	{
@@ -166,7 +166,7 @@
 		"wrId": 10046,
 		"positions": ["top", "middle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10046.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.jpg",
 		"name_ru": "Тимо"
 	},
 	{
@@ -816,7 +816,7 @@
 		"wrId": 10144,
 		"positions": ["middle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10144.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/viktor/skins/base/images/viktor_splash_centered_0.viktorvgu.jpg",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/viktor/skins/base/images/viktor_splash_centered_0.jpg",
 		"name_ru": "Виктор"
 	},
 	{
@@ -1306,7 +1306,7 @@
 		"wrId": 10082,
 		"positions": ["top", "jungle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10082.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ambessa/skins/base/images/ambessa_splash_centered_0.domina.jpg",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/ambessa/skins/base/images/ambessa_splash_centered_0.jpg",
 		"name_ru": "Амбесса"
 	},
 	{
@@ -1366,7 +1366,7 @@
 		"wrId": 10085,
 		"positions": ["middle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10085.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aurora/skins/base/images/aurora_splash_centered_0.aurora.jpg",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aurora/skins/base/images/aurora_splash_centered_0.jpg",
 		"name_ru": "Аврора"
 	},
 	{
