@@ -110,10 +110,6 @@ function addImageLinks(champions) {
 					x.splashArtLink =
 						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/aurora/skins/base/images/aurora_splash_centered_0.aurora.jpg";
 					break;
-				// TODO: temporary, drop once the icon in our bucket is fixed
-				case "kennen":
-					x.iconLink = communityDragonIconLink(x.id);
-					break;
 				case "teemo":
 					x.splashArtLink =
 						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.asu_teemo.jpg";
