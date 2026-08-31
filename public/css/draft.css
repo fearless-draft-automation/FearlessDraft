@@ -106,16 +106,41 @@ body {
 }
 
 .champion-icon {
+	display: block;
 	width: 75px;
 	height: 75px;
 	margin: 0px;
 	cursor: pointer;
+}
+
+/*
+    An inset box-shadow on an <img> is painted behind the image, so it never
+    shows. The frame gives the shadow something to sit on top of.
+*/
+.champion-frame {
+	position: relative;
+	display: block;
+	width: 75px;
+	height: 75px;
 	transition: transform 0.2s;
 }
 
-.champion-icon:hover {
+.champion-frame::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.75);
+	pointer-events: none;
+}
+
+.champion-frame:hover {
 	transform: scale(1.05);
 	z-index: 1;
+}
+
+/* The selection border claims the same 2px, so it takes over from the shadow */
+.champion-frame:has(.champion-icon.selected)::after {
+	display: none;
 }
 
 .champion-icon.selected {

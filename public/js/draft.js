@@ -60,6 +60,10 @@ function displayChampions(champions) {
 
 	championsList = Object.values(champions).sort(championNameComparator("ru"));
 	for (const champion of championsList) {
+		// The inner shadow lives on a frame around the icon, see draft.css
+		const championFrameEl = document.createElement("span");
+		championFrameEl.classList.add("champion-frame");
+
 		const championIconEl = document.createElement("img");
 		championIconEl.src = champion.iconLink;
 		championIconEl.alt = champion.name;
@@ -131,7 +135,8 @@ function displayChampions(champions) {
 			});
 		}
 
-		gridEl.appendChild(championIconEl);
+		championFrameEl.appendChild(championIconEl);
+		gridEl.appendChild(championFrameEl);
 	}
 }
 
