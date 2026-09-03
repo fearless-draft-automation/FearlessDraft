@@ -125,7 +125,7 @@ function includeWrOnly(champions) {
 			iconLink:
 				"https://images.fearless-draft-wr.net/assets/champions/head-icons/10166.png",
 			splashArtLink:
-				"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/annie/skins/base/images/annie_splash_centered_0.jpg",
+				"https://images.fearless-draft-wr.net/assets/champions/head-images/10166.jpg",
 			name_ru: "Норра",
 		},
 	];
