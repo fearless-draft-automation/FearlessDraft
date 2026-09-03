@@ -105,7 +105,19 @@ function addImageLinks(champions) {
 					break;
 				case "xinzhao":
 					x.splashArtLink =
-						"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/xinzhao/skins/base/images/xinzhaorework_splash_centered_0.jpg";
+						"https://images.fearless-draft-wr.net/assets/champions/head-images/10016.jpg";
+					break;
+				case "nidalee":
+					x.splashArtLink =
+						"https://images.fearless-draft-wr.net/assets/champions/head-images/10084.jpg";
+					break;
+				case "teemo":
+					x.splashArtLink =
+						"https://images.fearless-draft-wr.net/assets/champions/head-images/10046.jpg";
+					break;
+				case "shyvana":
+					x.splashArtLink =
+						"https://images.fearless-draft-wr.net/assets/champions/head-images/10049.jpg";
 					break;
 			}
 

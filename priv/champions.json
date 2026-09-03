@@ -56,7 +56,7 @@
 		"wrId": 10016,
 		"positions": ["jungle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10016.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/xinzhao/skins/base/images/xinzhaorework_splash_centered_0.jpg",
+		"splashArtLink": "https://images.fearless-draft-wr.net/assets/champions/head-images/10016.jpg",
 		"name_ru": "Ксин Жао"
 	},
 	{
@@ -166,7 +166,7 @@
 		"wrId": 10046,
 		"positions": ["top", "middle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10046.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/base/images/teemo_splash_centered_0.jpg",
+		"splashArtLink": "https://images.fearless-draft-wr.net/assets/champions/head-images/10046.jpg",
 		"name_ru": "Тимо"
 	},
 	{
@@ -586,7 +586,7 @@
 		"wrId": 10084,
 		"positions": ["jungle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10084.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/nidalee/skins/base/images/nidalee_splash_centered_0.jpg",
+		"splashArtLink": "https://images.fearless-draft-wr.net/assets/champions/head-images/10084.jpg",
 		"name_ru": "Нидали"
 	},
 	{
@@ -736,7 +736,7 @@
 		"wrId": 10049,
 		"positions": ["jungle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10049.png",
-		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/shyvana/skins/base/images/shyvana_splash_centered_0.jpg",
+		"splashArtLink": "https://images.fearless-draft-wr.net/assets/champions/head-images/10049.jpg",
 		"name_ru": "Шивана"
 	},
 	{
