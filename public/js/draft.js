@@ -486,7 +486,7 @@ function hover(pick) {
 			`#${slot[0] === "B" ? "blue" : "red"}-picks .pick-slot:nth-child(${slot[2]})`,
 		);
 		const pickImage = pickSlot.querySelector("img");
-		pickImage.src = champions[pick].iconLink;
+		pickImage.src = champions[pick].headImageLink;
 		maybeRenderChampionName(pickSlot, pick);
 	}
 }
