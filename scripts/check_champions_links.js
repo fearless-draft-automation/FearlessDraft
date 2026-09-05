@@ -34,7 +34,7 @@ function collectLinks() {
 	const champions = require(filepath);
 
 	return champions.reduce((acc, x) => {
-		for (const field of ["iconLink", "splashArtLink"]) {
+		for (const field of ["iconLink", "headImageLink", "splashArtLink"]) {
 			const url = x[field];
 
 			if (!url) {

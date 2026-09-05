@@ -112,6 +112,7 @@ function addImageLinks(champions) {
 	return champions
 		.map((x) => {
 			x.iconLink = `https://images.fearless-draft-wr.net/assets/champions/head-icons/${x.wrId}.png`;
+			x.headImageLink = `https://images.fearless-draft-wr.net/assets/champions/head-images/v2/${x.wrId}.png`;
 			x.splashArtLink = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/${x.key}/skins/base/images/${x.key}_splash_centered_0.jpg`;
 
 			return x;
@@ -119,8 +120,9 @@ function addImageLinks(champions) {
 		.map((x) => {
 			switch (x.key) {
 				case "none":
-					// No Wild Rift id, so no icon in our bucket
+					// No Wild Rift id, so no images in our bucket
 					x.iconLink = communityDragonIconLink(x.id);
+					x.headImageLink = "/img/placeholder.png";
 					x.splashArtLink = "/img/placeholder.png";
 					break;
 				case "xinzhao":
@@ -156,6 +158,8 @@ function includeWrOnly(champions) {
 			positions: wildRiftInfo.norra.positions,
 			iconLink:
 				"https://images.fearless-draft-wr.net/assets/champions/head-icons/10166.png",
+			headImageLink:
+				"https://images.fearless-draft-wr.net/assets/champions/head-images/v2/10166.png",
 			splashArtLink:
 				"https://images.fearless-draft-wr.net/assets/champions/head-images/10166.jpg",
 			name_ru: "Норра",
