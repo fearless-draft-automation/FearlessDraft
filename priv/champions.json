@@ -644,7 +644,7 @@
 		"name": "Akali",
 		"key": "akali",
 		"wrId": 10031,
-		"positions": ["middle", "top"],
+		"positions": ["top", "middle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10031.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/akali/skins/base/images/akali_splash_centered_0.jpg",
 		"name_ru": "Акали"
@@ -1004,7 +1004,7 @@
 		"name": "Yasuo",
 		"key": "yasuo",
 		"wrId": 10037,
-		"positions": ["middle", "top"],
+		"positions": ["top", "middle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10037.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/yasuo/skins/base/images/yasuo_splash_centered_0.jpg",
 		"name_ru": "Ясуо"
@@ -1134,7 +1134,7 @@
 		"name": "Zed",
 		"key": "zed",
 		"wrId": 10039,
-		"positions": ["middle", "jungle"],
+		"positions": ["jungle", "middle"],
 		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10039.png",
 		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/zed/skins/base/images/zed_splash_centered_0.jpg",
 		"name_ru": "Зед"

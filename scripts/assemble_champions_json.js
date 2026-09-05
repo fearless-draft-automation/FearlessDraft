@@ -7,6 +7,12 @@ const path = require("node:path");
 const fetch = require("node-fetch");
 const fs = require("node:fs/promises");
 
+// Maps a Wild Rift champion key to { id, positions? }. `positions` is present only
+// for champions whose Wild Rift roles differ from the PC play rates we download.
+const wildRiftInfo = require(
+	path.join(__dirname, "../priv/wildrift_info.json"),
+);
+
 (async () => {
 	let champions = await fetchChampions();
 	champions = champions.map((x) => {
@@ -18,6 +24,7 @@ const fs = require("node:fs/promises");
 	});
 	champions = filterWildRift(champions);
 	champions = await addPositions(champions);
+	champions = applyPositionOverrides(champions);
 	champions = addImageLinks(champions);
 	champions = await addLocale(champions, "ru_ru");
 	champions = includeWrOnly(champions);
@@ -33,16 +40,13 @@ async function fetchChampions() {
 }
 
 function filterWildRift(champions) {
-	const filepath = path.join(__dirname, "../priv/wildrift_ids.json");
-	const wildRiftIds = require(filepath);
-
 	return champions.reduce((acc, x) => {
 		const key = x.key.toLowerCase();
 
 		if (key === "none") {
 			acc.push({ ...x, wrId: null });
-		} else if (wildRiftIds[key]) {
-			acc.push({ ...x, wrId: wildRiftIds[key] });
+		} else if (wildRiftInfo[key]) {
+			acc.push({ ...x, wrId: wildRiftInfo[key].id });
 		} else {
 			console.log(`[WARN] Cannot find champion ${key} in Wild Rift`);
 		}
@@ -77,11 +81,27 @@ function determinePositions(positionPlayRates) {
 	return Object.entries(positionPlayRates).reduce((acc, elem) => {
 		const [position, playRateObj] = elem;
 		if (playRateObj.playRate > 0) {
-			acc.push(position.toLowerCase());
+			acc.push(normalizePosition(position.toLowerCase()));
 		}
 
 		return acc;
 	}, []);
+}
+
+// The draft UI calls the bot lane role "support", upstream calls it "utility"
+function normalizePosition(position) {
+	return position === "utility" ? "support" : position;
+}
+
+function applyPositionOverrides(champions) {
+	return champions.map((x) => {
+		const positions = wildRiftInfo[x.key]?.positions;
+		if (positions) {
+			x.positions = positions;
+		}
+
+		return x;
+	});
 }
 
 function communityDragonIconLink(id) {
@@ -132,8 +152,8 @@ function includeWrOnly(champions) {
 			id: null,
 			name: "Norra",
 			key: "norra",
-			wrId: 10166,
-			positions: ["middle"],
+			wrId: wildRiftInfo.norra.id,
+			positions: wildRiftInfo.norra.positions,
 			iconLink:
 				"https://images.fearless-draft-wr.net/assets/champions/head-icons/10166.png",
 			splashArtLink:

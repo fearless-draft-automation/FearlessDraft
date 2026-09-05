@@ -1,0 +1,473 @@
+{
+	"aatrox": {
+		"id": 10002,
+		"positions": ["top", "jungle"]
+	},
+	"ahri": {
+		"id": 10038
+	},
+	"akali": {
+		"id": 10031
+	},
+	"akshan": {
+		"id": 10100
+	},
+	"alistar": {
+		"id": 10081
+	},
+	"ambessa": {
+		"id": 10082
+	},
+	"amumu": {
+		"id": 10004
+	},
+	"annie": {
+		"id": 10036
+	},
+	"ashe": {
+		"id": 10079,
+		"positions": ["bottom", "support"]
+	},
+	"aurelionsol": {
+		"id": 10023
+	},
+	"aurora": {
+		"id": 10085
+	},
+	"bard": {
+		"id": 10105
+	},
+	"blitzcrank": {
+		"id": 10033
+	},
+	"brand": {
+		"id": 10119,
+		"positions": ["middle", "support"]
+	},
+	"braum": {
+		"id": 10021
+	},
+	"caitlyn": {
+		"id": 10112
+	},
+	"camille": {
+		"id": 10055,
+		"positions": ["top", "jungle"]
+	},
+	"chogath": {
+		"id": 10088
+	},
+	"corki": {
+		"id": 10060,
+		"positions": ["bottom", "middle"]
+	},
+	"darius": {
+		"id": 10071,
+		"positions": ["top", "jungle"]
+	},
+	"diana": {
+		"id": 10013
+	},
+	"draven": {
+		"id": 10077
+	},
+	"drmundo": {
+		"id": 10062
+	},
+	"ekko": {
+		"id": 10011
+	},
+	"evelynn": {
+		"id": 10029
+	},
+	"ezreal": {
+		"id": 10098
+	},
+	"fiddlesticks": {
+		"id": 10133
+	},
+	"fiora": {
+		"id": 10032,
+		"positions": ["top", "jungle"]
+	},
+	"fizz": {
+		"id": 10086,
+		"positions": ["middle", "jungle"]
+	},
+	"galio": {
+		"id": 10099,
+		"positions": ["middle", "support"]
+	},
+	"garen": {
+		"id": 10001
+	},
+	"gnar": {
+		"id": 10078
+	},
+	"gragas": {
+		"id": 10089,
+		"positions": ["top", "jungle", "middle", "support"]
+	},
+	"graves": {
+		"id": 10072,
+		"positions": ["jungle", "top"]
+	},
+	"gwen": {
+		"id": 10054
+	},
+	"hecarim": {
+		"id": 10019
+	},
+	"heimerdinger": {
+		"id": 10127,
+		"positions": ["middle"]
+	},
+	"irelia": {
+		"id": 10094,
+		"positions": ["top", "jungle", "middle"]
+	},
+	"janna": {
+		"id": 10075
+	},
+	"jarvaniv": {
+		"id": 10056,
+		"positions": ["jungle", "support"]
+	},
+	"jax": {
+		"id": 10040
+	},
+	"jayce": {
+		"id": 10101,
+		"positions": ["top", "jungle", "middle"]
+	},
+	"jhin": {
+		"id": 10022
+	},
+	"jinx": {
+		"id": 10018
+	},
+	"kaisa": {
+		"id": 10026
+	},
+	"kalista": {
+		"id": 10134
+	},
+	"karma": {
+		"id": 10007,
+		"positions": ["support", "middle"]
+	},
+	"kassadin": {
+		"id": 10103
+	},
+	"katarina": {
+		"id": 10095
+	},
+	"kayle": {
+		"id": 10041,
+		"positions": ["top", "jungle", "middle"]
+	},
+	"kayn": {
+		"id": 10005
+	},
+	"kennen": {
+		"id": 10061,
+		"positions": ["top", "middle"]
+	},
+	"khazix": {
+		"id": 10017
+	},
+	"kindred": {
+		"id": 10073
+	},
+	"kogmaw": {
+		"id": 10110
+	},
+	"ksante": {
+		"id": 10152
+	},
+	"leesin": {
+		"id": 10059
+	},
+	"leona": {
+		"id": 10044
+	},
+	"lillia": {
+		"id": 10135
+	},
+	"lissandra": {
+		"id": 10109
+	},
+	"lucian": {
+		"id": 10042
+	},
+	"lulu": {
+		"id": 10048
+	},
+	"lux": {
+		"id": 10003
+	},
+	"malphite": {
+		"id": 10083,
+		"positions": ["top"]
+	},
+	"maokai": {
+		"id": 10074,
+		"positions": ["support", "top", "jungle"]
+	},
+	"masteryi": {
+		"id": 10070
+	},
+	"mel": {
+		"id": 10139
+	},
+	"milio": {
+		"id": 10108
+	},
+	"missfortune": {
+		"id": 10066
+	},
+	"monkeyking": {
+		"id": 10009,
+		"positions": ["jungle", "top"]
+	},
+	"mordekaiser": {
+		"id": 10035
+	},
+	"morgana": {
+		"id": 10028,
+		"positions": ["jungle", "middle", "support"]
+	},
+	"nami": {
+		"id": 10091
+	},
+	"nasus": {
+		"id": 10065
+	},
+	"nautilus": {
+		"id": 10132,
+		"positions": ["support", "top", "jungle"]
+	},
+	"nidalee": {
+		"id": 10084
+	},
+	"nilah": {
+		"id": 10027,
+		"positions": ["jungle"]
+	},
+	"nocturne": {
+		"id": 10151
+	},
+	"norra": {
+		"id": 10166,
+		"positions": ["middle"]
+	},
+	"nunu": {
+		"id": 10008
+	},
+	"olaf": {
+		"id": 10106,
+		"positions": ["top", "jungle"]
+	},
+	"orianna": {
+		"id": 10012
+	},
+	"ornn": {
+		"id": 10136,
+		"positions": ["top", "support"]
+	},
+	"pantheon": {
+		"id": 10030,
+		"positions": ["top", "jungle", "middle"]
+	},
+	"poppy": {
+		"id": 10076,
+		"positions": ["support", "top"]
+	},
+	"pyke": {
+		"id": 10124,
+		"positions": ["support", "middle", "jungle"]
+	},
+	"rakan": {
+		"id": 10052
+	},
+	"rammus": {
+		"id": 10064
+	},
+	"rell": {
+		"id": 10116
+	},
+	"renekton": {
+		"id": 10121
+	},
+	"rengar": {
+		"id": 10006
+	},
+	"riven": {
+		"id": 10092,
+		"positions": ["top", "jungle"]
+	},
+	"rumble": {
+		"id": 10140
+	},
+	"ryze": {
+		"id": 10137
+	},
+	"samira": {
+		"id": 10104
+	},
+	"senna": {
+		"id": 10123,
+		"positions": ["support", "bottom"]
+	},
+	"seraphine": {
+		"id": 10034,
+		"positions": ["support", "middle"]
+	},
+	"sett": {
+		"id": 10068,
+		"positions": ["top", "support"]
+	},
+	"shen": {
+		"id": 10118,
+		"positions": ["top", "jungle"]
+	},
+	"shyvana": {
+		"id": 10049
+	},
+	"singed": {
+		"id": 10096,
+		"positions": ["top", "support"]
+	},
+	"sion": {
+		"id": 10125
+	},
+	"sivir": {
+		"id": 10107
+	},
+	"skarner": {
+		"id": 10117
+	},
+	"smolder": {
+		"id": 10138
+	},
+	"sona": {
+		"id": 10047
+	},
+	"soraka": {
+		"id": 10097
+	},
+	"swain": {
+		"id": 10126,
+		"positions": ["support", "middle"]
+	},
+	"syndra": {
+		"id": 10024
+	},
+	"taliyah": {
+		"id": 10146
+	},
+	"talon": {
+		"id": 10128,
+		"positions": ["jungle", "middle"]
+	},
+	"teemo": {
+		"id": 10046,
+		"positions": ["top", "middle"]
+	},
+	"thresh": {
+		"id": 10130
+	},
+	"tristana": {
+		"id": 10045
+	},
+	"tryndamere": {
+		"id": 10015,
+		"positions": ["top", "jungle"]
+	},
+	"twistedfate": {
+		"id": 10025
+	},
+	"twitch": {
+		"id": 10053,
+		"positions": ["jungle", "bottom"]
+	},
+	"urgot": {
+		"id": 10102
+	},
+	"varus": {
+		"id": 10093,
+		"positions": ["bottom"]
+	},
+	"vayne": {
+		"id": 10010,
+		"positions": ["bottom"]
+	},
+	"veigar": {
+		"id": 10122
+	},
+	"velkoz": {
+		"id": 10129,
+		"positions": ["middle", "support"]
+	},
+	"vex": {
+		"id": 10141
+	},
+	"vi": {
+		"id": 10050
+	},
+	"viego": {
+		"id": 10057
+	},
+	"viktor": {
+		"id": 10144
+	},
+	"vladimir": {
+		"id": 10090
+	},
+	"volibear": {
+		"id": 10058
+	},
+	"warwick": {
+		"id": 10131,
+		"positions": ["top", "jungle"]
+	},
+	"xayah": {
+		"id": 10051
+	},
+	"xinzhao": {
+		"id": 10016
+	},
+	"yasuo": {
+		"id": 10037
+	},
+	"yone": {
+		"id": 10069,
+		"positions": ["top", "middle", "jungle"]
+	},
+	"yunara": {
+		"id": 10148
+	},
+	"yuumi": {
+		"id": 10020
+	},
+	"zed": {
+		"id": 10039
+	},
+	"zeri": {
+		"id": 10067
+	},
+	"ziggs": {
+		"id": 10087,
+		"positions": ["middle"]
+	},
+	"zilean": {
+		"id": 10080
+	},
+	"zoe": {
+		"id": 10014
+	},
+	"zyra": {
+		"id": 10063,
+		"positions": ["middle", "support"]
+	}
+}
