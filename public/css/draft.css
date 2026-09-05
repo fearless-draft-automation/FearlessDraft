@@ -235,9 +235,6 @@ body {
 	overflow: hidden;
 }
 
-.pick-slot img:not([src$="/img/placeholder.png"]) {
-	object-position: center 30%;
-}
 .pick-slot img,
 .ban-slot img,
 .fearless-ban-slot img {

@@ -37,21 +37,33 @@ function getCurrSlot(currentPick) {
 	return pickOrder[currentPick - 1] || "done";
 }
 
-// Champion icons in our bucket are served through Cloudflare Image
+// Champion images in our bucket are served through Cloudflare Image
 // Transformations, which re-encode them (AVIF/WebP) on the fly. Links pointing
 // anywhere else are left alone.
-const ICON_CDN_HOST = "images.fearless-draft-wr.net";
+const IMAGE_CDN_HOST = "images.fearless-draft-wr.net";
 
-function optimizedIconLink(link) {
+function optimizedLink(link, options) {
 	const url = new URL(link, window.location.origin);
-	if (url.hostname !== ICON_CDN_HOST) {
+	if (url.hostname !== IMAGE_CDN_HOST) {
 		return link;
 	}
 
-	const iconSizePx = 128;
-	const options = `width=${iconSizePx},height=${iconSizePx},fit=scale-down,format=auto`;
-
 	return `${url.origin}/cdn-cgi/image/${options}${url.pathname}`;
+}
+
+function optimizedIconLink(link) {
+	const iconSizePx = 128;
+
+	return optimizedLink(
+		link,
+		`width=${iconSizePx},height=${iconSizePx},fit=scale-down,format=auto`,
+	);
+}
+
+// Head images are narrower than the pick slot renders on a 2x display, so we
+// only ask for a re-encode and let the slot crop them.
+function optimizedHeadImageLink(link) {
+	return optimizedLink(link, "width=480,fit=scale-down,format=auto");
 }
 
 function displayChampions(champions) {
@@ -119,7 +131,7 @@ function displayChampions(champions) {
 						);
 					}
 					const pickImage = pickSlot.querySelector("img");
-					pickImage.src = champion.splashArtLink;
+					pickImage.src = champion.headImageLink;
 					maybeRenderChampionName(pickSlot, champion.key);
 				}
 
@@ -503,7 +515,7 @@ function newPick(picks) {
 				`#${slot[0] === "B" ? "blue" : "red"}-picks .pick-slot:nth-child(${slot[2]})`,
 			);
 			const pickImage = pickSlot.querySelector("img");
-			pickImage.src = champions[pick].splashArtLink;
+			pickImage.src = champions[pick].headImageLink;
 			//text that shows champion name
 			maybeRenderChampionName(pickSlot, pick);
 		}
@@ -741,6 +753,7 @@ async function loadChampionsV2() {
 	const champions = await response.json();
 	return champions.reduce((acc, elem) => {
 		elem.iconLink = optimizedIconLink(elem.iconLink);
+		elem.headImageLink = optimizedHeadImageLink(elem.headImageLink);
 		acc[elem.key] = elem;
 		return acc;
 	}, {});
