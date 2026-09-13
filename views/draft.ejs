@@ -15,7 +15,7 @@
     </script>
 </head>
 
-<body <%- customizations.backgroundColor ? `style="background-color: ${customizations.backgroundColor};"` : "" %>>
+<body class="<%= presetClass %>">
     <div style="display: flex; flex-direction: column; min-width: max-content;">
         <div class="draft-container">
             <div class="blue-side">
@@ -66,7 +66,7 @@
             </div>
             <div class="champion-pool-container">
                 <div class="filter-container">
-                    <div class="role-filter" <%- customizations.hideFilters ? `style="visibility: hidden;"` : "" %>>
+                    <div class="role-filter">
                         <img src="/img/all_icon.png" alt="All" data-role="all" class="role-icon active">
                         <img src="/img/top_icon.png" alt="Top" data-role="top" class="role-icon">
                         <img src="/img/jg_icon.png" alt="Jungle" data-role="jungle" class="role-icon">
@@ -77,12 +77,12 @@
                     <div id="timer">
                         <%= pickTimeout %>
                     </div>
-                    <div class="search-bar" <%- customizations.hideFilters ? `style="visibility: hidden;"` : "" %>>
+                    <div class="search-bar">
                         <input type="text" id="searchInput" placeholder="Search champion...">
                     </div>
                 </div>
                 <div class="champion-pool-wrapper">
-                    <div <%- customizations.hideScrollbar ? `class="champion-pool hidden-scrollbar"` : `class="champion-pool"` %>>
+                    <div class="champion-pool">
                         <div id="champion-grid"></div>
                     </div>
                     <button id="confirmButton" enabled>Ready</button>

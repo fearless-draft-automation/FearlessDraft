@@ -351,11 +351,22 @@ svg.strike-line {
 	font-weight: bold;
 }
 
-.hidden-scrollbar {
+/* Visual presets, selected with the visual_preset query parameter. */
+
+.preset-bmt {
+	background-color: #090808;
+}
+
+.preset-bmt .role-filter,
+.preset-bmt .search-bar {
+	visibility: hidden;
+}
+
+.preset-bmt .champion-pool {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
 
-.hidden-scrollbar::-webkit-scrollbar {
+.preset-bmt .champion-pool::-webkit-scrollbar {
 	display: none;
 }

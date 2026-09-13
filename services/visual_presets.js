@@ -1,19 +1,7 @@
-const NO_PRESET = {
-	hideFilters: false,
-	hideScrollbar: false,
-	backgroundColor: null,
-};
+const PRESETS = ["bmt"];
 
-const PRESETS = {
-	bmt: {
-		hideFilters: true,
-		hideScrollbar: true,
-		backgroundColor: "#090808",
-	},
-};
-
-function getVisualPreset(name) {
-	return PRESETS[name] || NO_PRESET;
+function getPresetClass(name) {
+	return PRESETS.includes(name) ? `preset-${name}` : "";
 }
 
-module.exports = { getVisualPreset };
+module.exports = { getPresetClass };
