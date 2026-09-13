@@ -3,6 +3,7 @@ const router = express.Router();
 
 const { Draft } = require("../../models");
 const LiveDraftManager = require("../../services/live_draft_manager");
+const { getVisualPreset } = require("../../services/visual_presets");
 
 module.exports = router;
 
@@ -23,10 +24,7 @@ router.get("/draft/:draftId/:side", async (req, res) => {
 			redTeamName: draft.redTeamName,
 			pickTimeout: draft.options?.pickTimeout || draft.pickTimeout,
 			nicknames: draft.options?.nicknames || draft.nicknames,
-			customizations: {
-				hideFilters: req.query.hideFilters === "true",
-				hideScrollbar: req.query.hideScrollbar === "true",
-			},
+			customizations: getVisualPreset(req.query.visual_preset),
 		});
 	} catch (error) {
 		console.log(`Error rendering draft: ${error.message}`);

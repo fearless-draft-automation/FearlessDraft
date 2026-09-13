@@ -15,7 +15,7 @@
     </script>
 </head>
 
-<body>
+<body <%- customizations.backgroundColor ? `style="background-color: ${customizations.backgroundColor};"` : "" %>>
     <div style="display: flex; flex-direction: column; min-width: max-content;">
         <div class="draft-container">
             <div class="blue-side">
