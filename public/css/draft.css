@@ -353,10 +353,6 @@ svg.strike-line {
 
 /* Visual presets, selected with the visual_preset query parameter. */
 
-.preset-bmt {
-	background-color: #090808;
-}
-
 .preset-bmt .role-filter,
 .preset-bmt .search-bar {
 	visibility: hidden;
