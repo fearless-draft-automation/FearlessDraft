@@ -1551,6 +1551,17 @@
 		"name_ru": "Милио"
 	},
 	{
+		"id": 910,
+		"name": "Hwei",
+		"key": "hwei",
+		"wrId": 10147,
+		"positions": ["middle", "support"],
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10147.png",
+		"headImageLink": "https://images.fearless-draft-wr.net/assets/champions/head-images/v2/10147.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/hwei/skins/base/images/hwei_splash_centered_0.jpg",
+		"name_ru": "Хвэй"
+	},
+	{
 		"id": null,
 		"name": "Norra",
 		"key": "norra",
