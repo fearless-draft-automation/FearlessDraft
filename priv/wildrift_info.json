@@ -122,6 +122,10 @@
 		"id": 10127,
 		"positions": ["middle"]
 	},
+	"hwei": {
+		"id": 10147,
+		"positions": ["middle", "support"]
+	},
 	"irelia": {
 		"id": 10094,
 		"positions": ["top", "jungle", "middle"]
