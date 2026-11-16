@@ -1386,6 +1386,17 @@
 		"name_ru": "Орн"
 	},
 	{
+		"id": 517,
+		"name": "Sylas",
+		"key": "sylas",
+		"wrId": 10120,
+		"positions": ["jungle", "middle"],
+		"iconLink": "https://images.fearless-draft-wr.net/assets/champions/head-icons/10120.png",
+		"headImageLink": "https://images.fearless-draft-wr.net/assets/champions/head-images/v2/10120.png",
+		"splashArtLink": "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/sylas/skins/base/images/sylas_splash_centered_0.jpg",
+		"name_ru": "Сайлас"
+	},
+	{
 		"id": 526,
 		"name": "Rell",
 		"key": "rell",
